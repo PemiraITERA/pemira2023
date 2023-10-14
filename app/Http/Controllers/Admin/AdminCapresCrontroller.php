@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Capres;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Capres;
 use Illuminate\Http\Request;
