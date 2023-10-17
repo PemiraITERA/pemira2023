@@ -188,10 +188,10 @@
         </div>
         <!-- section 5 -->
         <div class="my-6 flex justify-center items-center w-[312px] gap-3 mx-auto">
-          <button class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200">
+          <button id="btnCV" class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200">
             CV
           </button>
-          <button class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200">
+          <button id="btnKampanye" class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200">
             Grand Design
           </button>
         </div>
@@ -231,8 +231,85 @@
             </div>
           </div>
         </div>
-        <div class="mb-40"></div>
+                <!-- Modal CV -->
+        <div class="fixed hidden top-20 z-40 inset-x-3 pb-4 items-center justify-center" id="modalCV">
+          <div
+              class="bg-white rounded-lg overflow-hidden shadow-lg shadow-[rgb(137, 148, 67)] transform transition-all w-max">
+              <div class="flex bg-button-color px-4 pt-4 -mb-2 rounded-t-lg justify-between items-center font-montserrat">
+                  <button
+                      class="close text-[#050200] font-bold py-2 px-4 rounded-lg hover:bg-main-200 hover:shadow-md hover:shadow-[rgb(137, 148, 67)] focus:outline-none focus:shadow-outline-blue active:bg-zinc-300 hover:text-red-600">
+                      X
+                  </button>
+                  <h2 class="text-[#050200] text-lg font-semibold">Curriculum Vitae</h2>
+              </div>
+              <div class="px-4 py-4">
+                  <div class="content-between items-center flex">
+                      <iframe src="https://drive.google.com/file/d/1P_Vcaz5VP0mmG0UbGw-MVyz1Ij5h0Sae/preview" width="640"
+                          height="480" allow="autoplay">
+                      </iframe>
+                  </div>
+              </div>
+          </div>
+          <div id="Backdrop1" class="opacity-25 fixed inset-0 -z-10 bg-black"></div>
+        </div>
+
+        <!-- Modal Kampanye -->
+        <div class="fixed hidden top-20 z-40 inset-x-3 pb-4 items-center justify-center" id="modalKampanye">
+            <div
+                class="bg-white rounded-lg overflow-hidden shadow-lg shadow-[rgb(137, 148, 67)] transform transition-all w-max">
+                <div class="flex bg-button-color px-4 pt-4 rounded-t-lg justify-between items-center font-montserrat">
+                    <button
+                        class="close text-[#050200] font-bold py-2 px-4 rounded-lg hover:bg-main-200 hover:shadow-md hover:shadow-[rgb(137, 148, 67)] focus:outline-none focus:shadow-outline-blue active:bg-zinc-300 hover:text-red-600">
+                        X
+                    </button>
+                    <h2 class="text-[#050200] text-lg font-semibold">Grand Design</h2>
+                </div>
+                <div class="px-4 py-4">
+                    <div class="content-between items-center flex">
+                        <iframe src="https://drive.google.com/file/d/1c8YLEidAfRIxnOAy6iHacl6AQerjP9xP/preview" width="640"
+                            height="480" allow="autoplay">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div id="Backdrop2" class="opacity-25 fixed inset-0 -z-10 bg-black"></div>
+        </div>
       </section>
+      <script>
+        var modalCV = document.getElementById("modalCV");
+        var modalKampanye = document.getElementById("modalKampanye");
+        var backdrop1 = document.getElementById("Backdrop1");
+        var backdrop2 = document.getElementById("Backdrop2");
+        var btnCV = document.getElementById("btnCV");
+        var btnKampanye = document.getElementById("btnKampanye");
+        var closeBtnCV = document.getElementsByClassName("close")[0];
+        var closeBtnKampanye = document.getElementsByClassName("close")[1];
+
+        btnCV.onclick = function () {
+            modalCV.style.display = "flex";
+        }
+        btnKampanye.onclick = function () {
+            modalKampanye.style.display = "flex";
+        }
+        closeBtnCV.onclick = function () {
+            modalCV.style.display = "none";
+        }
+        closeBtnKampanye.onclick = function () {
+            modalKampanye.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modalCV) {
+                modalCV.style.display = "none";
+            } else if (event.target == backdrop1) {
+                modalCV.style.display = "none";
+            }
+            if (event.target == modalKampanye) {
+                modalKampanye.style.display = "none";
+            } else if (event.target == backdrop2) {
+                modalKampanye.style.display = "none";
+            }
+        }
+      </script>
     </main>
     <footer>
       <!-- buat footer -->
