@@ -61,8 +61,28 @@
     </head>
     <main class="bg-white">
       <section>
+        
+        <!-- breadcrumb -->
+        <div class="hidden md:inline-flex items-center gap-6 ml-[38px] mb-14 mt-16" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+              <a href="#" class="inline-flex items-center text-xl font-normal font-poppins text-main-200 hover:text-main-100">
+                Capresma
+              </a>
+            </li>
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 18L15 12L9 6" stroke="#FF7A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            <li>
+              <a href="#" class="inline-flex items-center text-xl font-normal font-poppins text-main-200 hover:text-main-100">Detail Capresma</a>
+            </li>
+          </ol>
+        </div>
+
         <!-- section 1 -->
-        <div class="flex flex-col justify-center items-center gap-8 flex-shrink-0 w-[312px] h-[671px] px-6 py-8 bg-main-50 mx-auto mt-[30px] mb-[65px] rounded-3xl">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 flex-shrink-0 w-[312px] md:w-[688px] h-[671px] md:h-auto px-6 py-8 bg-main-50 mx-auto mt-[30px] md:mt-0 mb-[65px] md:mb-[84.16px] rounded-3xl">
           <img src="/public/client/images/union.svg" alt="">
           <div class="flex flex-col items-start self-stretch h-auto w-full gap-6">
             <h1 class="font-montserrat text-lg font-semibold leading-[125%] text-[#0C102D]">Nama Panjang Capresma</h1>
@@ -79,15 +99,16 @@
                 </p>
               </div>
               <div class="w-[1px] h-8 bg-main-300"></div>
-              <div class="flex-1 font-poppins text-[10px] font-semibold leading-[124%] text-main-200">
+              <a href="#" class="flex-1 font-poppins text-[10px] font-semibold leading-[124%] text-main-200">
                 Partai lainnya...
-              </div>
+              </a>
             </div>
           </div>
         </div>
+
         <!-- section 2 -->
         <div class="flex justify-center items-center flex-col py-11 gap-10 w-full border-t-[2px] border-b-[2px] border-main-100 bg-main-50">
-          <div class="h-auto w-[312px] flex flex-col justify-center items-center py-10 gap-8 rounded-3xl border-[2px] border-main-100 bg-[#FFF]">
+          <div class="h-auto w-[312px] md:w-[600px] flex flex-col justify-center items-center py-10 gap-8 rounded-3xl border-[2px] border-main-100 bg-[#FFF]">
             <div class="flex items-center pb-2 border-b-[2px] border-main-200">
               <h1 class="font-montserrat text-2xl font-semibold leading[125%] text-[#050200]">Visi</h1>
             </div>
@@ -103,7 +124,7 @@
             <div class="w-3 h-3 rounded-full bg-main-200 opacity-[37%]">
             </div>
           </div>
-          <div class="h-auto w-[312px] flex flex-col justify-center items-center py-10 gap-8 rounded-3xl border-[2px] border-main-100 bg-[#FFF]">
+          <div class="h-auto w-[312px] md:w-[600px] flex flex-col justify-center items-center py-10 gap-8 rounded-3xl border-[2px] border-main-100 bg-[#FFF]">
             <div class="flex items-center pb-2 border-b-[2px] border-main-200">
               <h1 class="font-montserrat text-2xl font-semibold leading[125%] text-[#050200]">Misi</h1>
             </div>
@@ -139,68 +160,82 @@
                 Lorem ipsum dolor sit amet consectetur. Purus quis aliquam tristique etiam risus felis.
               </p>
             </div>
+            <div class="flex px-6 justify-center items-center gap-6 self-stretch">
+              <div class="w-10 h-10 flex-shrink-0 flex justify-center items-center bg-main-200 rounded-full text-[#FFF] font-montserrat text-lg font-semibold leading-[125%]">
+                5
+              </div>
+              <p class="flex-1 font-poppins text-xs font-normal leading-[150%]">
+                Lorem ipsum dolor sit amet consectetur. Aliquam id mauris molestie eu. Massa arcu auctor luctus.
+              </p>
+            </div>
           </div>
         </div>
+
         <!-- section 3 -->
         <div class="my-16 flex flex-col w-full py-11 justify-center items-center gap-8 rounded-3xl">
-          <div class="flex items-center pb-2 border-b-[2px] border-main-200">
-            <h1 class="font-montserrat text-2xl font-semibold leading-[125%]">Video Pendek</h1>
+          <div class="flex w-full md:w-[688px] py-11 md:py-14 flex-col justify-center items-center gap-8">
+            <div class="flex items-center pb-2 border-b-[2px] border-main-200">
+              <h1 class="font-montserrat text-2xl font-semibold leading-[125%]">Video Pendek</h1>
+            </div>
+            <iframe src="" frameborder="0" class="flex w-[311px] md:w-[600px] h-[198px] md:h-[380px] items-center border-[2px] border-main-200 bg-[#0B1742]"></iframe>
           </div>
-          <iframe src="" frameborder="0" class="flex w-[311px] h-[198px] items-center border-[2px] border-main-200 bg-[#0B1742]"></iframe>
         </div>
+
         <!-- section 4 -->
         <div class="flex w-full px-10 py-16 flex-col justify-center items-center gap-10 flex-shrink-0 border-t-[2px] border-b-[2px] bg-main-50 border-main-100">
           <div class="flex items-center pb-2 border-b-[2px] border-main-200">
             <h1 class="font-montserrat text-2xl font-semibold leading-[125%] text-[#050200]">Program Kerja</h1>
           </div>
           <div class="flex py-2 pr-6 justify-center items-center gap-6 self-stretch rounded-lg border-[2px] border-main-200">
-            <div class="w-[60px] h-[60px] flex-shrink-0 flex justify-center items-center rounded-lg bg-main-200 text-[#FFF] font-montserrat text-2xl font-semibold leading-[125%]">
+            <div class="w-[60px] md:w-[100px] h-[60px] md:h-[100px] flex-shrink-0 flex justify-center items-center rounded-lg bg-main-200 text-[#FFF] font-montserrat text-2xl font-semibold leading-[125%] md:leading-normal md:text-[48px] md:-my-2 md:-mx-1">
               1
             </div>
-            <p class="flex-1 text-[#0C102D] font-poppins text-xs font-normal leading-[150%]">
+            <p class="flex-1 text-[#0C102D] font-poppins text-xs md:text-[18px] font-normal leading-[150%]">
               Lorem ipsum dolor sit amet consectetur. Nisl proin urna massa quam ac. Scelerisque imperdiet fermentum justo bibendum.
             </p>
           </div>
           <div class="flex py-2 pr-6 justify-center items-center gap-6 self-stretch rounded-lg border-[2px] border-main-200">
-            <div class="w-[60px] h-[60px] flex-shrink-0 flex justify-center items-center rounded-lg bg-main-200 text-[#FFF] font-montserrat text-2xl font-semibold leading-[125%]">
+            <div class="w-[60px] md:w-[100px] h-[60px] md:h-[100px] flex-shrink-0 flex justify-center items-center rounded-lg bg-main-200 text-[#FFF] font-montserrat text-2xl font-semibold leading-[125%] md:leading-normal md:text-[48px] md:-my-2 md:-mx-1">
               2
             </div>
-            <p class="flex-1 text-[#0C102D] font-poppins text-xs font-normal leading-[150%]">
+            <p class="flex-1 text-[#0C102D] font-poppins text-xs font-normal leading-[150%] md:text-[18px]">
               Lorem ipsum dolor sit amet consectetur. Blandit tempor vulputate at amet ut. Mi id laoreet mattis sit diam. Est eget nisi.
             </p>
           </div>
           <div class="flex py-2 pr-6 justify-center items-center gap-6 self-stretch rounded-lg border-[2px] border-main-200">
-            <div class="w-[60px] h-[60px] flex-shrink-0 flex justify-center items-center rounded-lg bg-main-200 text-[#FFF] font-montserrat text-2xl font-semibold leading-[125%]">
+            <div class="w-[60px] md:w-[100px] h-[60px] md:h-[100px] flex-shrink-0 flex justify-center items-center rounded-lg bg-main-200 text-[#FFF] font-montserrat text-2xl font-semibold leading-[125%] md:leading-normal md:text-[48px] md:-my-2 md:-mx-1">
               3
             </div>
-            <p class="flex-1 text-[#0C102D] font-poppins text-xs font-normal leading-[150%]">
+            <p class="flex-1 text-[#0C102D] font-poppins text-xs font-normal leading-[150%] md:text-[18px]">
               Lorem ipsum dolor sit amet consectetur. Lectus at vel ut quis vitae. Blandit fringilla enim sed elementum. Ac auctor gravida.
             </p>
           </div>
           <div class="flex py-2 pr-6 justify-center items-center gap-6 self-stretch rounded-lg border-[2px] border-main-200">
-            <div class="w-[60px] h-[60px] flex-shrink-0 flex justify-center items-center rounded-lg bg-main-200 text-[#FFF] font-montserrat text-2xl font-semibold leading-[125%]">
+            <div class="w-[60px] md:w-[100px] h-[60px] md:h-[100px] flex-shrink-0 flex justify-center items-center rounded-lg bg-main-200 text-[#FFF] font-montserrat text-2xl font-semibold leading-[125%] md:leading-normal md:text-[48px] md:-my-2 md:-mx-1">
               4
             </div>
-            <p class="flex-1 text-[#0C102D] font-poppins text-xs font-normal leading-[150%]">
+            <p class="flex-1 text-[#0C102D] font-poppins text-xs font-normal leading-[150%] md:text-[18px]">
               Lorem ipsum dolor sit amet consectetur. Eleifend vel ac eget purus. Nulla ullamcorper risus orci vitae. Mi ornare et.
             </p>
           </div>
         </div>
+
         <!-- section 5 -->
-        <div class="my-6 flex justify-center items-center w-[312px] gap-3 mx-auto">
-          <button id="btnCV" class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200">
+        <div class="my-6 flex justify-center items-center w-[312px] md:w-[560px] gap-3 mx-auto md:gap-8">
+          <button id="btnCV" class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs md:text-2xl font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200">
             CV
           </button>
-          <button id="btnKampanye" class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200">
+          <button id="btnKampanye" class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs md:text-2xl font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200">
             Grand Design
           </button>
         </div>
+
         <!-- section 6 -->
         <div class="flex w-full py-16 flex-col items-center gap-10 border-t-[2px] border-b-[2px] border-main-100 bg-main-50">
           <div class="flex pb-2 items-center border-b-[2px] border-main-200">
             <h1 class="text-[#050200] font-montserrat text-2xl font-semibold leading-[125%]">Partai Pendukung</h1>
           </div>
-          <div class="flex justify-center items-center gap-6">
+          <div class="grid grid-cols-2 md:grid-cols-3 justify-center items-center gap-6">
             <div class="flex flex-col items-center gap-6">
               <div class="w-[120px] h-[120px] bg-[#D9D9D9] rounded-full"></div>
               <h2 class="text-black font-montserrat text-2xl font-semibold leading-[125%]">HMIF</h2>
@@ -209,8 +244,6 @@
               <div class="w-[120px] h-[120px] bg-[#D9D9D9] rounded-full"></div>
               <h2 class="text-black font-montserrat text-2xl font-semibold leading-[125%]">HMIF</h2>
             </div>
-          </div>
-          <div class="flex justify-center items-center gap-6">
             <div class="flex flex-col items-center gap-6">
               <div class="w-[120px] h-[120px] bg-[#D9D9D9] rounded-full"></div>
               <h2 class="text-black font-montserrat text-2xl font-semibold leading-[125%]">HMIF</h2>
@@ -219,8 +252,6 @@
               <div class="w-[120px] h-[120px] bg-[#D9D9D9] rounded-full"></div>
               <h2 class="text-black font-montserrat text-2xl font-semibold leading-[125%]">HMIF</h2>
             </div>
-          </div>
-          <div class="flex justify-center items-center gap-6">
             <div class="flex flex-col items-center gap-6">
               <div class="w-[120px] h-[120px] bg-[#D9D9D9] rounded-full"></div>
               <h2 class="text-black font-montserrat text-2xl font-semibold leading-[125%]">HMIF</h2>
@@ -231,7 +262,8 @@
             </div>
           </div>
         </div>
-                <!-- Modal CV -->
+
+        <!-- Modal CV -->
         <div class="fixed hidden top-20 z-40 inset-x-3 pb-4 items-center justify-center" id="modalCV">
           <div
               class="bg-white rounded-lg overflow-hidden shadow-lg shadow-[rgb(137, 148, 67)] transform transition-all w-max">
