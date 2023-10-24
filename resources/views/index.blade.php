@@ -7,7 +7,8 @@
 
   <!-- Tailwind CSS -->
   @vite('resources/css/app.css')
-
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <title>Tailwind CSS CDN</title>
 </head>

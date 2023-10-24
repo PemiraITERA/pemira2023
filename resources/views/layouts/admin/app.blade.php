@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pemira | @yield('title')</title>
-
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
 
     <link rel="shortcut icon" href="{{ asset('mazzer/compiled/svg/favicon.svg') }}" type="image/x-icon">
