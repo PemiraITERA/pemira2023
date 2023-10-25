@@ -33,8 +33,6 @@ class LoginController extends Controller
             $user = Auth::user();
             if ($user->id_role == 888) {
                 return RouteServiceProvider::CMS;
-            } elseif ($user->id_role == 999) {
-                return RouteServiceProvider::Dosen;
             }
         }
         return RouteServiceProvider::HOME;

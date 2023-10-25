@@ -174,6 +174,15 @@
 
 
             </li>
+            <li
+                class="sidebar-item">
+                <a href="{{ route('logout') }}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Logout</span>
+                </a>
+
+
+            </li>
 
         </ul>
     </div>

@@ -1,8 +1,5 @@
 @extends('layouts.admin.app')
-
-
 @section('title', 'Dashboard')
-
 @section('content')
 
 <header class="mb-3">
