@@ -12,10 +12,7 @@ class AdminCMSController extends Controller
      */
     public function index()
     {
-        return view('admin.index',
-        [
-        ]
-);
+        return view('admin.index');
     }
 
     /**
@@ -64,5 +61,9 @@ class AdminCMSController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function __construct()
+    {
+        $this->middleware('guest')->except('index', 'create', 'store', 'show', 'edit', 'update', 'destroy');
     }
 }

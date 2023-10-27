@@ -19,7 +19,7 @@ class Admin
         if (Auth::check() && auth()->user()->id_role == 888) {
             return $next($request);
         } else {
-            return redirect('/login');
+            return redirect('/admin');
         }
     }
 }

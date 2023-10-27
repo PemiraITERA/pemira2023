@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Capres;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Admin\Controller;
 use Illuminate\Contracts\View\View;
-use App\Http\Controllers\Controller;
-use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Http\RedirectResponse;
 
-class AdminCapresCrontroller extends Controller
+class AdminDetailCapresController extends Controller
 {
         /**
      * Display a listing of the resource.
@@ -23,6 +23,7 @@ class AdminCapresCrontroller extends Controller
      */
     public function create()
     {
+        return view('admin.capres.create');
     }
 
     /**
