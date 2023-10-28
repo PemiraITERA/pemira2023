@@ -1,100 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Jangan Lupa Sesuaikan Title dengan nama page yang dibuat -->
-    <title>Document</title>
-
-    <!-- Kita pake cdn dulu ya -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    
-    <!-- Config tailwind -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              main: {
-                50: "#FFF9F5",
-                100: "#FBB03B",
-                200: "#FF7A17",
-                300: "#F88312",
-                400: "#0B1742",
-              },
-              pink: "#FB43FF",
-              purple: "#8512F8",
-              white: "#FFFDF6",
-              'white-2': "rgba(193, 113, 39, 0.1)",
-            },
-            fontFamily: {
-              montserrat: ["Montserrat", 'sans-serif'],
-              poppins: ["Poppins", 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
-    <style type="text/tailwindcss">
-        .gradient-1 {
-          @apply bg-gradient-to-tr from-main-300 to-pink;
-        }
-
-        .gradient-2 {
-          @apply bg-gradient-to-r from-main-300 to-purple;
-        }
-    </style>
-  </head>
-  <body>
     <head>
-      <nav>
-        <!-- buat navigasi -->
-      </nav>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Jangan Lupa Sesuaikan Title dengan nama page yang dibuat -->
+        <title>Document</title>
+
+        <!-- Kita pake cdn dulu ya -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Config tailwind -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        spacing: {
+                            75: "19rem",
+                        },
+                        colors: {
+                            main: {
+                                50: "#FFF9F5",
+                                100: "#FBB03B",
+                                200: "#FF7A17",
+                                300: "#F88312",
+                                400: "#0B1742",
+                            },
+                            pink: "#FB43FF",
+                            purple: "#8512F8",
+                            white: "#FFFDF6",
+                            "white-2": "rgba(193, 113, 39, 0.1)",
+                            "black-2": "rgba(0, 0, 0, 0.5)",
+                            "pale-yellow": "rgba(255, 168, 105, 0.15)",
+                            "blue-grey": "#49586C",
+                        },
+                        fontFamily: {
+                            montserrat: ["Montserrat", "sans-serif"],
+                            poppins: ["Poppins", "sans-serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
+                        boxShadow: {
+                            custom: "0px 8px 20px 0px rgba(255, 168, 105, 0.26)",
+                        },
+                        screens: {
+                            "4xl": "1920px",
+                        },
+                        dropShadow: {
+                            "header-shadow":
+                                "4px 0px 42px rgba(255, 168, 105, 0.25)",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style type="text/tailwindcss">
+            .gradient-1 {
+                @apply bg-gradient-to-tr from-main-300 to-pink;
+            }
+
+            .gradient-2 {
+                @apply bg-gradient-to-r from-main-300 to-purple;
+            }
+
+            .gradient-3 {
+                @apply bg-gradient-to-t from-black-2 via-transparent to-transparent;
+            }
+
+            .gradient-4 {
+                @apply bg-gradient-to-b from-[#FFEEDE] to-[#FFEEDE00];
+            }
+
+            .hamburger-active > span:nth-child(1) {
+                @apply rotate-45;
+            }
+
+            .hamburger-active > span:nth-child(2) {
+                @apply scale-0;
+            }
+
+            .hamburger-active > span:nth-child(3) {
+                @apply scale-0;
+            }
+
+            .hamburger-active > span:nth-child(4) {
+                @apply -rotate-45;
+            }
+        </style>
     </head>
-    <main class="md:px-10 md:pt-16 md:pb-[77px] md:bg-white">
-      <div class="gradient-1 py-16 md:py-20 px-6 md:px-11 min-[1920px]:px-[88px] flex flex-col gap-10 md:rounded-2xl max-w-[1400px] mx-auto relative">
-        <img src="../images/Ellipse-Rectangel-DESKTOP-CAPRESMA-LOKASI.svg" alt="" class="w-[100px] h-[100px] absolute top-11 -right-20">
-        <h1 class="font-montserrat text-lg md:text-2xl min-[1920px]:text-[40px] md:mb-4 text-[#ffffff] font-semibold text-center pb-2 px-[13.5px] box-border border-[#ffffff] border-b-2 md:w-fit md:mx-auto">LOKASI PEMILIHAN<span class="hidden md:inline"> OFFLINE</span></h1>
-        <div class="flex flex-col gap-10 min-[1920px]:flex-row">
-          <div class="rounded-2xl overflow-hidden flex-1">
-            <div class="relative bg-[url('../images/building-1.jpeg')] aspect-[314/277] md:aspect-[600/277]">
-              <h2 class="absolute bottom-9 md:bottom-8 left-8 text-[#ffffff] font-montserrat font-semibold text-lg md:text-2xl">Gedung F</h2>
+    <body>
+        <header
+            class="max-w-[1400px] mx-auto md:drop-shadow-header-shadow md:flex md:bg-white md:justify-between md:px-6 xl:rounded-full xl:mt-10"
+        >
+            <div
+                class="flex justify-between items-center px-6 py-4 bg-white border-main-100 drop-shadow-header-shadow md:drop-shadow-none md:inline-block md:px-0"
+                id="header"
+            >
+                <a
+                    href=""
+                    class="box-border border-[2px] border-main-100 border-solid rounded-full inline-block px-[14px] py-2"
+                >
+                    <img
+                        src="../images/Logo-PEMIRA2023.png"
+                        alt="logo-pemira-2023"
+                        class="inline-block rounded-full mr-[11px] w-6 md:w-9 xl:w-[50px]"
+                    />
+                    <h1
+                        class="inline-block font-montserrat text-main-300 font-extrabold text-base md:text-lg xl:text-2xl align-middle"
+                    >
+                        PEMIRA ITERA
+                    </h1>
+                </a>
+                <button
+                    id="hamburger"
+                    name="hamburger"
+                    type="button"
+                    class="block p-2 absolute right-4 md:hidden"
+                >
+                    <span
+                        class="block w-[35px] border-2 border-black rounded-full mb-[5px] mx-auto origin-top-left transition duration-300 ease-in-out"
+                    ></span>
+                    <span
+                        class="block w-[35px] border-2 border-black rounded-full mb-[5px] mx-auto transition duration-300 ease-in-out"
+                    ></span>
+                    <span
+                        class="block w-[35px] border-2 border-black rounded-full mb-[5px] mx-auto transition duration-300 ease-in-out"
+                    ></span>
+                    <span
+                        class="block w-[35px] border-2 border-black rounded-full mx-auto origin-bottom-left transition duration-300 ease-in-out"
+                    ></span>
+                </button>
             </div>
-            <div class="bg-[#FFF9F5] px-6 md:px-8 py-10 flex flex-col gap-6">
-              <h2 class="font-montserrat font-semibold text-lg md:text-2xl">1 Januari 2023 / Senin</h2>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Teknik Informatika <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 08:00</p>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Teknik Informatika <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 10:00</p>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Teknik Informatika <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 13:00</p>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Teknik Informatika <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 14:00</p>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Teknik Informatika <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 15:30</p>
+            <nav
+                class="font-inter md:font-poppins hidden md:flex md:justify-between md:items-center md:gap-8 md:p-2"
+                id="nav-menu"
+            >
+                <a
+                    href=""
+                    class="w-full flex items-center justify-between px-6 py-[18px] bg-white text-blue-grey text-base xl:text-xl group active:bg-main-200/20 md:active:bg-white transition md:px-0 md:py-0 md:inline-block md:w-auto md:text-[#050200]"
+                >
+                    <!-- Tambahkan md:font-bold ketika dalam halaman tersebut -->
+                    <p
+                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition"
+                    >
+                        Beranda
+                    </p>
+                    <i
+                        class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition md:hidden"
+                    ></i>
+                </a>
+                <a
+                    href=""
+                    class="w-full flex items-center justify-between px-6 py-[18px] bg-white text-blue-grey text-base xl:text-xl group active:bg-main-200/20 md:active:bg-white transition md:px-0 md:py-0 md:inline-block md:w-auto md:text-[#050200]"
+                >
+                    <!-- Tambahkan font-bold ketika dalam halaman tersebut -->
+                    <p
+                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition"
+                    >
+                        Capresma
+                    </p>
+                    <i
+                        class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition md:hidden"
+                    ></i>
+                </a>
+                <a
+                    href=""
+                    class="w-full flex items-center justify-between px-6 py-[18px] bg-white text-blue-grey text-base xl:text-xl group active:bg-main-200/20 md:active:bg-white transition md:px-0 md:py-0 md:inline-block md:w-auto md:text-[#050200]"
+                >
+                    <!-- Tambahkan font-bold ketika dalam halaman tersebut -->
+                    <p
+                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition"
+                    >
+                        Dokumentasi
+                    </p>
+                    <i
+                        class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition md:hidden"
+                    ></i>
+                </a>
+                <a
+                    href=""
+                    class="w-full flex items-center justify-between px-6 py-[18px] bg-white text-blue-grey text-base xl:text-xl group active:bg-main-200/20 md:active:bg-white transition md:px-0 md:py-0 md:inline-block md:w-auto md:text-[#050200]"
+                >
+                    <!-- Tambahkan font-bold ketika dalam halaman tersebut -->
+                    <p
+                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition"
+                    >
+                        Lokasi Pemilihan
+                    </p>
+                    <i
+                        class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition md:hidden"
+                    ></i>
+                </a>
+            </nav>
+        </header>
+        <main
+            class="md:px-10 md:pt-16 md:pb-[77px] md:bg-white overflow-hidden"
+        >
+            <div
+                class="gradient-1 py-16 md:py-20 px-6 md:px-11 xl:px-[88px] flex flex-col gap-10 md:rounded-2xl max-w-[1400px] mx-auto relative"
+            >
+                <img
+                    src="../images/Ellipse-Rectangel-DESKTOP-CAPRESMA-LOKASI.svg"
+                    alt=""
+                    class="hidden xl:block w-[100px] h-[100px] absolute top-11 -right-20"
+                />
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="156"
+                    height="164"
+                    viewBox="0 0 156 164"
+                    fill="none"
+                    class="hidden xl:block absolute top-0 -left-[85px]"
+                >
+                    <path
+                        d="M74.067 4.21634C74.8755 -0.144882 81.1245 -0.144876 81.933 4.21635L88.3427 38.7931C88.921 41.9128 92.7274 43.1496 95.029 40.9656L120.538 16.7599C123.756 13.7068 128.811 17.3799 126.902 21.3835L111.764 53.1241C110.398 55.988 112.75 59.2259 115.896 58.8119L150.761 54.223C155.159 53.6442 157.09 59.5874 153.192 61.704L122.288 78.4848C119.5 79.9989 119.5 84.0011 122.288 85.5152L153.192 102.296C157.09 104.413 155.159 110.356 150.761 109.777L115.896 105.188C112.75 104.774 110.398 108.012 111.764 110.876L126.902 142.617C128.811 146.62 123.756 150.293 120.538 147.24L95.029 123.034C92.7274 120.85 88.921 122.087 88.3427 125.207L81.933 159.784C81.1245 164.145 74.8755 164.145 74.067 159.784L67.6573 125.207C67.079 122.087 63.2726 120.85 60.971 123.034L35.4618 147.24C32.2442 150.293 27.1887 146.62 29.0981 142.617L44.2362 110.876C45.6021 108.012 43.2496 104.774 40.1038 105.188L5.23871 109.777C0.841108 110.356 -1.08995 104.413 2.80799 102.296L33.7117 85.5152C36.5 84.0011 36.5 79.9989 33.7117 78.4848L2.80799 61.704C-1.08996 59.5874 0.841112 53.6442 5.23871 54.223L40.1038 58.8119C43.2496 59.2259 45.6021 55.988 44.2362 53.1241L29.0981 21.3835C27.1887 17.3799 32.2442 13.7068 35.4618 16.7599L60.971 40.9656C63.2726 43.1496 67.079 41.9128 67.6573 38.7931L74.067 4.21634Z"
+                        fill="#F8D312"
+                    />
+                </svg>
+                <h1
+                    class="font-montserrat text-lg md:text-2xl xl:text-[40px] md:mb-4 text-[#ffffff] font-semibold text-center pb-2 px-[13.5px] box-border border-[#ffffff] border-b-2 md:w-fit md:mx-auto"
+                >
+                    LOKASI PEMILIHAN<span class="hidden md:inline">
+                        OFFLINE</span
+                    >
+                </h1>
+                <div class="flex flex-col gap-10 xl:flex-row">
+                    <div class="rounded-2xl overflow-hidden flex-1">
+                        <div class="relative">
+                            <img
+                                src="../images/building-1.jpeg"
+                                alt=""
+                                class="bg-[url('../images/building-1.jpeg')] aspect-[314/277] md:aspect-[600/277] object-cover"
+                            />
+                            <h2
+                                class="absolute bottom-9 md:bottom-8 left-8 text-[#ffffff] font-montserrat font-semibold text-lg md:text-2xl"
+                            >
+                                Gedung F
+                            </h2>
+                        </div>
+                        <div
+                            class="bg-[#FFF9F5] px-6 md:px-8 py-10 flex flex-col gap-6"
+                        >
+                            <h2
+                                class="font-montserrat font-semibold text-lg md:text-2xl"
+                            >
+                                1 Januari 2023 / Senin
+                            </h2>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Teknik Informatika
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                08:00
+                            </p>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Teknik Informatika
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                10:00
+                            </p>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Teknik Informatika
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                13:00
+                            </p>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Teknik Informatika
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                14:00
+                            </p>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Teknik Informatika
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                15:30
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden flex-1">
+                        <div class="relative">
+                            <img
+                                src="../images/building-2.jpeg"
+                                alt=""
+                                class="bg-[url('../images/building-1.jpeg')] aspect-[314/277] md:aspect-[600/277] object-cover"
+                            />
+                            <h2
+                                class="absolute bottom-9 md:bottom-8 left-8 text-[#ffffff] font-montserrat font-semibold text-lg md:text-2xl"
+                            >
+                                Gedung C & D
+                            </h2>
+                        </div>
+                        <div
+                            class="bg-[#FFF9F5] px-6 md:px-8 py-10 flex flex-col gap-6"
+                        >
+                            <h2
+                                class="font-montserrat font-semibold text-lg md:text-2xl"
+                            >
+                                2 Januari 2023 / Selasa
+                            </h2>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Sain Data
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                08:00
+                            </p>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Sain Data
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                10:00
+                            </p>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Sain Data
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                13:00
+                            </p>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Sain Data
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                14:00
+                            </p>
+                            <p
+                                class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
+                            >
+                                Sain Data
+                                <span
+                                    class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
+                                ></span>
+                                15:30
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="rounded-2xl overflow-hidden flex-1">
-            <div class="relative bg-[url('../images/building-1.jpeg')] aspect-[314/277] md:aspect-[600/277]">
-              <h2 class="absolute bottom-9 md:bottom-8 left-8 text-[#ffffff] font-montserrat font-semibold text-lg md:text-2xl">Gedung C & D</h2>
+        </main>
+        <footer
+            class="w-full py-[10px] md:py-[25px] xl:py-[52px] gradient-2 flex items-center justify-between px-6 box-border xl:justify-around"
+        >
+            <div
+                class="border-[#ffffff] border-2 rounded-full flex items-center py-[6.5px] md:py-[13px] px-3 pr-4 gap-3 w-fit"
+            >
+                <div
+                    class="bg-[#ffffff] rounded-full w-[27px] h-[27px] md:w-[48px] md:h-[48px] xl:w-[75px] xl:h-[75px] flex justify-center items-center"
+                >
+                    <img
+                        src="../images/Logo-PEMIRA2023.png"
+                        alt=""
+                        class="w-[21.62px] md:w-[38.44px] xl:w-[60px]"
+                    />
+                </div>
+                <div
+                    class="flex flex-col justify-center font-montserrat text-[#ffffff]"
+                >
+                    <p class="text-[8px] md:text-xs xl:text-xl">PEMIRA KM</p>
+                    <p class="text-xs md:text-2xl xl:text-3xl">ITERA</p>
+                </div>
             </div>
-            <div class="bg-[#FFF9F5] px-6 md:px-8 py-10 flex flex-col gap-6">
-              <h2 class="font-montserrat font-semibold text-lg md:text-2xl">2 Januari 2023 / Selasa</h2>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Sain Data <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 08:00</p>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Sain Data <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 10:00</p>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Sain Data <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 13:00</p>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Sain Data <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 14:00</p>
-              <p class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle">Sain Data <span class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"></span> 15:30</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <!-- buat footer -->
-    </footer>
-  </body>
+            <p
+                class="font-montserrat text-[8px] md:text-base text-[#ffffff] xl:font-semibold xl:text-xl"
+            >
+                &#169; 2023 Tim IT PEMIRA ITERA
+            </p>
+        </footer>
+        <script src="../js/hamburger-button.js"></script>
+    </body>
 </html>
