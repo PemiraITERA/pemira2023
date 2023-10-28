@@ -13,7 +13,8 @@ class Capres extends Model
     protected $fillable = [
         'nama_capres',
         'nim',
-        'prodi'
+        'prodi',
+        'tentang',
     ];
 
     public function detail_capres(){

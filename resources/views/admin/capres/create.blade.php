@@ -74,8 +74,35 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12">
+                            <div class="form-group mandatory @error('tentang') is-invalid @enderror">
+                                <label for="tentang" class="form-label">Tentang</label>
+                                <input type="text" id="tentang-column" class="form-control @error('tentang') is-invalid @enderror" placeholder="Masukkan Program Studi" name="tentang" value="{{ old('tentang') }}">
+                                @error('tentang')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <section class="section">
+                            <div class="card-body">
+                                <p>Block some text to display options in poppovers </p>
+                                <div id="full">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                   <div class="row">
                     <div class="col-12 d-flex justify-content-end">
+                        <div class="mb-4">
+                        <button id="addInput" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Tambah Input</button>
+                        </div>
+                        <div id="inputContainer">
+                          <!-- Input akan ditambahkan di sini -->
+                        </div>
                       <button type="submit" class="btn btn-primary me-1 mb-1">
                         Submit
                       </button>

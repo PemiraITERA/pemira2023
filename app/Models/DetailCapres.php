@@ -15,7 +15,8 @@ class DetailCapres extends Model
         'cv',
         'grand_design',
         'visi',
-        'misi'
+        'misi',
+        'proker'
     ];
 
     public function capres(){
