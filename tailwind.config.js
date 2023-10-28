@@ -8,6 +8,9 @@ module.exports = {
     ],
     theme: {
       extend: {
+        spacing: {
+          '75': '19rem',  
+        },
         colors: {
           main: {
             50: "#FFF9F5",
@@ -20,10 +23,23 @@ module.exports = {
           purple: "#8512F8",
           white: "#FFFDF6",
           'white-2': "rgba(193, 113, 39, 0.1)",
+          'black-2': "rgba(0, 0, 0, 0.5)",
+          "pale-yellow": "rgba(255, 168, 105, 0.15)",
+          "blue-grey": "#49586C",
         },
         fontFamily: {
           montserrat: ["Montserrat", 'sans-serif'],
           poppins: ["Poppins", 'sans-serif'],
+          inter: ["Inter", "sans-serif"],
+        },
+        boxShadow :{
+          'custom' : '0px 8px 20px 0px rgba(255, 168, 105, 0.26)',
+        },
+        screens: {
+          "4xl": "1920px",
+        },
+        dropShadow: {
+          "header-shadow": "4px 0px 42px rgba(255, 168, 105, 0.25)",
         },
       },
     },
