@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Jangan Lupa Sesuaikan Title dengan nama page yang dibuat -->
+        <title>Document</title>
+
+        <!-- Kita pake cdn dulu ya -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Config tailwind -->
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            main: {
+                                50: "#FFF9F5",
+                                100: "#FBB03B",
+                                200: "#FF7A17",
+                                300: "#F88312",
+                                400: "#0B1742",
+                            },
+                            pink: "#FB43FF",
+                            purple: "#8512F8",
+                            white: "#FFFDF6",
+                            "white-2": "rgba(193, 113, 39, 0.1)",
+                        },
+                        fontFamily: {
+                            montserrat: ["Montserrat", "sans-serif"],
+                            poppins: ["Poppins", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style type="text/tailwindcss">
+            .gradient-1 {
+                @apply bg-gradient-to-tr from-main-300 to-pink;
+            }
+
+            .gradient-2 {
+                @apply bg-gradient-to-r from-main-300 to-purple;
+            }
+        </style>
+    </head>
+    <body>
+        <head>
+            <nav>
+                <!-- buat navigasi -->
+            </nav>
+        </head>
+        <main>
+            <!-- buat content seluruhnya -->
+        </main>
+        <footer
+            class="w-full py-[10px] md:py-[25px] min-[1920px]:py-[52px] gradient-2 flex items-center justify-between px-6 box-border min-[1920px]:justify-around"
+        >
+            <div
+                class="border-[#ffffff] border-2 rounded-full flex items-center py-[6.5px] md:py-[13px] px-3 pr-4 gap-3 w-fit"
+            >
+                <div
+                    class="bg-[#ffffff] rounded-full w-[27px] h-[27px] md:w-[48px] md:h-[48px] min-[1920px]:w-[75px] min-[1920px]:h-[75px] flex justify-center items-center"
+                >
+                    <img
+                        src="../images/Logo-PEMIRA2023.png"
+                        alt=""
+                        class="w-[21.62px] md:w-[38.44px] min-[1920px]:w-[60px]"
+                    />
+                </div>
+                <div
+                    class="flex flex-col justify-center font-montserrat text-[#ffffff]"
+                >
+                    <p class="text-[8px] md:text-xs min-[1920px]:text-xl">
+                        PEMIRA KM
+                    </p>
+                    <p class="text-xs md:text-2xl min-[1920px]:text-3xl">
+                        ITERA
+                    </p>
+                </div>
+            </div>
+            <p
+                class="font-montserrat text-[8px] md:text-base text-[#ffffff] min-[1920px]:font-semibold min-[1920px]:text-xl"
+            >
+                &#169; 2023 Tim IT PEMIRA ITERA
+            </p>
+        </footer>
+    </body>
+</html>
