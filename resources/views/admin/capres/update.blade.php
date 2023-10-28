@@ -33,8 +33,9 @@
             </div>
             <div class="card-content">
               <div class="card-body">
-                <form class="form" data-parsley-validate action="/store" method="POST" enctype="multipart/form-data">
-                  @csrf
+                <form class="form" data-parsley-validate action="{{route('admin.capres.update', $capres->id) }}" method="POST" enctype="multipart/form-data">
+                    @method('PUT')
+                    @csrf
                     <div class="row">
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('nama') is-invalid @enderror">

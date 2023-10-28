@@ -67,7 +67,7 @@
 
             <li
                 class="sidebar-item hashup">
-                <a href="/" class='sidebar-link'>
+                <a href="{{route('admin.capres.create') }}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
@@ -141,6 +141,8 @@
 <script src="{{ asset('mazzer/extensions/parsleyjs/parsley.min.js') }}"></script>
 <script src="{{ asset('mazzer/static/js/pages/parsley.js') }}"></script>
 <script src="{{ asset('mazzer/static/js/pages/dashboard.js') }}"></script>
+<script src="{{ asset('mazzer/static/js/pages/sweetalert2.js') }}"></script>
+<script src="{{ asset('mazzer/extensions/sweetalert2/sweetalert2.min.js') }}"></script>
 
 </body>
 

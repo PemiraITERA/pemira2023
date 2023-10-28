@@ -43,12 +43,10 @@ Route::post('/login', [DummyController::class, 'login']);
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::get('/admin/cms', function () {
-        return view('admin.index');
-        });
 
     Route::middleware(['admin'])->name('admin.')->prefix('admin')->group(function () {
         Route::resource('dashboard', AdminCMSController::class);
         Route::resource('capres', AdminCapresController::class);
+        Route::resource('cms', AdminCMSController::class);
         });
 });

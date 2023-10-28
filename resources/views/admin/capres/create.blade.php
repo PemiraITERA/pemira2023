@@ -33,7 +33,7 @@
             </div>
             <div class="card-content">
               <div class="card-body">
-                <form class="form" data-parsley-validate action="/store" method="POST" enctype="multipart/form-data">
+                <form class="form" data-parsley-validate action="{{route('admin.capres.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div class="row">
                         <div class="col-md-12 col-12">

@@ -44,9 +44,15 @@
                                 <td>{{ $value->nim }}</td>
                                 <td>{{ $value->prodi }}</td>
                                 <td>
-                                    <a href="/update/{{ $value->id }}" class="btn btn-light-primary">Edit</a>
-                                    <a href="{{route('admin.capres.show', $value->id) }}" class="btn btn-light-success">Read</a>
-                                    <a href="/delete/{{ $value->id }}" class="btn btn-light-danger">Delete</a>
+                                    <a href="{{route('admin.capres.edit', $value->id) }}" class="btn btn-light-primary">Edit</a>
+                                <a href="{{route('admin.capres.show', $value->id) }}" class="btn btn-light-success">Read</a>
+                                <form method="POST" action="{{route('admin.capres.destroy', $value->id)}}"  enctype='multipart/form-data' style="display: inline-block">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-light-danger ml-1">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
                                 </td>
                             </tr>
                         @endforeach
