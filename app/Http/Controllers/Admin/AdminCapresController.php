@@ -57,7 +57,7 @@ class AdminCapresController extends Controller
             'nim' => $request->nim,
             'prodi' => $request->prodi
         ]);
-        return redirect('/index')->with('sukses', 'Berhasil Update Data!');
+        return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Tambah Data!');
     }
 
     /**
@@ -107,7 +107,7 @@ class AdminCapresController extends Controller
             'prodi' => $request->prodi
         ]);
 
-        return redirect('/index')->with('sukses', 'Berhasil Update Data!');
+        return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Update Data!');
     }
 
     /**
@@ -117,7 +117,7 @@ class AdminCapresController extends Controller
     {
         $capres = Capres::where('id', $id)->first();
         $capres->delete();
-        return redirect('/index')->with('sukses', 'Berhasil Update Data!');
+        return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Hapus Data!');
     }
 
     public function __construct()
