@@ -60,7 +60,7 @@
                 </table>
             </div>
             <div class="card-footer clearfix">
-                {{ $capres->links('vendor.pagination.bootstrap-5') }}
+                {{ $prodi->links('vendor.pagination.bootstrap-5') }}
             </div>
         </div>
 
