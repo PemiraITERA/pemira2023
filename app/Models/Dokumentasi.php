@@ -8,10 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Dokumentasi extends Model
 {
     use HasFactory;
-    protected $table = 'Dokumentasi';
+    protected $table = 'dokumentasi';
     protected $guarded = ['id'];
     protected $fillable = ['foto'];
 
 }
-
-

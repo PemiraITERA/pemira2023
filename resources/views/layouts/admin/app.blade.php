@@ -101,42 +101,43 @@
             </li>
             <li class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
-                    <i class="bi bi-person-circle"></i>
+                    <i class="bi bi-building"></i>
                     <span>Program studi</span>
                 </a>
 
                 <ul class="submenu ">
                     <li class="submenu-item ">
                         <a href="{{route('admin.prodi.create') }}" class="submenu-link">
-                            <i class="bi bi-person-fill-add"></i> Tambah Program Studi
+                            <i class="bi bi-building-fill-add"></i>Tambah Program Studi
                         </a>
                     </li>
 
                     <li class="submenu-item">
                         <a href="{{route('admin.prodi.index') }}" class="submenu-link">
-                            <i class="bi bi-person-badge-fill"></i> Kelola Program Studi
+                            <i class="bi bi-building-fill"></i> Kelola Program Studi
                         </a>
                     </li>
                 </ul>
             </li>
 
             </li>
+
             <li class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
-                    <i class="bi bi-person-circle"></i>
+                    <i class="bi bi-cloud"></i>
                     <span>Dokumentasi</span>
                 </a>
 
                 <ul class="submenu ">
                     <li class="submenu-item ">
                         <a href="{{route('admin.dokumentasi.create') }}" class="submenu-link">
-                            <i class="bi bi-person-fill-add"></i> Tambah Dokumentasi
+                            <i class="bi bi-cloud-plus-fill"></i> Tambah Dokumentasi
                         </a>
                     </li>
 
                     <li class="submenu-item">
                         <a href="{{route('admin.dokumentasi.index') }}" class="submenu-link">
-                            <i class="bi bi-person-badge-fill"></i> Kelola Dokumentasi
+                          <i class="bi bi-cloud-fill"></i> Kelola Dokumentasi
                         </a>
                     </li>
                 </ul>

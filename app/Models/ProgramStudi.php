@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProgramStudi extends Model
 {
     use HasFactory;
-    protected $table = 'Program_studi';
+    protected $table = 'prodi';
     protected $guarded = ['id'];
 
     protected $fillable = [

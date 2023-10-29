@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\DummyController;
 use App\Http\Controllers\Admin\AdminCMSController;
+use App\Http\Controllers\Admin\AdminDokumentasiController;
 use App\Http\Controllers\Admin\AdminCapresController;
+use App\Http\Controllers\Admin\AdminProgramStudiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +49,8 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['admin'])->name('admin.')->prefix('admin')->group(function () {
         Route::resource('dashboard', AdminCMSController::class);
         Route::resource('capres', AdminCapresController::class);
+        Route::resource('dokumentasi', AdminDokumentasiController::class);
+        Route::resource('prodi', AdminProgramStudiController::class);
         Route::resource('cms', AdminCMSController::class);
         });
 });
