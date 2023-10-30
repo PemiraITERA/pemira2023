@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_capres', function (Blueprint $table) {
+        Schema::create('misi_capres', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_capres');
-            $table->string('cv');
-            $table->string('grand_design');
-            $table->string('visi');
+            $table->string('id_detail');
+            $table->string('misi');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detail_capres');
+        Schema::dropIfExists('misi_capres');
     }
 };

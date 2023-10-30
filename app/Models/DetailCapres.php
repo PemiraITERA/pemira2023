@@ -15,11 +15,16 @@ class DetailCapres extends Model
         'cv',
         'grand_design',
         'visi',
-        'misi',
-        'proker'
     ];
 
     public function capres(){
         return $this->belongsTo(Capres::class, 'id_capres', 'id');
+    }
+
+    public function misi(){
+        return $this->hasMany(Misi::class);
+    }
+    public function progja(){
+        return $this->hasMany(Progja::class);
     }
 }

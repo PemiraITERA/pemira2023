@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pemira | @yield('title')</title>
+    @vite('resources/css/app.css')
 
 
 
@@ -16,8 +17,6 @@
   <link rel="stylesheet" href="{{ asset('mazzer/compiled/css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('mazzer/compiled/css/app-dark.css') }}">
   <link rel="stylesheet" href="{{ asset('mazzer/compiled/css/iconly.css') }}">
-  <link rel="stylesheet" href="{{ asset('mazzer/extensions/quill/quill.snow.css') }}">
-  <link rel="stylesheet" href="{{ asset('mazzer/extensions/quill/quill.bubble.css') }}">
 </head>
 
 <body>
@@ -189,9 +188,6 @@
 <script src="{{ asset('mazzer/static/js/pages/sweetalert2.js') }}"></script>
 <script src="{{ asset('mazzer/static/js/pages/add-input.js') }}"></script>
 <script src="{{ asset('mazzer/extensions/sweetalert2/sweetalert2.min.js') }}"></script>
-<script src="{{ asset('mazzer/extensions/quill/quill.min.js') }}"></script>
-<script src="{{ asset('mazzer/static/js/pages/quill.js') }}"></script>
-
 
 </body>
 
