@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_capres');
             $table->bigInteger('nim');
             $table->string('prodi');
+            $table->string('tentang');
             $table->timestamps();
         });
     }

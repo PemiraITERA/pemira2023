@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Capres;
+use App\Models\DetailCapres;
+use App\Models\Misi;
+use App\Models\Progja;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
-use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\RedirectResponse;
 
 class AdminCapresController extends Controller
 {
@@ -34,30 +38,49 @@ class AdminCapresController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = $request->validate([
-            'nama' => 'required|max:255|min:3',
-            'nim' => 'required|numeric',
-            'prodi' => 'required|max:255|min:3',
-        ],[
-            'nama.required' => 'Input Tidak Boleh Kosong',
-            'nama.min' => 'Input Minimal 3 Karakter',
-            'nama.max' => 'Input Hanya Menampung 255 Karakter',
-            'nim.required' => 'Input Tidak Boleh Kosong',
-            'nim.min' => 'Input Minimal 3 Karakter',
-            'nim.max' => 'Input Hanya Menampung 255 Karakter',
-            'nim.numeric' => 'Input Hanya Dapat Menerima Angka',
-            'prodi.required' => 'Input Tidak Boleh Kosong',
-            'prodi.min' => 'Input Minimal 3 Karakter',
-            'prodi.max' => 'Input Hanya Menampung 255 Karakter',
-        ]);
+        $rules = [];
+        $messages = [];
+        // Loop through each item and construct validation rules
+        foreach ($request->all() as $key => $item) { // Validation rule for the 'name' field
+            if($key == 'nim'){
+                $rules["{$key}"] = 'required|numeric';
+            }else{
+                $rules["{$key}"] = 'required|string';
+            }
+        }
+        // Validate the request data using the rules and messages
+        $validator = Validator::make($request->all(), $rules, $messages);
 
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }else{
+            $capres = Capres::create([
+                'nama_capres' => $request->nama,
+                'nim' => $request->nim,
+                'prodi' => $request->prodi,
+                'tentang' => $request->tentang
+            ]);
+            $detail_capres = DetailCapres::create([
+                'id_capres' => $capres->id,
+                'visi' => $request->visi,
+                'cv' => $request->cv,
+                'grand_design' => $request->grand_design
+            ]);
 
-        Capres::create([
-            'nama_capres' => $request->nama,
-            'nim' => $request->nim,
-            'prodi' => $request->prodi
-        ]);
-        return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Tambah Data!');
+            for($i = 1; $i <= $request->misiCount; $i++) {
+                Misi::create([
+                    'id_detail' => $detail_capres->id,
+                    'misi' => $request['misi1'],
+                ]);
+            }
+            for($i = 1; $i <= $request->misiCount; $i++) {
+                Progja::create([
+                    'id_detail' => $detail_capres->id,
+                    'progja' => $request['progja'.$i],
+                ]);
+            }
+            return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Tambah Data!');
+        }
     }
 
     /**
@@ -66,7 +89,10 @@ class AdminCapresController extends Controller
     public function show(string $id)
     {
         $capres = Capres::where('id', $id)->first();
-        return view('admin.capres.read', compact('capres'));
+        $detail_capres = DetailCapres::where('id_capres', $id)->first();
+        $misi_capres = Misi::where('id_detail', $detail_capres->id)->get();
+        $progja_capres = Progja::where('id_detail', $detail_capres->id)->get();
+        return view('admin.capres.read', compact('capres', 'detail_capres', 'misi_capres', 'progja_capres'));
     }
 
     /**
@@ -75,7 +101,10 @@ class AdminCapresController extends Controller
     public function edit(string $id)
     {
         $capres = Capres::where('id', $id)->first();
-        return view('admin.capres.update', compact('capres'));
+        $detail_capres = DetailCapres::where('id_capres', $id)->first();
+        $misi_capres = Misi::where('id_detail', $detail_capres->id)->get();
+        $progja_capres = Progja::where('id_detail', $detail_capres->id)->get();
+        return view('admin.capres.update', compact('capres', 'detail_capres', 'misi_capres', 'progja_capres'));
     }
 
     /**
@@ -83,31 +112,53 @@ class AdminCapresController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validator = $request->validate([
-            'nama' => 'required|max:255|min:3',
-            'nim' => 'required|numeric',
-            'prodi' => 'required|max:255|min:3',
-        ],[
-            'nama.required' => 'Input Tidak Boleh Kosong',
-            'nama.min' => 'Input Minimal 3 Karakter',
-            'nama.max' => 'Input Hanya Menampung 255 Karakter',
-            'nim.required' => 'Input Tidak Boleh Kosong',
-            'nim.min' => 'Input Minimal 3 Karakter',
-            'nim.max' => 'Input Hanya Menampung 255 Karakter',
-            'nim.numeric' => 'Input Hanya Dapat Menerima Angka',
-            'prodi.required' => 'Input Tidak Boleh Kosong',
-            'prodi.min' => 'Input Minimal 3 Karakter',
-            'prodi.max' => 'Input Hanya Menampung 255 Karakter',
-        ]);
+        $rules = [];
+        $messages = [];
+        // Loop through each item and construct validation rules
+        foreach ($request->all() as $key => $item) { // Validation rule for the 'name' field
+            if($key == 'nim'){
+                $rules["{$key}"] = 'required|numeric';
+            }else{
+                $rules["{$key}"] = 'required|string';
+            }
+        }
+        // Validate the request data using the rules and messages
+        $validator = Validator::make($request->all(), $rules, $messages);
 
         $capres = Capres::where('id', $id)->first();
-        $capres -> update([
-            'nama_capres' => $request -> nama,
-            'nim' => $request -> nim,
-            'prodi' => $request->prodi
-        ]);
+        $detail_capres = DetailCapres::where('id_capres', $id)->first();
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }else{
+            $capres->update([
+                'nama_capres' => $request->nama,
+                'nim' => $request->nim,
+                'prodi' => $request->prodi,
+                'tentang' => $request->tentang
+            ]);
+            $detail_capres->update([
+                'id_capres' => $capres->id,
+                'visi' => $request->visi,
+                'cv' => $request->cv,
+                'grand_design' => $request->grand_design
+            ]);
 
-        return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Update Data!');
+            for($i = 1; $i <= $request->misiCount; $i++) {
+                $misi_capres = Misi::where('id_detail', $detail_capres->id)->first();
+                $misi_capres->update([
+                    'id_detail' => $detail_capres->id,
+                    'misi' => $request['misi'.$i],
+                ]);
+            }
+            for($i = 1; $i <= $request->misiCount; $i++) {
+                $progja_capres = Progja::where('id_detail', $detail_capres->id)->first();
+                $progja_capres->update([
+                    'id_detail' => $detail_capres->id,
+                    'progja' => $request['progja'.$i],
+                ]);
+            }
+            return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Ubah Data!');
+        }
     }
 
     /**
