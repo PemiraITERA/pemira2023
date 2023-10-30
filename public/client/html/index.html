@@ -10,6 +10,16 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Icons -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+
     <title>Pemira ITERA</title>
     <!--<link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <!--<link href="/dist/output.css" rel="stylesheet">-->
@@ -22,6 +32,9 @@
       tailwind.config = {
         theme: {
           extend: {
+            spacing: {
+              '75': '19rem',  
+            },
             colors: {
               main: {
                 50: "#FFF9F5",
@@ -34,10 +47,23 @@
               purple: "#8512F8",
               white: "#FFFDF6",
               'white-2': "rgba(193, 113, 39, 0.1)",
+              'black-2': "rgba(0, 0, 0, 0.5)",
+              "pale-yellow": "rgba(255, 168, 105, 0.15)",
+              "blue-grey": "#49586C",
             },
             fontFamily: {
               montserrat: ["Montserrat", 'sans-serif'],
               poppins: ["Poppins", 'sans-serif'],
+              inter: ["Inter", "sans-serif"],
+            },
+            boxShadow :{
+              'custom' : '0px 8px 20px 0px rgba(255, 168, 105, 0.26)',
+            },
+            screens: {
+              "4xl": "1920px",
+            },
+            dropShadow: {
+              "header-shadow": "4px 0px 42px rgba(255, 168, 105, 0.25)",
             },
             backgroundImage: {
               'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -54,8 +80,33 @@
       .gradient-1 {
           @apply bg-gradient-to-tr from-main-300 to-pink;
       }
+
       .gradient-2 {
           @apply bg-gradient-to-r from-main-300 to-purple;
+      }
+
+      .gradient-3 {
+          @apply bg-gradient-to-t from-black-2 via-transparent to-transparent;
+      }
+
+      .gradient-4 {
+          @apply bg-gradient-to-b from-[#FFEEDE] to-[#FFEEDE00];
+      }
+
+      .hamburger-active > span:nth-child(1) {
+          @apply rotate-45;
+      }
+
+      .hamburger-active > span:nth-child(2) {
+          @apply scale-0;
+      }
+
+      .hamburger-active > span:nth-child(3) {
+          @apply scale-0;
+      }
+
+      .hamburger-active > span:nth-child(4) {
+          @apply -rotate-45;
       }
     </style>
   </head>
@@ -99,8 +150,8 @@
     </header>
 
     <main>
-      <div class="flex flex-col items-center text-center m-4 mt-20 h-[25vh] gap-6 lg:gap-10">
-        <h1 class="text-2xl font-extrabold lg:text-4xl lg:w-2/4 text-main-400" id="title">Pemira adalah <span class="text-orange-500">saksi</span> dari perubahan, harapan, dan aspirasi</h1>
+      <div class="flex flex-col items-center text-center m-4 mt-20 xl:mt-40 h-[25vh] gap-6 lg:gap-10">
+        <h1 class="text-2xl font-extrabold lg:text-4xl lg:w-2/4 text-main-400" id="title">Pemira adalah <span class="text-orange-500">saksi</span> dari <br class="hidden md:block">perubahan, harapan, dan aspirasi</h1>
         <p class="text-[12px] text-main-400 lg:text-sm lg:w-4/12 w-11/12 font-medium">Saatnya untuk menentukan, untuk memilih, dan untuk merubah masa depan Institut Teknologi Sumatera bersama-sama.</p>
         <button class="w-full rounded-full bg-main-300 hover:ring-orange-200 hover:ring-2 p-4 lg:w-[244px] font-medium text-white shadow-xl shadow-orange-200 flex flex-row justify-center gap-3">Ayo Voting!<i class="block lg:hidden" data-feather="arrow-right"></i></button>
       </div>
@@ -195,18 +246,9 @@
           }
         })
       });
-      // Hamburger
-      const hamburger = document.querySelector("#hamburger");
-      const navMenu = document.querySelector("#nav-menu");
-      const header = document.querySelector("#header");
-      hamburger.addEventListener("click", function () {
-          hamburger.classList.toggle("hamburger-active");
-          navMenu.classList.toggle("hidden");
-          header.classList.toggle("border-b-[2px]");
-          header.classList.toggle("drop-shadow-header-shadow");
-      });
       //icon
       feather.replace();
     </script>
+    <script src="../js/hamburger-button.js"></script>
   </body>
 </html>

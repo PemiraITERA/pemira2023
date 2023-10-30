@@ -31,6 +31,9 @@
             tailwind.config = {
                 theme: {
                     extend: {
+                        spacing: {
+                            75: "19rem",
+                        },
                         colors: {
                             main: {
                                 50: "#FFF9F5",
@@ -43,6 +46,7 @@
                             purple: "#8512F8",
                             white: "#FFFDF6",
                             "white-2": "rgba(193, 113, 39, 0.1)",
+                            "black-2": "rgba(0, 0, 0, 0.5)",
                             "pale-yellow": "rgba(255, 168, 105, 0.15)",
                             "blue-grey": "#49586C",
                         },
@@ -51,12 +55,19 @@
                             poppins: ["Poppins", "sans-serif"],
                             inter: ["Inter", "sans-serif"],
                         },
+                        boxShadow: {
+                            custom: "0px 8px 20px 0px rgba(255, 168, 105, 0.26)",
+                        },
                         screens: {
                             "4xl": "1920px",
                         },
                         dropShadow: {
                             "header-shadow":
                                 "4px 0px 42px rgba(255, 168, 105, 0.25)",
+                        },
+                        backgroundImage: {
+                            "gradient-radial":
+                                "radial-gradient(var(--tw-gradient-stops))",
                         },
                     },
                 },
@@ -69,6 +80,14 @@
 
             .gradient-2 {
                 @apply bg-gradient-to-r from-main-300 to-purple;
+            }
+
+            .gradient-3 {
+                @apply bg-gradient-to-t from-black-2 via-transparent to-transparent;
+            }
+
+            .gradient-4 {
+                @apply bg-gradient-to-b from-[#FFEEDE] to-[#FFEEDE00];
             }
 
             .hamburger-active > span:nth-child(1) {
