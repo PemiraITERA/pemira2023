@@ -36,7 +36,7 @@ class AdminProgramStudiController extends Controller
     {
         $validator = $request->validate([
             'nama_prodi' => 'required|max:255|min:3',
-            'gedung_pemilihan' => 'required|numeric',
+            'gedung_pemilihan' => 'required|max:255|min:3',
             'waktu_pemilihan' => 'required|max:255|min:3',
         ],[
             'nama_prodi.required' => 'Input Tidak Boleh Kosong',
@@ -52,9 +52,9 @@ class AdminProgramStudiController extends Controller
 
 
         ProgramStudi::create([
-            'nama_prodi' => $request->nama,
-            'gedung_pemilihan' => $request->nim,
-            'waktu_pemilihan' => $request->prodi
+            'nama_prodi' => $request->nama_prodi,
+            'gedung_pemilihan' => $request->gedung_pemilihan,
+            'waktu_pemilihan' => $request->waktu_pemilihan
         ]);
         return redirect(route('admin.prodi.index'))->with('sukses', 'Berhasil Tambah Data!');
     }
@@ -83,7 +83,7 @@ class AdminProgramStudiController extends Controller
     {
         $validator = $request->validate([
             'nama_prodi' => 'required|max:255|min:3',
-            'gedung_pemilihan' => 'required|numeric',
+            'gedung_pemilihan' => 'required|max:255|min:3',
             'waktu_pemilihan' => 'required|max:255|min:3',
         ],[
             'nama_prodi.required' => 'Input Tidak Boleh Kosong',
@@ -104,7 +104,7 @@ class AdminProgramStudiController extends Controller
             'waktu_pemilihan' => $request->waktu_pemilihan
         ]);
 
-        return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Update Data!');
+        return redirect(route('admin.prodi.index'))->with('sukses', 'Berhasil Update Data!');
     }
 
     /**

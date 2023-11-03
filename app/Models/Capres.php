@@ -12,6 +12,7 @@ class Capres extends Model
     protected $table = 'capres';
     protected $fillable = [
         'nama_capres',
+        'foto_capres',
         'nim',
         'prodi',
         'tentang',

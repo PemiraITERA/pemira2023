@@ -39,7 +39,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('nama_prodi') is-invalid @enderror">
                                 <label for="nama_prodi" class="form-label">Nama Prodi</label>
-                                <input type="text" id="nama-prodi-column" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama Prodi" name="nama-prodi-column" value="{{ old('nama_prodi') }}">
+                                <input type="text" id="nama-prodi-column" class="form-control @error('nama_prodi') is-invalid @enderror" placeholder="Masukkan Nama Prodi" name="nama_prodi" value="{{ old('nama_prodi') }}">
                                 @error('nama_prodi')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -51,8 +51,8 @@
                     <div class="row">
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('gedung_pemilihan') is-invalid @enderror">
-                                <label for="gedung_pemilihan" class="form-label">NIM</label>
-                                <input type="text" id="gedung-pemilihan-column" class="form-control @error('gedung_pemilihan') is-invalid @enderror" placeholder="Masukkan Nama Gedung Pemilihan" name="gedung_pemilihan" value="{{ old('gedung_pemilihan') }}">
+                                <label for="gedung_pemilihan" class="form-label">Gedung Pemilihan</label>
+                                <input type="text" id="gedung-pemilihan-column" class="form-control @error('gedung_pemilihan') is-invalid @enderror" placeholder="Masukkan Gedung Pemilihan" name="gedung_pemilihan" value="{{ old('gedung_pemilihan') }}">
                                 @error('gedung_pemilihan')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -63,8 +63,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory @error('prodi') is-invalid @enderror">
-                                <label for="prodi" class="form-label">Waktu Pemilihan</label>
+                            <div class="form-group mandatory @error('waktu_pemilihan') is-invalid @enderror">
+                                <label for="waktu_pemilihan" class="form-label">Waktu Pemilihan</label>
                                 <input type="text" id="waktu-pemilihan-column" class="form-control @error('waktu_pemilihan') is-invalid @enderror" placeholder="Masukkan Waktu Pemilihan" name="waktu_pemilihan" value="{{ old('waktu_pemilihan') }}">
                                 @error('waktu_pemilihan')
                                     <div class="invalid-feedback">
@@ -74,22 +74,8 @@
                             </div>
                         </div>
                     </div>
-                    <section class="section">
-                            <div class="card-body">
-                                <p>Block some text to display options in poppovers </p>
-                                <div id="full">
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                   <div class="row">
                     <div class="col-12 d-flex justify-content-end">
-                        <div class="mb-4">
-                        <button id="addInput" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Tambah Input</button>
-                        </div>
-                        <div id="inputContainer">
-                          <!-- Input akan ditambahkan di sini -->
-                        </div>
                       <button type="submit" class="btn btn-primary me-1 mb-1">
                         Submit
                       </button>

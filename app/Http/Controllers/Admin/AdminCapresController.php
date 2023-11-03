@@ -44,8 +44,15 @@ class AdminCapresController extends Controller
         foreach ($request->all() as $key => $item) { // Validation rule for the 'name' field
             if($key == 'nim'){
                 $rules["{$key}"] = 'required|numeric';
+                $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
+                $messages["{$key}.numeric"] = "{$key} Hanya Dapat Menerima Angka";
+            }else if($key == 'foto_capres'){
+                $rules["{$key}"] = 'required|max:5120';
+                $messages["{$key}.max"] = "{$key} Hanya Dapat Menerima File Dengan Ukuran Maksimal 5mb";
+                $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
             }else{
                 $rules["{$key}"] = 'required|string';
+                $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
             }
         }
         // Validate the request data using the rules and messages
@@ -54,8 +61,17 @@ class AdminCapresController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }else{
+
+        if ($request->hasFile('foto_capres')) {
+            $detination_path = 'public/capres';
+            $image = $request->file('foto_capres');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->storeAs($detination_path, $imageName);
+        }
+
             $capres = Capres::create([
                 'nama_capres' => $request->nama,
+                'foto_capres' => $imageName,
                 'nim' => $request->nim,
                 'prodi' => $request->prodi,
                 'tentang' => $request->tentang

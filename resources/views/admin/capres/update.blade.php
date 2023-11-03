@@ -64,6 +64,14 @@
                     <div class="row">
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory">
+                                <label for="foto_capres" class="form-label">Foto Capresma</label>
+                                <input type="file" id="foto_capres-column" class="form-control " name="foto_capres" value="{{ $capres->foto_capres }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12">
+                            <div class="form-group mandatory">
                                 <label for="nim" class="form-label">NIM</label>
                                 <input type="number" id="nim-column" class="form-control" placeholder="Masukkan NIM" name="nim" value="{{ $capres->nim }}">
                             </div>

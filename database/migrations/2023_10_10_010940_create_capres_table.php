@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('capres', function (Blueprint $table) {
             $table->id();
             $table->string('nama_capres');
+            $table->string('foto_capres');
             $table->bigInteger('nim');
             $table->string('prodi');
             $table->string('tentang');

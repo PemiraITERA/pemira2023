@@ -38,7 +38,7 @@
                         @foreach ($dokumentasi as $data => $value)
                             <tr>
                                 <td>{{ $dokumentasi->firstItem() + $data}}</td>
-                                <td>{{ $value-> foto}}</td>
+                                <td><img src="{{ asset('storage/dokumentasi/'.$value->foto) }}" alt="hayo" style="width: 30px; object-fit: cover;"></td>
                                 <td>
                                     <a href="{{route('admin.dokumentasi.edit', $value->id) }}" class="btn btn-light-primary">Edit</a>
                                 <a href="{{route('admin.dokumentasi.show', $value->id) }}" class="btn btn-light-success">Read</a>

@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Dokumentasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
-use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class AdminDokumentasiController extends Controller
 {
@@ -35,16 +35,21 @@ class AdminDokumentasiController extends Controller
     public function store(Request $request)
     {
         $validator = $request->validate([
-            'foto' => 'required|max:255|min:10',
+            'foto' => 'required|mimes:jpg,png,jpeg|max:5120',
         ],[
             'foto.required' => 'Input Tidak Boleh Kosong',
-            'foto.min' => 'Input Minimal 10 Karakter',
-            'foto.max' => 'Input Hanya Menampung 255 Karakter',
+            'foto.max' => 'Input Hanya Menampung File  Maksimal 5mb',
+            'foto.mimes' => 'Input Hanya Menerima File Dengan Extensi jpg,png,jpeg'
         ]);
 
-
+        if ($request->hasFile('foto')) {
+            $detination_path = 'public/dokumentasi';
+            $image = $request->file('foto');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->storeAs($detination_path, $imageName);
+        }
         Dokumentasi::create([
-            'foto' => $request->foto,
+            'foto' => $imageName
         ]);
         return redirect(route('admin.dokumentasi.index'))->with('sukses', 'Berhasil Tambah Data!');
     }
@@ -94,6 +99,10 @@ class AdminDokumentasiController extends Controller
     public function destroy(string $id)
     {
         $dokumentasi = Dokumentasi::where('id', $id)->first();
+        $filePath = 'dokumentasi/' . $dokumentasi->foto;
+        if (Storage::disk('public')->exists($filePath)) {
+            Storage::disk('public')->delete($filePath);
+        }
         $dokumentasi->delete();
         return redirect(route('admin.dokumentasi.index'))->with('sukses', 'Berhasil Hapus Data!');
     }

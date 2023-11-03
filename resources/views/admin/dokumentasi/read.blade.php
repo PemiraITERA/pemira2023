@@ -37,7 +37,7 @@
                             <div class="col-md-12 col-12">
                                 <div class="form-group">
                                     <label for="name-column" class="form-label">Foto</label>
-                                    <input type="text" id="name-column" class="form-control" disabled value="{{ $capres->nama_capres }}" name="name-column" >
+                                    <input type="text" id="name-column" class="form-control" disabled value="{{ $dokumentasi->foto }}" name="name-column" >
                                 </div>
                             </div>
                         </div>

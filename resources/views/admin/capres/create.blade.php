@@ -63,6 +63,14 @@
                     <div class="row">
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory">
+                                <label for="foto_capres" class="form-label">Foto Capresma</label>
+                                <input type="file" id="foto_capres-column" class="form-control " name="foto_capres" value="{{ old('foto_capres') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12">
+                            <div class="form-group mandatory">
                                 <label for="nim" class="form-label">NIM</label>
                                 <input type="number" id="nim-column" class="form-control" placeholder="Masukkan NIM" name="nim" value="{{ old('nim') }}">
                             </div>
@@ -80,7 +88,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory">
                                 <label for="tentang" class="form-label">Tentang</label>
-                                <textarea id="tentang-column" class="form-control" placeholder="Masukkan Tentang Capres" name="tentang" value="{{ old('tentang') }}" rows="5" style="resize: none"></textarea>
+                                <textarea id="tentang-column" class="form-control" placeholder="Masukkan Tentang Capres" name="tentang" rows="5" style="resize: none">{{ old('tentang') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -88,7 +96,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory">
                                 <label for="visi" class="form-label">Visi</label>
-                                <textarea id="visi-column" class="form-control" placeholder="Masukkan Visi" name="visi" value="{{ old('visi') }}" rows="5" style="resize: none"></textarea>
+                                <textarea id="visi-column" class="form-control" placeholder="Masukkan Visi" name="visi" rows="5" style="resize: none">{{ old('visi') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -96,7 +104,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory">
                                 <label for="cv" class="form-label">CV</label>
-                                <textarea id="cv-column" class="form-control" placeholder="Masukkan CV" name="cv" value="{{ old('cv') }}" rows="5" style="resize: none"></textarea>
+                                <textarea id="cv-column" class="form-control" placeholder="Masukkan CV" name="cv" rows="5" style="resize: none">{{ old('cv') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -104,7 +112,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory">
                                 <label for="grand_design" class="form-label">Visi</label>
-                                <textarea id="grand_design-column" class="form-control" placeholder="Masukkan Grand Design" name="grand_design" value="{{ old('grand_design') }}" rows="5" style="resize: none"></textarea>
+                                <textarea id="grand_design-column" class="form-control" placeholder="Masukkan Grand Design" name="grand_design" rows="5" style="resize: none">{{ old('grand_design') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -120,7 +128,7 @@
                             <div class="col-md-12 col-12">
                                 <div class="form-group mandatory">
                                     <label for="misi1" class="form-label">Misi 1</label>
-                                    <textarea name="misi1" class="form-control" placeholder="Masukkan Misi 1" value="{{ old('misi1') }}" rows="5" style="resize: none"></textarea>
+                                    <textarea name="misi1" class="form-control" placeholder="Masukkan Misi 1" rows="5" style="resize: none"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +145,7 @@
                             <div class="col-md-12 col-12">
                                 <div class="form-group mandatory">
                                     <label for="progja1" class="form-label">Program Kerja 1</label>
-                                    <textarea name="progja1" class="form-control" placeholder="Masukkan Program Kerja 1" value="{{ old('progja1') }}" rows="5" style="resize: none"></textarea>
+                                    <textarea name="progja1" class="form-control" placeholder="Masukkan Program Kerja 1" rows="5" style="resize: none"></textarea>
                                 </div>
                             </div>
                         </div>

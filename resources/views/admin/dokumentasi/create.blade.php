@@ -33,13 +33,13 @@
             </div>
             <div class="card-content">
               <div class="card-body">
-                <form class="form" data-parsley-validate action="{{route('admin.capres.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="form" data-parsley-validate action="{{route('admin.dokumentasi.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div class="row">
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('foto') is-invalid @enderror">
                                 <label for="foto" class="form-label">Foto Dokumentasi</label>
-                                <input type="text" id="foto-column" class="form-control @error('foto') is-invalid @enderror" placeholder="Masukkan Foto" name="foto" value="{{ old('foto') }}">
+                                <input type="file" id="foto-column" class="form-control @error('foto') is-invalid @enderror" placeholder="Masukkan Foto" name="foto">
                                 @error('foto')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -48,23 +48,8 @@
                             </div>
                         </div>
                     </div>
-                    </div>
-                    <section class="section">
-                            <div class="card-body">
-                                <p>Block some text to display options in poppovers </p>
-                                <div id="full">
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                   <div class="row">
                     <div class="col-12 d-flex justify-content-end">
-                        <div class="mb-4">
-                        <button id="addInput" type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Tambah Input</button>
-                        </div>
-                        <div id="inputContainer">
-                          <!-- Input akan ditambahkan di sini -->
-                        </div>
                       <button type="submit" class="btn btn-primary me-1 mb-1">
                         Submit
                       </button>

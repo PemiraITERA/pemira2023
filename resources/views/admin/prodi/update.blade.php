@@ -39,8 +39,8 @@
                     <div class="row">
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('nama') is-invalid @enderror">
-                                <label for="nama" class="form-label">Nama Prodi</label>
-                                <input type="text" id="nama-prodi-column" class="form-control @error('nama_prodi') is-invalid @enderror" placeholder="Masukkan Nama Prodi" name="nama-prodi-column" value="{{ $prodi->nama_prodi }}">
+                                <label for="nama_prodi" class="form-label">Nama Prodi</label>
+                                <input type="text" id="nama-prodi-column" class="form-control @error('nama_prodi') is-invalid @enderror" placeholder="Masukkan Nama Prodi" name="nama_prodi" value="{{ $prodi->nama_prodi }}">
                                 @error('nama_prodi')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -53,7 +53,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('gedung_pemilihan') is-invalid @enderror">
                                 <label for="gedung_pemilihan" class="form-label">Gedung Pemilihan</label>
-                                <input type="text" id="gedung-pemilihan-column" class="form-control @error('gedung_pemilihan') is-invalid @enderror" placeholder="Masukkan Nama Gedung Pemilihan" name="gedung-pemilihan-column" value="{{ $prodi->gedung_pemilihan   }}">
+                                <input type="text" id="gedung-pemilihan-column" class="form-control @error('gedung_pemilihan') is-invalid @enderror" placeholder="Masukkan Nama Gedung Pemilihan" name="gedung_pemilihan" value="{{ $prodi->gedung_pemilihan   }}">
                                 @error('gedung_pemilihan')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -64,9 +64,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory @error('prodi') is-invalid @enderror">
-                                <label for="prodi" class="form-label">Waktu Pemilihan</label>
-                                <input type="text" id="waktu-pemilihan-column" class="form-control @error('waktu_pemilihan') is-invalid @enderror" placeholder="Masukkan Waktu Pemilihan" name="waktu-pemilihan-column" value="{{ $prodi->waktu_pemilihan }}">
+                            <div class="form-group mandatory @error('waktu_pemilihan') is-invalid @enderror">
+                                <label for="waktu_pemilihan" class="form-label">Waktu Pemilihan</label>
+                                <input type="text" id="waktu-pemilihan-column" class="form-control @error('waktu_pemilihan') is-invalid @enderror" placeholder="Masukkan Waktu Pemilihan" name="waktu_pemilihan" value="{{ $prodi->waktu_pemilihan }}">
                                 @error('waktu_pemilihan')
                                     <div class="invalid-feedback">
                                         {{ $message }}

@@ -12,7 +12,7 @@ $(document).ready(function () {
                 <div class="col-md-12 col-12">
                     <div class="form-group mandatory">
                         <label for="misi${inputCount + 1}" class="form-label">Misi ${inputCount + 1}</label>
-                        <textarea name="misi${inputCount + 1}" class="form-control" placeholder="Masukkan Misi ${inputCount + 1}" value="{{ old('misi${inputCount + 1}') }}" rows="5" style="resize: none"></textarea>
+                        <textarea name="misi${inputCount + 1}" class="form-control" placeholder="Masukkan Misi ${inputCount + 1}" rows="5" style="resize: none"></textarea>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@ $(document).ready(function () {
                 <div class="col-md-12 col-12">
                     <div class="form-group mandatory">
                         <label for="progja${inputCount + 1}" class="form-label">Program Kerja ${inputCount + 1}</label>
-                        <textarea name="progja${inputCount + 1}" class="form-control" placeholder="Masukkan program Keja ${inputCount + 1}" rows="5" style="resize: none">{{ old('progja${inputCount + 1}') }}</textarea>
+                        <textarea name="progja${inputCount + 1}" class="form-control" placeholder="Masukkan program Kerja ${inputCount + 1}" rows="5" style="resize: none"></textarea>
                     </div>
                 </div>
             </div>
