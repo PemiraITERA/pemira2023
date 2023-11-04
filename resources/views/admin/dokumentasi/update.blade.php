@@ -40,7 +40,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('foto') is-invalid @enderror">
                                 <label for="foto" class="form-label">Foto Dokumentasi</label>
-                                <input type="text" id="foto-column" class="form-control @error('foto') is-invalid @enderror" placeholder="Masukkan Foto" name="foto" value="{{ $dokumentasi->foto }}">
+                                <input type="file" id="foto-column" class="form-control @error('foto') is-invalid @enderror" placeholder="Masukkan Foto" name="foto">
                                 @error('foto')
                                     <div class="invalid-feedback">
                                         {{ $message }}

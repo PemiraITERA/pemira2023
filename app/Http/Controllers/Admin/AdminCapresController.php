@@ -8,6 +8,7 @@ use App\Models\Misi;
 use App\Models\Progja;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -47,8 +48,9 @@ class AdminCapresController extends Controller
                 $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
                 $messages["{$key}.numeric"] = "{$key} Hanya Dapat Menerima Angka";
             }else if($key == 'foto_capres'){
-                $rules["{$key}"] = 'required|max:5120';
+                $rules["{$key}"] = 'required|mimes:jpg,png,jpeg|max:5120';
                 $messages["{$key}.max"] = "{$key} Hanya Dapat Menerima File Dengan Ukuran Maksimal 5mb";
+                $messages["{$key}.mimes"] = "{$key} Hanya Menerima File Dengan Esktensi jpg,png,jpeg";
                 $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
             }else{
                 $rules["{$key}"] = 'required|string';
@@ -134,8 +136,14 @@ class AdminCapresController extends Controller
         foreach ($request->all() as $key => $item) { // Validation rule for the 'name' field
             if($key == 'nim'){
                 $rules["{$key}"] = 'required|numeric';
+                $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
+                $messages["{$key}.numeric"] = "{$key} Hanya Dapat Menerima Angka";
+            }else if($key == 'foto_capres'){
+                $rules["{$key}"] = 'max:5120';
+                $messages["{$key}.max"] = "{$key} Hanya Dapat Menerima File Dengan Ukuran Maksimal 5mb";
             }else{
                 $rules["{$key}"] = 'required|string';
+                $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
             }
         }
         // Validate the request data using the rules and messages
@@ -146,32 +154,74 @@ class AdminCapresController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }else{
-            $capres->update([
-                'nama_capres' => $request->nama,
-                'nim' => $request->nim,
-                'prodi' => $request->prodi,
-                'tentang' => $request->tentang
-            ]);
-            $detail_capres->update([
-                'id_capres' => $capres->id,
-                'visi' => $request->visi,
-                'cv' => $request->cv,
-                'grand_design' => $request->grand_design
-            ]);
+            $image = $request->file('foto_capres');
+            if($image != null){
+                if ($request->hasFile('foto_capres')) {
+                    $detination_path = 'public/capres';
+                    $image = $request->file('foto_capres');
+                    $imageName = time() . '_' . $image->getClientOriginalName();
+                    $image->storeAs($detination_path, $imageName);
+                    $filePath = 'capres/'.$capres->foto_capres;
+                    if (Storage::disk('public')->exists($filePath)) {
+                        Storage::disk('public')->delete($filePath);
+                    }
+                }
+                $capres->update([
+                    'nama_capres' => $request->nama,
+                    'foto_capres' => $imageName,
+                    'nim' => $request->nim,
+                    'prodi' => $request->prodi,
+                    'tentang' => $request->tentang
+                ]);
+                $detail_capres->update([
+                    'id_capres' => $capres->id,
+                    'visi' => $request->visi,
+                    'cv' => $request->cv,
+                    'grand_design' => $request->grand_design
+                ]);
 
-            for($i = 1; $i <= $request->misiCount; $i++) {
-                $misi_capres = Misi::where('id_detail', $detail_capres->id)->first();
-                $misi_capres->update([
-                    'id_detail' => $detail_capres->id,
-                    'misi' => $request['misi'.$i],
+                for($i = 1; $i <= $request->misiCount; $i++) {
+                    $misi_capres = Misi::where('id_detail', $detail_capres->id)->first();
+                    $misi_capres->update([
+                        'id_detail' => $detail_capres->id,
+                        'misi' => $request['misi'.$i],
+                    ]);
+                }
+                for($i = 1; $i <= $request->misiCount; $i++) {
+                    $progja_capres = Progja::where('id_detail', $detail_capres->id)->first();
+                    $progja_capres->update([
+                        'id_detail' => $detail_capres->id,
+                        'progja' => $request['progja'.$i],
+                    ]);
+                }
+            }else{
+                $capres->update([
+                    'nama_capres' => $request->nama,
+                    'nim' => $request->nim,
+                    'prodi' => $request->prodi,
+                    'tentang' => $request->tentang
                 ]);
-            }
-            for($i = 1; $i <= $request->misiCount; $i++) {
-                $progja_capres = Progja::where('id_detail', $detail_capres->id)->first();
-                $progja_capres->update([
-                    'id_detail' => $detail_capres->id,
-                    'progja' => $request['progja'.$i],
+                $detail_capres->update([
+                    'id_capres' => $capres->id,
+                    'visi' => $request->visi,
+                    'cv' => $request->cv,
+                    'grand_design' => $request->grand_design
                 ]);
+
+                for($i = 1; $i <= $request->misiCount; $i++) {
+                    $misi_capres = Misi::where('id_detail', $detail_capres->id)->first();
+                    $misi_capres->update([
+                        'id_detail' => $detail_capres->id,
+                        'misi' => $request['misi'.$i],
+                    ]);
+                }
+                for($i = 1; $i <= $request->misiCount; $i++) {
+                    $progja_capres = Progja::where('id_detail', $detail_capres->id)->first();
+                    $progja_capres->update([
+                        'id_detail' => $detail_capres->id,
+                        'progja' => $request['progja'.$i],
+                    ]);
+                }
             }
             return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Ubah Data!');
         }
@@ -183,6 +233,10 @@ class AdminCapresController extends Controller
     public function destroy(string $id)
     {
         $capres = Capres::where('id', $id)->first();
+        $filePath = 'capres/'.$capres->foto_capres;
+        if (Storage::disk('public')->exists($filePath)) {
+            Storage::disk('public')->delete($filePath);
+        }
         $capres->delete();
         return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Hapus Data!');
     }

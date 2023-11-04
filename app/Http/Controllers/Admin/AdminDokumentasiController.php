@@ -78,17 +78,28 @@ class AdminDokumentasiController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = $request->validate([
-            'foto' => 'required|max:255|min:10',
+            'foto' => 'required|mimes:jpg,png,jpeg|max:5120',
         ],[
             'foto.required' => 'Input Tidak Boleh Kosong',
-            'foto.min' => 'Input Minimal 10 Karakter',
-            'foto.max' => 'Input Hanya Menampung 255 Karakter',
+            'foto.max' => 'Input Hanya Menampung File  Maksimal 5mb',
+            'foto.mimes' => 'Input Hanya Menerima File Dengan Extensi jpg,png,jpeg'
         ]);
 
         $dokumentasi = Dokumentasi::where('id', $id)->first();
-        $dokumentasi -> update([
-            'foto' => $request -> foto
-        ]);
+        if ($request->hasFile('foto')) {
+            $detination_path = 'public/dokumentasi';
+            $image = $request->file('foto');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->storeAs($detination_path, $imageName);
+            $filePath = 'dokumentasi/'.$dokumentasi->foto;
+            if (Storage::disk('public')->exists($filePath)) {
+                Storage::disk('public')->delete($filePath);
+            }
+
+            $dokumentasi -> update([
+                'foto' => $imageName
+            ]);
+        }
 
         return redirect(route('admin.dokumentasi.index'))->with('sukses', 'Berhasil Update Data!');
     }
