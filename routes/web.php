@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\AdminCMSController;
 use App\Http\Controllers\Admin\AdminDokumentasiController;
 use App\Http\Controllers\Admin\AdminCapresController;
 use App\Http\Controllers\Admin\AdminProgramStudiController;
+use App\Http\Controllers\Client\HomeClientController;
+use App\Http\Controllers\Client\ClientCapresmaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +22,21 @@ use App\Http\Controllers\Admin\AdminProgramStudiController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('client/index');
+// });
 // Route::get('/index', [AdminCapresController::class, 'index']);
 // Route::get('/create', [AdminCapresController::class, 'create']);
 // Route::get('/read/{id}', [AdminCapresController::class, 'show']);
 // Route::get('/update/{id}', [AdminCapresController::class, 'edit']);
 // Route::get('/update/{id}', [AdminCapresController::class, 'destroy']);
 // Route::post('/store', [AdminCapresController::class, 'store']);
+
+Route::get('/', [HomeClientController::class, 'index'])->name('beranda');
+Route::controller(ClientCapresmaController::class)->name('capresma.')->prefix('capresma')->group(function () {
+    Route::get('/{view}', 'index');
+    Route::get('/{capresma}/{nama_capresma}', 'show');
+});
 
 Auth::routes(['register' => false,
 'reset' => false,
