@@ -187,7 +187,7 @@ class AdminCapresController extends Controller
                         'misi' => $request['misi'.$i],
                     ]);
                 }
-                for($i = 1; $i <= $request->misiCount; $i++) {
+                for($i = 1; $i <= $request->progjaCount; $i++) {
                     $progja_capres = Progja::where('id_detail', $detail_capres->id)->first();
                     $progja_capres->update([
                         'id_detail' => $detail_capres->id,
@@ -215,7 +215,7 @@ class AdminCapresController extends Controller
                         'misi' => $request['misi'.$i],
                     ]);
                 }
-                for($i = 1; $i <= $request->misiCount; $i++) {
+                for($i = 1; $i <= $request->progjaCount; $i++) {
                     $progja_capres = Progja::where('id_detail', $detail_capres->id)->first();
                     $progja_capres->update([
                         'id_detail' => $detail_capres->id,
@@ -233,9 +233,19 @@ class AdminCapresController extends Controller
     public function destroy(string $id)
     {
         $capres = Capres::where('id', $id)->first();
+        $detail_capres = DetailCapres::where('id_capres', $id)->first();
+        $misi = Misi::where('id_detail', $detail_capres->id)->get();
+        $progja = Progja::where('id_detail', $detail_capres->id)->get();
         $filePath = 'capres/'.$capres->foto_capres;
         if (Storage::disk('public')->exists($filePath)) {
             Storage::disk('public')->delete($filePath);
+        }
+
+        foreach ($misi as $data){
+            $data->delete();
+        }
+        foreach ($progja as $data){
+            $data->delete();
         }
         $capres->delete();
         return redirect(route('admin.capres.index'))->with('sukses', 'Berhasil Hapus Data!');

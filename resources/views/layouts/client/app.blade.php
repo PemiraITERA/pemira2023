@@ -108,7 +108,7 @@
                 id="nav-menu"
             >
                 <a
-                    href=""
+                    href="/"
                     class="w-full flex items-center justify-between px-6 py-[18px] bg-white text-blue-grey text-base xl:text-xl group active:bg-main-200/20 md:active:bg-white transition md:px-0 md:py-0 md:inline-block md:w-auto md:text-[#050200]"
                 >
                     <!-- Tambahkan md:font-bold ketika dalam halaman tersebut -->

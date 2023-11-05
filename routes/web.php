@@ -34,9 +34,17 @@ use App\Http\Controllers\Client\ClientCapresmaController;
 
 Route::get('/', [HomeClientController::class, 'index'])->name('beranda');
 Route::controller(ClientCapresmaController::class)->name('capresma.')->prefix('capresma')->group(function () {
-    Route::get('/{view}', 'index');
-    Route::get('/{capresma}/{nama_capresma}', 'show');
+    Route::get('/view', 'index');
+    Route::get('/view/{nama_capresma}', 'show');
 });
+// Route::controller(ClientDokumentasiCapresmaController::class)->name('capresma.')->prefix('capresma')->group(function () {
+//     Route::get('/{view}', 'index');
+//     Route::get('/{capresma}/{nama_capresma}', 'show');
+// });
+// Route::controller(ClientLokasiPemilihanCapresmaController::class)->name('capresma.')->prefix('capresma')->group(function () {
+//     Route::get('/{view}', 'index');
+//     Route::get('/{capresma}/{nama_capresma}', 'show');
+// });
 
 Auth::routes(['register' => false,
 'reset' => false,

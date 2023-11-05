@@ -73,6 +73,15 @@ $(document).ready(function () {
         // Update nilai input count ke dalam input tipe hidden
         $('#progjaCount').val(inputCount);
     });
+    // Function to clear local storage if the URL matches a certain condition
+    function clearLocalStorageForURL(url) {
+        if (window.location.href === url) {
+            localStorage.clear();
+        }
+    }
+
+    // Call the function to clear local storage if the URL matches
+    clearLocalStorageForURL('http://127.0.0.1:8000/admin/capres');
 
 });
 
@@ -81,4 +90,15 @@ $(document).ready(function () {
 document.getElementById('closeButton').addEventListener('click', function() {
     document.getElementById('errorAlert').style.display = 'none';
 });
+
+// Function to clear specific local storage items based on a condition
+function clearLocalStorageForURL(url) {
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      if (key.includes(url)) {
+        localStorage.removeItem(key);
+      }
+    }
+  }
+
 

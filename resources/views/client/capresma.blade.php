@@ -129,6 +129,9 @@
                         </div>
                         <!-- infophoto -->
                         <div class="bg-white p-6 flex justify-center">
+                            <a
+                             href="{{ Request::routeIs('capresma') ? '#' : '/capresma/view/'.$data->nama_capres }}"
+                             >
                             <button
                                 class="inline-flex gap-x-3 item-center overflow-hidden border-[1px] md:border-[1.5px] rounded-full border-main-300 px-6 md:px-7 py-[18px] md:py-4 md:font-semibold shadow-custom text-main-300 font-poppins text-[14px] md:text-[12px] xl:text-[18px]"
                             >
@@ -157,119 +160,12 @@
                                     />
                                 </svg>
                             </button>
+
+                            </a>
                         </div>
                     </div>
-
                 @endforeach
 
-                    {{-- <!-- Capresma 2 -->
-                    <div
-                        class="rounded-2xl overflow-hidden bg-white w-[311px] md:w-[294px] xl:w-full"
-                    >
-                        <!-- photo -->
-                        <div class="relative">
-                            <img
-                                class="w-full px-10 pt-5"
-                                src="/public/client/images/union.svg"
-                                alt=""
-                            />
-                            <div
-                                class="gradient-3 absolute h-72 -mt-72 w-full flex justify-center"
-                            >
-                                <p
-                                    class="text-white font-montserrat text-center w-40 md:w-36 xl:w-48 self-end mb-5 xl:mb-7 text-lg xl:text-[24px] font-medium"
-                                >
-                                    Nama Lengkap Capresma
-                                </p>
-                            </div>
-                        </div>
-                        <!-- infophoto -->
-                        <div class="bg-white p-6 flex justify-center">
-                            <button
-                                class="inline-flex gap-x-3 item-center overflow-hidden border-[1px] md:border-[1.5px] rounded-full border-main-300 px-6 md:px-7 py-[18px] md:py-4 md:font-semibold shadow-custom text-main-300 font-poppins text-[14px] md:text-[12px] xl:text-[18px]"
-                            >
-                                Lihat Detail Presma
-                                <svg
-                                    class="self-center"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="13"
-                                    height="14"
-                                    viewBox="0 0 13 14"
-                                    fill="none"
-                                >
-                                    <path
-                                        d="M2.94531 7.01102H10.3269"
-                                        stroke="#F88312"
-                                        stroke-width="1.58176"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    />
-                                    <path
-                                        d="M6.63574 3.32022L10.3265 7.011L6.63574 10.7018"
-                                        stroke="#F88312"
-                                        stroke-width="1.58176"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Capresma 3 -->
-                    <div
-                        class="rounded-2xl overflow-hidden bg-white w-[311px] md:w-[294px] xl:w-full"
-                    >
-                        <!-- photo -->
-                        <div class="relative">
-                            <img
-                                class="w-full px-10 pt-5"
-                                src="/public/client/images/union.svg"
-                                alt=""
-                            />
-                            <div
-                                class="gradient-3 absolute h-72 -mt-72 w-full flex justify-center"
-                            >
-                                <p
-                                    class="text-white font-montserrat text-center w-40 md:w-36 xl:w-48 self-end mb-5 xl:mb-7 text-lg xl:text-[24px] font-medium"
-                                >
-                                    Nama Lengkap Capresma
-                                </p>
-                            </div>
-                        </div>
-                        <!-- infophoto -->
-                        <div class="bg-white p-6 flex justify-center">
-                            <button
-                                class="inline-flex gap-x-3 item-center overflow-hidden border-[1px] md:border-[1.5px] rounded-full border-main-300 px-6 md:px-7 py-[18px] md:py-4 md:font-semibold shadow-custom text-main-300 font-poppins text-[14px] md:text-[12px] xl:text-[18px]"
-                            >
-                                Lihat Detail Presma
-                                <svg
-                                    class="self-center"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="13"
-                                    height="14"
-                                    viewBox="0 0 13 14"
-                                    fill="none"
-                                >
-                                    <path
-                                        d="M2.94531 7.01102H10.3269"
-                                        stroke="#F88312"
-                                        stroke-width="1.58176"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    />
-                                    <path
-                                        d="M6.63574 3.32022L10.3265 7.011L6.63574 10.7018"
-                                        stroke="#F88312"
-                                        stroke-width="1.58176"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    --}}
                 </div>
             </div>
         </div>
