@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminCapresController;
 use App\Http\Controllers\Admin\AdminProgramStudiController;
 use App\Http\Controllers\Client\HomeClientController;
 use App\Http\Controllers\Client\ClientCapresmaController;
+use App\Http\Controllers\Client\ClientDokumentasiCapresmaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,6 @@ use App\Http\Controllers\Client\ClientCapresmaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('client/index');
-// });
 // Route::get('/index', [AdminCapresController::class, 'index']);
 // Route::get('/create', [AdminCapresController::class, 'create']);
 // Route::get('/read/{id}', [AdminCapresController::class, 'show']);
