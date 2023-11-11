@@ -267,15 +267,13 @@
         <div
             class="my-6 flex justify-center items-center w-[312px] md:w-[450px] xl:w-[560px] gap-3 mx-auto md:gap-8"
         >
-            <a
-                href="{{ $detailcapres->cv }}"
+            <button
                 id="btnCV"
                 class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] hover:bg-slate-100 active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs md:text-2xl font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200"
             >
                 CV
-            </a>
-            <a
-                href="{{ $detailcapres->grand_design }}"
+            </button>
+            <button
                 id="btnKampanye"
                 class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] hover:bg-slate-100 active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs md:text-2xl font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200"
             >

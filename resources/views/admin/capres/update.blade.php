@@ -148,7 +148,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('grand_design') is-invalid @enderror">
                                 <label for="grand_design" class="form-label">Grand Design</label>
-                                <textarea id="grand_design-column" class="form-control @error('grand_design') is-invalid @enderror" placeholder="Masukkan Grand Design" name="grand_design" rows="5" style="resize: none">{{ $detail_capres->visi }}</textarea>
+                                <textarea id="grand_design-column" class="form-control @error('grand_design') is-invalid @enderror" placeholder="Masukkan Grand Design" name="grand_design" rows="5" style="resize: none">{{ $detail_capres->grand_design }}</textarea>
                                 @error('grand_design')
                                     <div class="invalid-feedback">
                                         {{ $message }}
