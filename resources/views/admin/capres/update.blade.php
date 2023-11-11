@@ -55,93 +55,139 @@
                   @csrf
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('nama') is-invalid @enderror">
                                 <label for="nama" class="form-label">Nama Capresma</label>
-                                <input type="text" id="nama-column" class="form-control " placeholder="Masukkan Nama" name="nama" value="{{ $capres->nama_capres }}">
+                                <input type="text" id="nama-column" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama" name="nama" value="{{ $capres->nama_capres }}">
+                                @error('nama')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group">
+                            <div class="form-group mandatory @error('foto_capres') is-invalid @enderror">
                                 <label for="foto_capres" class="form-label">Foto Capresma</label>
-                                <input type="file" id="foto_capres-column" class="form-control " name="foto_capres">
+                                <input type="file" id="foto_capres-column" class="form-control @error('foto_capres') is-invalid @enderror" name="foto_capres">
+                                @error('foto_capres')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('nim') is-invalid @enderror">
                                 <label for="nim" class="form-label">NIM</label>
-                                <input type="number" id="nim-column" class="form-control" placeholder="Masukkan NIM" name="nim" value="{{ $capres->nim }}">
+                                <input type="number" id="nim-column" class="form-control @error('nim') is-invalid @enderror" placeholder="Masukkan NIM" name="nim" value="{{ $capres->nim }}">
+                                @error('nim')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('prodi') is-invalid @enderror">
                                 <label for="prodi" class="form-label">Program Studi</label>
-                                <input type="text" id="prodi-column" class="form-control" placeholder="Masukkan Program Studi" name="prodi" value="{{ $capres->prodi }}">
+                                <input type="text" id="prodi-column" class="form-control @error('prodi') is-invalid @enderror" placeholder="Masukkan Program Studi" name="prodi" value="{{ $capres->prodi }}">
+                                @error('prodi')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('tentang') is-invalid @enderror">
                                 <label for="tentang" class="form-label">Tentang</label>
-                                <textarea id="tentang-column" class="form-control" placeholder="Masukkan Tentang Capres" name="tentang" rows="5" style="resize: none">{{ $capres->tentang }}</textarea>
+                                <textarea id="tentang-column" class="form-control @error('tentang') is-invalid @enderror" placeholder="Masukkan Tentang Capres" name="tentang" rows="5" style="resize: none">{{ $capres->tentang }}</textarea>
+                                @error('tentang')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('visi') is-invalid @enderror">
                                 <label for="visi" class="form-label">Visi</label>
-                                <textarea id="visi-column" class="form-control" placeholder="Masukkan Visi" name="visi" rows="5" style="resize: none">{{ $detail_capres->visi }}</textarea>
+                                <textarea id="visi-column" class="form-control @error('visi') is-invalid @enderror" placeholder="Masukkan Visi" name="visi" rows="5" style="resize: none">{{ $detail_capres->visi }}</textarea>
+                                @error('visi')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('cv') is-invalid @enderror">
                                 <label for="cv" class="form-label">CV</label>
-                                <textarea id="cv-column" class="form-control" placeholder="Masukkan CV" name="cv" rows="5" style="resize: none">{{ $detail_capres->cv }}</textarea>
+                                <textarea id="cv-column" class="form-control @error('cv') is-invalid @enderror" placeholder="Masukkan CV" name="cv" rows="5" style="resize: none">{{ $detail_capres->cv }}</textarea>
+                                @error('cv')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
-                                <label for="grand_design" class="form-label">Visi</label>
-                                <textarea id="grand_design-column" class="form-control" placeholder="Masukkan Grand Design" name="grand_design" rows="5" style="resize: none">{{ $detail_capres->visi }}</textarea>
+                            <div class="form-group mandatory @error('grand_design') is-invalid @enderror">
+                                <label for="grand_design" class="form-label">Grand Design</label>
+                                <textarea id="grand_design-column" class="form-control @error('grand_design') is-invalid @enderror" placeholder="Masukkan Grand Design" name="grand_design" rows="5" style="resize: none">{{ $detail_capres->visi }}</textarea>
+                                @error('grand_design')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
-                    <div id="input-container-misi">
                         @foreach ($misi_capres as $data)
-                            <div class="row dynamic-input-misi">
+                            <div class="row">
                                 <div class="col-md-12 col-12">
-                                    <div class="form-group mandatory">
-                                        <label for="misi{{ $loop->iteration }}" class="form-label">Misi 1</label>
-                                        <textarea name="misi{{ $loop->iteration }}" class="form-control" placeholder="Masukkan Misi {{ $loop->iteration }}" rows="5" style="resize: none">{{ $data->misi }}</textarea>
+                                    <div class="form-group mandatory @error('misi{{ $loop->iteration }}') is-invalid @enderror">
+                                        <label for="misi{{ $loop->iteration }}" class="form-label">Misi {{  $loop->iteration  }}</label>
+                                        <textarea name="misi{{ $loop->iteration }}" class="form-control @error('misi{{ $loop->iteration }}') is-invalid @enderror" placeholder="Masukkan Misi {{ $loop->iteration }}" rows="5" style="resize: none">{{ $data->misi }}</textarea>
+                                        @error('misi{{ $loop->iteration }}')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-                    </div>
                     <input type="hidden" id="misiCount" name="misiCount" value="1">
-                    <div id="input-container-progja">
-                        <div class="row dynamic-input-progja">
-                            @foreach ($progja_capres as $data)
+                    @foreach ($progja_capres as $data)
+                        <div class="row">
                                 <div class="col-md-12 col-12">
-                                    <div class="form-group mandatory">
-                                        <label for="progja{{ $loop->iteration }}" class="form-label">Program Kerja 1</label>
-                                        <textarea name="progja{{ $loop->iteration }}" class="form-control" placeholder="Masukkan Program Kerja {{ $loop->iteration }}" rows="5" style="resize: none">{{ $data->progja }}</textarea>
+                                    <div class="form-group mandatory @error('progja{{ $loop->iteration }}') is-invalid @enderror">
+                                        <label for="progja{{ $loop->iteration }}" class="form-label">Program Kerja {{  $loop->iteration  }}</label>
+                                        <textarea name="progja{{ $loop->iteration }}" class="form-control @error('progja{{ $loop->iteration }}') is-invalid @enderror" placeholder="Masukkan Program Kerja {{ $loop->iteration }}" rows="5" style="resize: none">{{ $data->progja }}</textarea>
+                                        @error('progja{{ $loop->iteration }}')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
-                            @endforeach
                         </div>
-                    </div>
+                    @endforeach
                     <input type="hidden" id="progjaCount" name="progjaCount" value="1">
                   <div class="row">
                     <div class="col-12 d-flex justify-content-end">

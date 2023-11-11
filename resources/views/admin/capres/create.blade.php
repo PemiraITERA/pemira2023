@@ -32,125 +32,146 @@
             <div class="card-header">
               <h4 class="card-title">Create Capresma</h4>
             </div>
-            @if($errors->any())
-            <div id="errorAlert" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                @foreach($errors->all() as $error)
-                    <div>
-                        <strong class="font-bold">Error!</strong>
-                        <span class="block sm:inline">{{ $error }}</span>
-                    </div>
-                @endforeach
-                <span id="closeButton" class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                    <svg class="fill-current h-6 w-6 text-red-500 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <title>Close</title>
-                        <path d="M14.348 5.652a.5.5 0 01.708.708L10.707 10l4.349 4.348a.5.5 0 11-.708.708L10 10.707l-4.348 4.349a.5.5 0 01-.708-.708L9.293 10 4.944 5.652a.5.5 0 01.708-.708L10 9.293l4.348-4.341z"></path>
-                    </svg>
-                </span>
-            </div>
-            @endif
             <div class="card-content">
               <div class="card-body">
                 <form class="form" data-parsley-validate action="{{route('admin.capres.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('nama') is-invalid @enderror">
                                 <label for="nama" class="form-label">Nama Capresma</label>
-                                <input type="text" id="nama-column" class="form-control " placeholder="Masukkan Nama" name="nama" value="{{ old('nama') }}">
+                                <input type="text" id="nama-column" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukkan Nama" name="nama" value="{{ old('nama') }}" required>
+                                @error('nama')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('foto_capres') is-invalid @enderror">
                                 <label for="foto_capres" class="form-label">Foto Capresma</label>
-                                <input type="file" id="foto_capres-column" class="form-control " name="foto_capres" value="{{ old('foto_capres') }}">
+                                <input type="file" id="foto_capres-column" class="form-control @error('foto_capres') is-invalid @enderror" name="foto_capres" value="{{ old('foto_capres') }}" required>
+                                @error('foto_capres')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('nim') is-invalid @enderror">
                                 <label for="nim" class="form-label">NIM</label>
-                                <input type="number" id="nim-column" class="form-control" placeholder="Masukkan NIM" name="nim" value="{{ old('nim') }}">
+                                <input type="number" id="nim-column" class="form-control @error('nim') is-invalid @enderror" placeholder="Masukkan NIM" name="nim" value="{{ old('nim') }}" required>
+                                @error('nim')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('prodi') is-invalid @enderror">
                                 <label for="prodi" class="form-label">Program Studi</label>
-                                <input type="text" id="prodi-column" class="form-control" placeholder="Masukkan Program Studi" name="prodi" value="{{ old('prodi') }}">
+                                <input type="text" id="prodi-column" class="form-control @error('prodi') is-invalid @enderror" placeholder="Masukkan Program Studi" name="prodi" value="{{ old('prodi') }}" required>
+                                @error('prodi')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('tentang') is-invalid @enderror">
                                 <label for="tentang" class="form-label">Tentang</label>
-                                <textarea id="tentang-column" class="form-control" placeholder="Masukkan Tentang Capres" name="tentang" rows="5" style="resize: none">{{ old('tentang') }}</textarea>
+                                <textarea id="tentang-column" class="form-control @error('tentang') is-invalid @enderror" placeholder="Masukkan Tentang Capres" name="tentang" rows="5" style="resize: none" required>{{ old('tentang') }}</textarea>
+                                @error('tentang')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('visi') is-invalid @enderror">
                                 <label for="visi" class="form-label">Visi</label>
-                                <textarea id="visi-column" class="form-control" placeholder="Masukkan Visi" name="visi" rows="5" style="resize: none">{{ old('visi') }}</textarea>
+                                <textarea id="visi-column" class="form-control @error('visi') is-invalid @enderror" placeholder="Masukkan Visi" name="visi" rows="5" style="resize: none" required>{{ old('visi') }}</textarea>
+                                @error('visi')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
+                            <div class="form-group mandatory @error('cv') is-invalid @enderror">
                                 <label for="cv" class="form-label">CV</label>
-                                <textarea id="cv-column" class="form-control" placeholder="Masukkan CV" name="cv" rows="5" style="resize: none">{{ old('cv') }}</textarea>
+                                <input id="cv-column" class="form-control @error('cv') is-invalid @enderror" placeholder="Masukkan CV" name="cv" rows="5" style="resize: none" required value="{{ old('cv') }}">
+                                @error('cv')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory">
-                                <label for="grand_design" class="form-label">Visi</label>
-                                <textarea id="grand_design-column" class="form-control" placeholder="Masukkan Grand Design" name="grand_design" rows="5" style="resize: none">{{ old('grand_design') }}</textarea>
+                            <div class="form-group mandatory @error('grand_design') is-invalid @enderror">
+                                <label for="grand_design" class="form-label">Grand Design</label>
+                                <input id="grand_design-column" class="form-control @error('grand_design') is-invalid @enderror" placeholder="Masukkan Grand Design" name="grand_design" rows="5" style="resize: none" value="{{ old('grand_design') }}">
+                                @error('grand_design')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 d-flex justify-content-end">
-                            <button id="removeInputMisi" type="button" class="btn btn-link text-decoration-none text-danger font-bold py-2 px-4 rounded"><i class="bi bi-trash"></i> Hapus Input Terakhir Misi</button>
-                            <button id="addInputMisi" type="button" class="btn btn-link text-decoration-none text-success font-bold py-2 px-4 rounded"><i class="bi bi-plus-square"></i> Tambah Input Misi</button>
-
-                        </div>
-                    </div>
-                    <div id="input-container-misi">
-                        <div class="row dynamic-input-misi">
+                    @for ($i = 1; $i <= $misi_count; $i++)
+                        <div class="row">
                             <div class="col-md-12 col-12">
-                                <div class="form-group mandatory">
-                                    <label for="misi1" class="form-label">Misi 1</label>
-                                    <textarea name="misi1" class="form-control" placeholder="Masukkan Misi 1" rows="5" style="resize: none"></textarea>
+                                <div class="form-group mandatory  @error('misi'.$i) is-invalid @enderror">
+                                    <label for="misi{{ $i }}" class="form-label">Misi {{ $i }}</label>
+                                    <textarea name="misi{{ $i }}" class="form-control @error('misi'.$i) is-invalid @enderror" placeholder="Masukkan Misi {{ $i }}" rows="5" style="resize: none">{{ old('misi'.$i) }}</textarea>
+                                    @error('misi'.$i)
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <input type="hidden" id="misiCount" name="misiCount" value="1">
-                    <div class="row">
-                      <div class="col-12 d-flex justify-content-end">
-                          <button id="removeInputProgja" type="button" class="btn btn-link text-decoration-none text-danger font-bold py-2 px-4 rounded"><i class="bi bi-trash"></i> Hapus Input Terakhir Program Kerja</button>
-                          <button id="addInputProgja" type="button" class="btn btn-link text-decoration-none text-success font-bold py-2 px-4 rounded"><i class="bi bi-plus-square"></i> Tambah Input  Program Kerja</button>
-                      </div>
-                  </div>
-                    <div id="input-container-progja">
+                    @endfor
+                    @for ($i = 1; $i <= $progja_count; $i++)
                         <div class="row dynamic-input-progja">
                             <div class="col-md-12 col-12">
-                                <div class="form-group mandatory">
-                                    <label for="progja1" class="form-label">Program Kerja 1</label>
-                                    <textarea name="progja1" class="form-control" placeholder="Masukkan Program Kerja 1" rows="5" style="resize: none"></textarea>
+                                <div class="form-group mandatory  @error('progja'.$i) is-invalid @enderror">
+                                    <label for="progja{{ $i }}" class="form-label">Program Kerja {{ $i }}</label>
+                                    <textarea name="progja{{ $i }}" class="form-control @error('progja'.$i) is-invalid @enderror" placeholder="Masukkan Program Kerja {{ $i }}" rows="5" style="resize: none">{{ old('progja'.$i) }}</textarea>
+                                    @error('progja'.$i)
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <input type="hidden" id="progjaCount" name="progjaCount" value="1">
+                    @endfor
+                    <input type="hidden" id="misiCount" name="misiCount" value="{{ $misi_count }}">
+                    <input type="hidden" id="progjaCount" name="progjaCount" value="{{ $progja_count }}">
                   <div class="row">
                     <div class="col-12 d-flex justify-content-end">
                       <button type="submit" class="save btn btn-primary me-1 mb-1">

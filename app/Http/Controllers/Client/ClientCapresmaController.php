@@ -28,10 +28,10 @@ class ClientCapresmaController extends Controller
     {
         $capres = Capres::where('nama_capres', $nama_capres)->first();
         $detailcapres = DetailCapres::where('id', $capres->id)->first();
-        $misicapres = Misi::where('id', $detailcapres->id)->first();
-        $progjacapres = Progja::where('id', $detailcapres->id)->first();
+        $misicapres = Misi::where('id_detail', $detailcapres->id)->get();
+        $progjacapres = Progja::where('id_detail', $detailcapres->id)->get();
 
-        // return view('client.detailcapresma.', compact('capres', 'detail_capres', 'misi_capres', 'progja_capres'));
-        return dd($capres, $detailcapres, $misicapres, $progjacapres);
+        return view('client.detailcapresma', compact('capres', 'detailcapres', 'misicapres', 'progjacapres'));
+        // return dd($capres, $detailcapres, $misicapres, $progjacapres);
     }
 }

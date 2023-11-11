@@ -114,30 +114,26 @@
                             </div>
                         </div>
                     </div>
-                    <div id="input-container-misi">
-                        @foreach ($misi_capres as $data)
-                        <div class="row dynamic-input-misi">
+                    @foreach ($misi_capres as $data)
+                    <div class="row">
+                        <div class="col-md-12 col-12">
+                            <div class="form-group mandatory">
+                                <label for="misi1" class="form-label">Misi  {{ $loop->iteration }}</label>
+                                <textarea name="misi1" class="form-control" placeholder="Masukkan Misi 1" rows="5" style="resize: none" disabled>{{ $data->misi }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    @foreach ($progja_capres as $data)
+                        <div class="row">
                             <div class="col-md-12 col-12">
                                 <div class="form-group mandatory">
-                                    <label for="misi1" class="form-label">Misi  {{ $loop->iteration }}</label>
-                                    <textarea name="misi1" class="form-control" placeholder="Masukkan Misi 1" rows="5" style="resize: none" disabled>{{ $data->misi }}</textarea>
+                                    <label for="progja1" class="form-label">Program Kerja  {{ $loop->iteration }}</label>
+                                    <textarea name="progja1" class="form-control" placeholder="Masukkan Program Kerja 1" rows="5" style="resize: none" disabled> {{ $data->progja }}</textarea>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
-                    </div>
-                    <div id="input-container-progja">
-                        @foreach ($progja_capres as $data)
-                            <div class="row dynamic-input-progja">
-                                <div class="col-md-12 col-12">
-                                    <div class="form-group mandatory">
-                                        <label for="progja1" class="form-label">Program Kerja  {{ $loop->iteration }}</label>
-                                        <textarea name="progja1" class="form-control" placeholder="Masukkan Program Kerja 1" rows="5" style="resize: none" disabled> {{ $data->progja }}</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
+                    @endforeach
               </div>
             </div>
           </div>

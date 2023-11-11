@@ -29,9 +29,11 @@ class AdminCapresController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.capres.create');
+        $misi_count = $request->misi;
+        $progja_count = $request->progja;
+        return view('admin.capres.create', compact('misi_count', 'progja_count'));
     }
 
     /**
@@ -39,22 +41,27 @@ class AdminCapresController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $rules = [];
         $messages = [];
         // Loop through each item and construct validation rules
-        foreach ($request->all() as $key => $item) { // Validation rule for the 'name' field
+        foreach ($request->all() as $key => $item) { 
             if($key == 'nim'){
                 $rules["{$key}"] = 'required|numeric';
-                $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
-                $messages["{$key}.numeric"] = "{$key} Hanya Dapat Menerima Angka";
+                $messages["{$key}.required"] = "{$key} tidak boleh kosong";
+                $messages["{$key}.numeric"] = "{$key} hanya dapat menerima angka";
             }else if($key == 'foto_capres'){
                 $rules["{$key}"] = 'required|mimes:jpg,png,jpeg|max:5120';
-                $messages["{$key}.max"] = "{$key} Hanya Dapat Menerima File Dengan Ukuran Maksimal 5mb";
-                $messages["{$key}.mimes"] = "{$key} Hanya Menerima File Dengan Esktensi jpg,png,jpeg";
-                $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
-            }else{
-                $rules["{$key}"] = 'required|string';
-                $messages["{$key}.required"] = "{$key} Tidak Boleh Kosong";
+                $messages["{$key}.max"] = "{$key} hanya dapat menerima file dengan ukuran maksimal 5mb";
+                $messages["{$key}.mimes"] = "{$key} hanya menerima file dengan esktensi jpg,png,jpeg";
+                $messages["{$key}.required"] = "{$key} tidak boleh kosong";
+            }else if($key == 'cv' || $key == 'grand_design'){
+                $rules["{$key}"] = 'required|URL';
+                $messages["{$key}.required"] = "{$key} tidak boleh kosong";
+                $messages["{$key}.url"] = "{$key} hanya menerima inputan url";
+            } else {
+                $rules["{$key}"] = 'required';
+                $messages["{$key}.required"] = "{$key} tidak boleh kosong";
             }
         }
         // Validate the request data using the rules and messages
@@ -88,7 +95,7 @@ class AdminCapresController extends Controller
             for($i = 1; $i <= $request->misiCount; $i++) {
                 Misi::create([
                     'id_detail' => $detail_capres->id,
-                    'misi' => $request['misi1'],
+                    'misi' => $request['misi'.$i],
                 ]);
             }
             for($i = 1; $i <= $request->misiCount; $i++) {

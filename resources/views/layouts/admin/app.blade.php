@@ -68,7 +68,7 @@
 
             <li
                 class="sidebar-item hashup">
-                <a href="{{route('admin.capres.create') }}" class='sidebar-link'>
+                <a href="{{route('admin.cms.index') }}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
@@ -84,7 +84,8 @@
 
                 <ul class="submenu ">
                     <li class="submenu-item ">
-                        <a href="{{route('admin.capres.create') }}" class="submenu-link">
+                        <!-- Modal toggle -->
+                        <a id="openModal" class="submenu-link cursor-pointer">
                             <i class="bi bi-person-fill-add"></i> Tambah Capres
                         </a>
                     </li>
@@ -172,6 +173,41 @@
             </div>
         </div>
     </footer>
+    <!-- Main modal -->
+    <div id="myModal" class="hidden fixed inset-0 overflow-auto bg-gray-500 bg-opacity-75 z-50 flex items-center justify-center text-white">
+        <div class="bg-gray-800 p-8 w-96 rounded shadow-lg">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-semibold text-gray-800">Masukkan Jumlah Misi Dan Program kerja</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal body (form) -->
+            <form action="{{route('admin.capres.create') }}" method="push">
+                @method('GET')
+                @csrf
+                <div class="mb-4">
+                    <label for="misi" class="block text-sm font-medium">Jumlah Misi</label>
+                    <input type="number" id="misi" name="misi" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+
+                <div class="mb-4">
+                    <label for="progja" class="block text-sm font-medium">Jumlah Program Kerja</label>
+                    <input type="number" id="progja" name="progja" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+
+                <div class="flex justify-end">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     <script src="{{ asset('mazzer/static/js/components/dark.js') }}"></script>
     <script src="{{ asset('mazzer/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 
@@ -186,7 +222,7 @@
 <script src="{{ asset('mazzer/static/js/pages/parsley.js') }}"></script>
 <script src="{{ asset('mazzer/static/js/pages/dashboard.js') }}"></script>
 <script src="{{ asset('mazzer/static/js/pages/sweetalert2.js') }}"></script>
-<script src="{{ asset('mazzer/static/js/pages/add-input.js') }}"></script>
+<script src="{{ asset('mazzer/static/js/pages/modal.js') }}"></script>
 <script src="{{ asset('mazzer/extensions/sweetalert2/sweetalert2.min.js') }}"></script>
 
 </body>
