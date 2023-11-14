@@ -7,7 +7,9 @@
         <title>@yield('title')</title>
 
         <!-- Scripts -->
-        @vite('resources/css/app.css')
+        {{-- @vite('resources/css/app.css') --}}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
