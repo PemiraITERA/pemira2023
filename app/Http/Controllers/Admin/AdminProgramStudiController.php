@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\ProgramStudi;
+use App\Models\gedung;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
@@ -26,7 +27,8 @@ class AdminProgramStudiController extends Controller
      */
     public function create()
     {
-        return view('admin.prodi.create');
+        $gedung = gedung::all();
+        return view('admin.prodi.create', compact('gedung'));
     }
 
     /**
@@ -37,7 +39,7 @@ class AdminProgramStudiController extends Controller
         $validator = $request->validate([
             'nama_prodi' => 'required|max:255|min:3',
             'gedung_pemilihan' => 'required|max:255|min:3',
-            'waktu_pemilihan' => 'required|max:255|min:3',
+            'waktu_pemilihan' => 'required|date_format:H:i',
         ],[
             'nama_prodi.required' => 'Input Tidak Boleh Kosong',
             'nama_prodi.min' => 'Input Minimal 3 Karakter',
@@ -46,8 +48,7 @@ class AdminProgramStudiController extends Controller
             'gedung_pemilihan.min' => 'Input Minimal 3 Karakter',
             'gedung_pemilihan.max' => 'Input Hanya Menampung 255 Karakter',
             'waktu_pemilihan.required' => 'Input Tidak Boleh Kosong',
-            'waktu_pemilihan.min' => 'Input Minimal 3 Karakter',
-            'waktu_pemilihan.max' => 'Input Hanya Menampung 255 Karakter',
+            'waktu_pemilihan.min' => 'Inputkan Waktu Dengan Benar ex: 13:20',
         ]);
 
 
@@ -73,7 +74,8 @@ class AdminProgramStudiController extends Controller
     public function edit(string $id)
     {
         $prodi = ProgramStudi::where('id', $id)->first();
-        return view('admin.prodi.update', compact('prodi'));
+        $gedung = gedung::all();
+        return view('admin.prodi.update', compact('prodi', 'gedung'));
     }
 
     /**

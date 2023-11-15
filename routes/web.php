@@ -8,9 +8,11 @@ use App\Http\Controllers\Admin\AdminCMSController;
 use App\Http\Controllers\Admin\AdminDokumentasiController;
 use App\Http\Controllers\Admin\AdminCapresController;
 use App\Http\Controllers\Admin\AdminProgramStudiController;
+use App\Http\Controllers\Admin\AdminGedungController;
 use App\Http\Controllers\Client\HomeClientController;
 use App\Http\Controllers\Client\ClientCapresmaController;
 use App\Http\Controllers\Client\ClientDokumentasiCapresmaController;
+use App\Http\Controllers\Client\ClientLokasiPemilihanCapresmaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,14 +36,12 @@ Route::controller(ClientCapresmaController::class)->name('capresma.')->prefix('c
     Route::get('/view', 'index');
     Route::get('/view/{nama_capresma}', 'show');
 });
-// Route::controller(ClientDokumentasiCapresmaController::class)->name('capresma.')->prefix('capresma')->group(function () {
-//     Route::get('/{view}', 'index');
-//     Route::get('/{capresma}/{nama_capresma}', 'show');
-// });
-// Route::controller(ClientLokasiPemilihanCapresmaController::class)->name('capresma.')->prefix('capresma')->group(function () {
-//     Route::get('/{view}', 'index');
-//     Route::get('/{capresma}/{nama_capresma}', 'show');
-// });
+Route::controller(ClientDokumentasiCapresmaController::class)->name('dokumentasi.')->prefix('dokumentasi')->group(function () {
+    Route::get('/', 'index');
+});
+Route::controller(ClientLokasiPemilihanCapresmaController::class)->name('lokasi-pemilihan.')->prefix('lokasi-pemilihan')->group(function () {
+    Route::get('/', 'index');
+});
 
 Auth::routes(['register' => false,
 'reset' => false,
@@ -62,6 +62,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['admin'])->name('admin.')->prefix('admin')->group(function () {
         Route::resource('dashboard', AdminCMSController::class);
         Route::resource('capres', AdminCapresController::class);
+        Route::resource('gedung', AdminGedungController::class);
         Route::resource('dokumentasi', AdminDokumentasiController::class);
         Route::resource('prodi', AdminProgramStudiController::class);
         Route::resource('cms', AdminCMSController::class);

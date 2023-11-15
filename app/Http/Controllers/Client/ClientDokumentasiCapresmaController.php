@@ -14,9 +14,9 @@ class ClientDokumentasiCapresmaController extends Controller
             'dokumentasi' => Dokumentasi::all()
         ]);
     }
-    public function show(string $foto)
-    {
-        $capres = Dokumentasi::where('foto', $foto)->first();
-        return dd($foto);
-    }
+    // public function show(string $foto)
+    // {
+    //     $capres = Dokumentasi::where('foto', $foto)->first();
+    //     return dd($foto);
+    // }
 }

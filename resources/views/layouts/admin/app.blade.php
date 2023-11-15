@@ -102,25 +102,44 @@
             <li class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-building"></i>
+                    <span>Gedung</span>
+                </a>
+
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a href="{{route('admin.gedung.create') }}" class="submenu-link">
+                            <i class="bi bi-building-fill-add"></i>Tambah Gedung
+                        </a>
+                    </li>
+
+                    <li class="submenu-item">
+                        <a href="{{route('admin.gedung.index') }}" class="submenu-link">
+                            <i class="bi bi-building-fill"></i> Kelola Gedung
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-people"></i>
                     <span>Program studi</span>
                 </a>
 
                 <ul class="submenu ">
                     <li class="submenu-item ">
                         <a href="{{route('admin.prodi.create') }}" class="submenu-link">
-                            <i class="bi bi-building-fill-add"></i>Tambah Program Studi
+                            <i class="bi bi-people-fill"></i>Tambah Program Studi
                         </a>
                     </li>
 
                     <li class="submenu-item">
                         <a href="{{route('admin.prodi.index') }}" class="submenu-link">
-                            <i class="bi bi-building-fill"></i> Kelola Program Studi
+                            <i class="bi bi-people-fill"></i> Kelola Program Studi
                         </a>
                     </li>
                 </ul>
             </li>
 
-            </li>
 
             <li class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>

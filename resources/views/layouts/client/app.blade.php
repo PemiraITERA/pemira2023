@@ -136,7 +136,7 @@
                     ></i>
                 </a>
                 <a
-                    href=""
+                    href="{{ Request::routeIs('dokumentasi') ? '#' : '/dokumentasi/' }}"
                     class="w-full flex items-center justify-between px-6 py-[18px] bg-white text-blue-grey text-base xl:text-xl group active:bg-main-200/20 md:active:bg-white transition md:px-0 md:py-0 md:inline-block md:w-auto md:text-[#050200]"
                 >
                     <!-- Tambahkan font-bold ketika dalam halaman tersebut -->
@@ -150,7 +150,7 @@
                     ></i>
                 </a>
                 <a
-                    href=""
+                    href="{{ Request::routeIs('lokasi') ? '#' : '/lokasi-pemilihan/' }}"
                     class="w-full flex items-center justify-between px-6 py-[18px] bg-white text-blue-grey text-base xl:text-xl group active:bg-main-200/20 md:active:bg-white transition md:px-0 md:py-0 md:inline-block md:w-auto md:text-[#050200]"
                 >
                     <!-- Tambahkan font-bold ketika dalam halaman tersebut -->
@@ -175,6 +175,6 @@
 
         <script src="{{ asset('client/js/hamburger-button.js') }}"></script>
         <script src="{{ asset('client/js/modal.js') }}"></script>
-        
+
     </body>
 </html>

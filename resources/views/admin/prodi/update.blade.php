@@ -53,7 +53,11 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('gedung_pemilihan') is-invalid @enderror">
                                 <label for="gedung_pemilihan" class="form-label">Gedung Pemilihan</label>
-                                <input type="text" id="gedung-pemilihan-column" class="form-control @error('gedung_pemilihan') is-invalid @enderror" placeholder="Masukkan Nama Gedung Pemilihan" name="gedung_pemilihan" value="{{ $prodi->gedung_pemilihan   }}">
+                                <select name="gedung_pemilihan" id="gedung_pemilihan" class="form-control @error('gedung_pemilihan') is-invalid @enderror">
+                                @foreach ($gedung as $data )
+                                    <option value="{{ $data->gedung }}" @if ($prodi->gedung_pemilihan == $data->gedung) selected @endif>{{ $data->gedung }}</option>
+                                @endforeach
+                                </select>
                                 @error('gedung_pemilihan')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -66,7 +70,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('waktu_pemilihan') is-invalid @enderror">
                                 <label for="waktu_pemilihan" class="form-label">Waktu Pemilihan</label>
-                                <input type="text" id="waktu-pemilihan-column" class="form-control @error('waktu_pemilihan') is-invalid @enderror" placeholder="Masukkan Waktu Pemilihan" name="waktu_pemilihan" value="{{ $prodi->waktu_pemilihan }}">
+                                <input type="text" id="waktu-pemilihan-column" class="form-control @error('waktu_pemilihan') is-invalid @enderror" placeholder="Masukkan Waktu Pemilihan ex: 13:20" name="waktu_pemilihan" value="{{ $prodi->waktu_pemilihan }}">
                                 @error('waktu_pemilihan')
                                     <div class="invalid-feedback">
                                         {{ $message }}

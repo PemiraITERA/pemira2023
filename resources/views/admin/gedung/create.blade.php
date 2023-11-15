@@ -1,21 +1,21 @@
 @extends('layouts.admin.app')
 
 
-@section('title', 'Create Program Studi')
+@section('title', 'Create Dokumentasi')
 
 @section('content')
 <div class="page-heading">
     <div class="page-title">
       <div class="row">
         <div class="col-12 col-md-6 order-md-1 order-last">
-          <h3>Tambah Program Studi</h3>
+          <h3>Tambah Gedung</h3>
         </div>
         <div class="col-12 col-md-6 order-md-2 order-first">
           <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
               <li class="breadcrumb-item active" aria-current="page">
-                Create Program Studi
+                Create Gedung
               </li>
             </ol>
           </nav>
@@ -29,18 +29,18 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title">Create Program Studi</h4>
+              <h4 class="card-title">Create Gedung</h4>
             </div>
             <div class="card-content">
               <div class="card-body">
-                <form class="form" data-parsley-validate action="{{route('admin.prodi.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="form" data-parsley-validate action="{{route('admin.gedung.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory @error('nama_prodi') is-invalid @enderror">
-                                <label for="nama_prodi" class="form-label">Nama Prodi</label>
-                                <input type="text" id="nama-prodi-column" class="form-control @error('nama_prodi') is-invalid @enderror" placeholder="Masukkan Nama Prodi" name="nama_prodi" value="{{ old('nama_prodi') }}">
-                                @error('nama_prodi')
+                            <div class="form-group mandatory @error('gedung') is-invalid @enderror">
+                                <label for="gedung" class="form-label">Gedung</label>
+                                <input type="text" id="gedung-column" class="form-control @error('gedung') is-invalid @enderror" placeholder="Masukkan Gedung" name="gedung">
+                                @error('gedung')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -50,14 +50,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory @error('gedung_pemilihan') is-invalid @enderror">
-                                <label for="gedung_pemilihan" class="form-label">Gedung Pemilihan</label>
-                                <select name="gedung_pemilihan" id="gedung_pemilihan" class="form-control @error('gedung_pemilihan') is-invalid @enderror">
-                                @foreach ($gedung as $data )
-                                    <option value="{{ $data->gedung }}">{{ $data->gedung }}</option>
-                                @endforeach
-                                </select>
-                                @error('gedung_pemilihan')
+                            <div class="form-group mandatory @error('tgl') is-invalid @enderror">
+                                <label for="tgl" class="form-label">Tanggal</label>
+                                <input type="text" id="tgl-column" class="form-control @error('tgl') is-invalid @enderror" placeholder="Masukkan Tanggal ex: 15/11/2023" name="tgl">
+                                @error('tgl')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -67,10 +63,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory @error('waktu_pemilihan') is-invalid @enderror">
-                                <label for="waktu_pemilihan" class="form-label">Waktu Pemilihan</label>
-                                <input type="text" id="waktu-pemilihan-column" class="form-control @error('waktu_pemilihan') is-invalid @enderror" placeholder="Masukkan Waktu Pemilihan ex: 13:20" name="waktu_pemilihan" value="{{ old('waktu_pemilihan') }}">
-                                @error('waktu_pemilihan')
+                            <div class="form-group mandatory @error('foto') is-invalid @enderror">
+                                <label for="foto" class="form-label">Foto</label>
+                                <input type="file" id="foto-column" class="form-control @error('foto') is-invalid @enderror" placeholder="Masukkan Foto Gedung" name="foto">
+                                @error('foto')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
