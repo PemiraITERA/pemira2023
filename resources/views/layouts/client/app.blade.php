@@ -8,7 +8,6 @@
 
         <!-- Scripts -->
         {{-- @vite('resources/css/app.css') --}}
-        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 
         <!-- Fonts -->
@@ -27,6 +26,8 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+
+        <script src="https://unpkg.com/feather-icons"></script>
 
         <style type="text/tailwindcss">
             .gradient-1 {
@@ -119,9 +120,11 @@
                     >
                         Beranda
                     </p>
-                    <i
-                        class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition md:hidden"
-                    ></i>
+                    <div class="md:hidden">
+                        <i
+                            class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200"
+                        ></i>
+                    </div>
                 </a>
                 <a
                     href="{{ Request::routeIs('capresma') ? '#' : '/capresma/view' }}"
@@ -133,9 +136,11 @@
                     >
                         Capresma
                     </p>
-                    <i
-                        class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition md:hidden"
-                    ></i>
+                    <div class="md:hidden">
+                        <i
+                            class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition"
+                        ></i>
+                    </div>
                 </a>
                 <a
                     href="{{ Request::routeIs('dokumentasi') ? '#' : '/dokumentasi/' }}"
@@ -147,9 +152,11 @@
                     >
                         Dokumentasi
                     </p>
-                    <i
-                        class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition md:hidden"
-                    ></i>
+                    <div class="md:hidden">
+                        <i
+                            class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition"
+                        ></i>
+                    </div>
                 </a>
                 <a
                     href="{{ Request::routeIs('lokasi') ? '#' : '/lokasi-pemilihan/' }}"
@@ -161,9 +168,11 @@
                     >
                         Lokasi Pemilihan
                     </p>
-                    <i
-                        class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition md:hidden"
-                    ></i>
+                    <div class="md:hidden">
+                        <i
+                            class="fa-solid fa-arrow-right fa-xl pr-2 text-blue-grey group-active:text-main-200 transition"
+                        ></i>
+                    </div>
                 </a>
             </nav>
         </header>
@@ -171,10 +180,36 @@
             <!-- buat content seluruhnya -->
             @yield('content')
         </main>
-        <footer>
-            <!-- buat footer -->
+        <footer
+            class="w-full py-[10px] md:py-[25px] xl:py-[52px] gradient-2 flex items-center justify-between px-6 box-border xl:justify-around"
+        >
+            <div
+                class="border-[#ffffff] border-2 rounded-full flex items-center py-[6.5px] md:py-[13px] px-3 pr-4 gap-3 w-fit"
+            >
+                <div
+                    class="bg-[#ffffff] rounded-full w-[27px] h-[27px] md:w-[48px] md:h-[48px] xl:w-[75px] xl:h-[75px] flex justify-center items-center"
+                >
+                    <img
+                        src="{{ asset('assets/images/Logo-PEMIRA2023.png') }}"
+                        alt=""
+                        class="w-[21.62px] md:w-[38.44px] xl:w-[60px]"
+                    />
+                </div>
+                <div
+                    class="flex flex-col justify-center font-montserrat text-[#ffffff]"
+                >
+                    <p class="text-[8px] md:text-xs xl:text-xl">PEMIRA KM</p>
+                    <p class="text-xs md:text-2xl xl:text-3xl">ITERA</p>
+                </div>
+            </div>
+            <p
+                class="font-montserrat text-[8px] md:text-base text-[#ffffff] xl:font-semibold xl:text-xl"
+            >
+                &#169; 2023 Tim IT PEMIRA ITERA
+            </p>
         </footer>
 
+        <script src="{{ asset('client/js/accordion.js') }}"></script>
         <script src="{{ asset('client/js/hamburger-button.js') }}"></script>
         <script src="{{ asset('client/js/modal.js') }}"></script>
 
