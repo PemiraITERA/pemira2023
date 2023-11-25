@@ -384,7 +384,7 @@
                 <div class="px-4 py-4">
                     <div class="content-between items-center flex">
                         <iframe
-                            src="https://drive.google.com/file/d/1P_Vcaz5VP0mmG0UbGw-MVyz1Ij5h0Sae/preview"
+                            src="{{ $detailcapres->cv }}"
                             width="640"
                             height="480"
                             allow="autoplay"
@@ -422,7 +422,7 @@
                 <div class="px-4 py-4">
                     <div class="content-between items-center flex">
                         <iframe
-                            src="https://drive.google.com/file/d/1c8YLEidAfRIxnOAy6iHacl6AQerjP9xP/preview"
+                            src="{{ $detailcapres->grand_design}}"
                             width="640"
                             height="480"
                             allow="autoplay"
