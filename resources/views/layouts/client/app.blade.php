@@ -116,7 +116,7 @@
                 >
                     <!-- Tambahkan md:font-bold ketika dalam halaman tersebut -->
                     <p
-                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition"
+                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition {{ Request::routeIs('beranda') ? 'md:font-bold' : '' }}"
                     >
                         Beranda
                     </p>
@@ -132,7 +132,7 @@
                 >
                     <!-- Tambahkan font-bold ketika dalam halaman tersebut -->
                     <p
-                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition"
+                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition {{ Request::routeIs('capresma.') ? 'md:font-bold' : '' }}"
                     >
                         Capresma
                     </p>
@@ -148,7 +148,7 @@
                 >
                     <!-- Tambahkan font-bold ketika dalam halaman tersebut -->
                     <p
-                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition"
+                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition {{ Request::routeIs('dokumentasi.') ? 'md:font-bold' : '' }}"
                     >
                         Dokumentasi
                     </p>
@@ -164,7 +164,7 @@
                 >
                     <!-- Tambahkan font-bold ketika dalam halaman tersebut -->
                     <p
-                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition"
+                        class="group-active:text-main-200 group-active:font-bold md:group-active:font-normal md:group-active:text-[#050200] transition {{ Request::routeIs('lokasi-pemilihan.') ? 'md:font-bold' : '' }}"
                     >
                         Lokasi Pemilihan
                     </p>
