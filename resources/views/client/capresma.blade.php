@@ -173,7 +173,7 @@
 
     <!-- Daftar Partai -->
     <section
-        class="gradient-4 mx-auto w-full xl:w-[1400px] md:w-[680px] inline-flex flex-col justify-center py-16 md:py-20 xl:py-[80px] gap-16 md:rounded-3xl"
+        class="gradient-4 mx-auto w-full xl:w-[1400px] md:w-[680px] inline-flex flex-col justify-center py-16 md:py-20 xl:py-[80px] gap-16 md:rounded-3xl hidden"
     >
         <!-- Tema-->
         <div class="flex justify-center">

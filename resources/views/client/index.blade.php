@@ -13,8 +13,8 @@
     <div id="timeline" class="mt-[15em] mb-[10em] flex flex-col items-center justify-center text-center">
     <h1 class="text-2xl font-semibold mb-5 font-poppins">Jadwal</h1>
         <div class="w-full lg:w-8/12 lg:h-50 md:h-auto md:w-auto md:rounded-sm md:shadow-lg h-[13em] rounded-md lg:rounded-full bg-[#F9EFE1] overflow-x-auto overflow-y-hidden gap-5 p-2 flex flex-col items-center">
-        <img src="{{ asset('assets/images/timeline.svg') }}" class="lg:scale-[1] lg:translate-x-0 lg:translate-y-0 scale-[2.5] translate-x-[13em] translate-y-[3em] md:hidden lg:block">
-        <img src="{{ asset('assets/images/timeline-tablet.svg') }}" class="hidden lg:hidden md:block">
+        <img src="{{ asset('assets/images/timeline_update.svg') }}" class="lg:scale-[1] lg:translate-x-0 lg:translate-y-0 scale-[2.5] translate-x-[13em] translate-y-[3em] md:hidden lg:block">
+        <img src="{{ asset('assets/images/timeline-tablet_update.svg') }}" class="hidden lg:hidden md:block">
         </div>
     </div>
 

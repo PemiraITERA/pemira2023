@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('progja_capres', function (Blueprint $table) {
-            $table->id();
-            $table->string('id_detail');
+        Schema::table('progja_capres', function (Blueprint $table) {
             $table->longText('progja')->change();
-            $table->timestamps();
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('progja_capres');
+        Schema::table('progja_capres', function (Blueprint $table) {
+            //
+        });
     }
 };
