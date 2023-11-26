@@ -20,9 +20,7 @@
                 <div
                     class="bg-green-400 w-full h-56 max-sm:h-40 max-lg:h-44"
                 >
-                    <div class="">
-                        <img src="{{ asset('storage/dokumentasi/'.$item->foto) }}" alt="dokumentasi" />
-                    </div>
+                    <img src="{{ asset('storage/dokumentasi/'.$item->foto) }}" alt="dokumentasi" class="w-full h-full object-cover"/>
                 </div>
             @endforeach
         </div>
