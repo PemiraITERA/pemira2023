@@ -7,7 +7,7 @@
     <div class="flex flex-col items-center text-center m-4 mt-20 xl:mt-40 h-[25vh] gap-6 lg:gap-10">
     <h1 class="text-2xl font-extrabold lg:text-4xl lg:w-2/4 text-main-400 font-montserrat" id="title">Pemira adalah <span class="text-orange-500">saksi</span> dari <br class="hidden md:block font-montserrat">perubahan, harapan, dan aspirasi</h1>
     <p class="text-[12px] text-main-400 lg:text-sm lg:w-4/12 w-11/12 font-medium font-poppins">Saatnya untuk menentukan, untuk memilih, dan untuk merubah masa depan Institut Teknologi Sumatera bersama-sama.</p>
-    <button class="w-full rounded-full bg-main-300 hover:ring-orange-200 hover:ring-2 p-4 lg:w-[244px] md:w-[244px] font-medium text-white shadow-xl shadow-orange-200 flex flex-row justify-center gap-3 font-montserrat">Ayo Voting!<i class="block lg:hidden" data-feather="arrow-right"></i></button>
+    <a href="http://pemira.km.itera.ac.id/"><button class="w-full rounded-full bg-main-300 hover:ring-orange-200 hover:ring-2 p-4 lg:w-[244px] md:w-[244px] font-medium text-white shadow-xl shadow-orange-200 flex flex-row justify-center gap-3 font-montserrat">Ayo Voting!<i class="block lg:hidden" data-feather="arrow-right"></i></button></a>
     </div>
 
     <div id="timeline" class="mt-[15em] mb-[10em] flex flex-col items-center justify-center text-center">
