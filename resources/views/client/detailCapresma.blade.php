@@ -53,7 +53,7 @@
             </div>
             <img
                 class="md:p-[30px] w-full max-w-[217px] md:max-w-[288px] object-cover aspect-auto"
-                src="{{ $capres->foto_capres }}"
+                src="{{asset('storage/capres/'.$capres->foto_capres)  }}"
                 alt=""
             />
             <div
