@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\gedung;
-use Carbon\Carbon;
+// use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -37,14 +37,14 @@ public function store(Request $request)
 {
     $validator = $request->validate([
         'gedung' => 'required|min:3',
-        'tgl'=> 'required|date_format:d/m/Y',
+        'tgl'=> 'required|min:3',
         'jam'=> 'required|min:3',
         'foto' => 'required|mimes:jpg,png,jpeg|max:5120',
     ],[
         'gedung.required' => 'Input Tidak Boleh Kosong',
         'gedung.min' => 'Minimal Inputkan 3 Karakter',
         'tgl.required' => 'Input Tidak boleh Kosong',
-        'tgl.date_format' => 'Inputkan Tanggal Dengan Benar ex: 15/11/2023',
+        'tgl.min' => 'Minimal Inputkan 3 Karakter',
         'jam.required' => 'Input Tidak Boleh Kosong',
         'jam.min' => 'Minimal Inputkan 3 Karakter',
         'foto.max' => 'Input Hanya Menampung File  Maksimal 5mb',
@@ -60,17 +60,17 @@ public function store(Request $request)
     }
 
     // Ambil tanggal dari input form
-    $inputDate = $request->input('tanggal');
+    // $inputDate = $request->input('tanggal');
 
     // Konversi tanggal ke objek Carbon
-    $carbonDate = Carbon::parse($inputDate);
+    // $carbonDate = Carbon::parse($inputDate);
 
     // Format sesuai keinginan "1 Januari 2023 / Senin"
-    $tanggal = $carbonDate->format('j F Y / l');
+    // $tanggal = $carbonDate->format('j F Y / l');
 
     gedung::create([
         'gedung' => $request->gedung,
-        'tgl' => $tanggal,
+        'tgl' => $request->tgl,
         'jam' => $request->jam,
         'foto' => $imageName,
     ]);
@@ -92,9 +92,7 @@ public function show(string $id)
 public function edit(string $id)
 {
     $gedung = gedung::where('id', $id)->first();
-    $carbonDate = Carbon::createFromFormat('j F Y / l', $gedung->tgl);
-    $tgl = $carbonDate->format('d/m/Y');
-    return view('admin.gedung.update', compact('gedung', 'tgl'));
+    return view('admin.gedung.update', compact('gedung'));
 }
 
 /**
@@ -104,14 +102,14 @@ public function update(Request $request, string $id)
 {
     $validator = $request->validate([
         'gedung' => 'required|min:3',
-        'tgl'=> 'required|date_format:d/m/Y',
+        'tgl'=> 'required|min:3',
         'jam'=> 'required|min:3',
         'foto' => 'required|mimes:jpg,png,jpeg|max:5120',
     ],[
         'gedung.required' => 'Input Tidak Boleh Kosong',
         'gedung.min' => 'Minimal Inputkan 3 Karakter',
         'tgl.required' => 'Input Tidak boleh Kosong',
-        'tgl.date_format' => 'Inputkan Tanggal Dengan Benar ex: 15/11/2023',
+        'tgl.min' => 'Minimal Inputkan 3 Karakter',
         'jam.required' => 'Input Tidak Boleh Kosong',
         'jam.min' => 'Minimal Inputkan 3 Karakter',
         'foto.max' => 'Input Hanya Menampung File  Maksimal 5mb',
@@ -122,13 +120,13 @@ public function update(Request $request, string $id)
     $image = $request->file('foto');
 
     // Ambil tanggal dari input form
-    $inputDate = $request->input('tanggal');
+    // $inputDate = $request->input('tanggal');
 
     // Konversi tanggal ke objek Carbon
-    $carbonDate = Carbon::parse($inputDate);
+    // $carbonDate = Carbon::parse($inputDate);
 
     // Format sesuai keinginan "1 Januari 2023 / Senin"
-    $tanggal = $carbonDate->format('j F Y / l');
+    // $tanggal = $carbonDate->format('j F Y / l');
 
     if($image != null){
         if ($request->hasFile('foto')) {
@@ -144,7 +142,7 @@ public function update(Request $request, string $id)
 
         $gedung->update([
             'gedung' => $request->gedung,
-            'tgl' => $tanggal,
+            'tgl' => $$request->tgl,
             'jam' => $request->jam,
             'foto' => $imageName,
         ]);

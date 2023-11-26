@@ -52,7 +52,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('tgl') is-invalid @enderror">
                                 <label for="tgl" class="form-label">Tanggal</label>
-                                <input type="text" id="tgl-column" class="form-control @error('tgl') is-invalid @enderror" placeholder="Masukkan Tanggal ex: 15/11/2023" name="tgl">
+                                <input type="text" id="tgl-column" class="form-control @error('tgl') is-invalid @enderror" placeholder="Masukkan Tanggal ex: 15/11/2023 - 17/11/2023" name="tgl" value="{{ old('tgl') }}">
                                 @error('tgl')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -65,7 +65,7 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('jam') is-invalid @enderror">
                                 <label for="jam" class="form-label">Jam</label>
-                                <input type="text" id="jam-column" class="form-control @error('jam') is-invalid @enderror" placeholder="Masukkan Tanggal ex: 12:00 - 14:00" name="jam">
+                                <input type="text" id="jam-column" class="form-control @error('jam') is-invalid @enderror" placeholder="Masukkan Tanggal ex: 12:00 - 14:00" name="jam" {{ old('jam') }}>
                                 @error('jam')
                                     <div class="invalid-feedback">
                                         {{ $message }}

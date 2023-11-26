@@ -114,22 +114,10 @@ class="md:px-10 md:pt-16 md:pb-[77px] md:bg-white overflow-hidden"
                 <h2
                     class="font-montserrat font-semibold text-lg md:text-2xl"
                 >
-                    {{ $data->tgl }} Pukul {{ $data->jam }}
+                    Tanggal {{ $data->tgl }}
+                    <br>
+                    Pukul {{ $data->jam }}
                 </h2>
-                @foreach ($prodi as $item)
-                    @if ($data->gedung == $item->gedung_pemilihan)
-                        <p
-                            class="font-poppins text-xs md:text-lg md:font-semibold text-main-200 box-border border-b-[1px] border-main-200 p-6 align-middle"
-                        >
-                            {{ $item->nama_prodi }}
-                            <span
-                                class="inline-block w-5 bg-main-200 h-[1px] align-middle mx-6"
-                            ></span>
-                            {{ $item->waktu_pemilihan }}
-                        </p>
-                    @endif
-
-                @endforeach
             </div>
         </div>
         @endforeach
