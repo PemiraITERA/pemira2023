@@ -74,7 +74,7 @@
                 >
                     {{ $capres->tentang }}
                 </p>
-                <div class="flex justify-center items-center gap-4">
+                <div class="flex justify-center items-center gap-4 hidden">
                     <div class="flex justify-center items-center gap-2">
                         <div
                             class="w-8 h-8 rounded-full bg-[#FFD8C2]"
@@ -284,7 +284,7 @@
         <!-- section 6 - partai pendukung -->
         <div
             id="partai"
-            class="flex w-full py-16 flex-col items-center gap-10 border-t-[2px] border-b-[2px] border-main-100 bg-main-50"
+            class="flex w-full py-16 flex-col items-center gap-10 border-t-[2px] border-b-[2px] border-main-100 bg-main-50 hidden"
         >
             <div
                 class="flex pb-2 items-center border-b-[2px] border-main-200"
