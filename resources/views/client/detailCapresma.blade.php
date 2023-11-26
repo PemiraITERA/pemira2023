@@ -265,7 +265,7 @@
 
         <!-- section 5 - cv & grand design -->
         <div
-            class="my-6 flex justify-center items-center w-[312px] md:w-[450px] xl:w-[560px] gap-3 mx-auto md:gap-8 bg-main-50 border-main-100"
+            class="my-6 flex justify-center items-center w-[312px] md:w-[450px] xl:w-[560px] gap-3 mx-auto md:gap-8 border-[2px] border-main-100 bg-[#FFF]"
         >
             <button
                 id="btnCV"
