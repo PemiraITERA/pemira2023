@@ -936,6 +936,10 @@ video {
   aspect-ratio: 314/277;
 }
 
+.aspect-auto{
+  aspect-ratio: auto;
+}
+
 .h-0{
   height: 0px;
 }
@@ -1136,6 +1140,10 @@ video {
 
 .max-w-\[1400px\]{
   max-width: 1400px;
+}
+
+.max-w-\[217px\]{
+  max-width: 217px;
 }
 
 .flex-1{
@@ -2923,6 +2931,10 @@ video {
   .md\:w-fit{
     width: -moz-fit-content;
     width: fit-content;
+  }
+
+  .md\:max-w-\[288px\]{
+    max-width: 288px;
   }
 
   .md\:grid-cols-2{

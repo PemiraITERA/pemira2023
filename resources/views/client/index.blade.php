@@ -28,7 +28,7 @@
     <img src="{{ asset('assets/images/triangle.svg') }}" class="relative left-[-280px] translate-y-[7em] hidden lg:block scale-100"/>
     <h1 class="text-center text-2xl font-bold border-b-2 border-b-orange-300 pb-3 lg:text-3xl font-montserrat">APA ITU PEMIRA? 🤔</h1>
     <p class="text-center text-sm lg:w-2/3 w-11/12 lg:w-7/12 lg:mt-11 mb-11 font-poppins">Lorem ipsum dolor sit amet consectetur. Sed mauris mi ac nibh augue orci. Risus turpis praesent tellus felis. Vel vitae iaculis potenti gravida odio vitae sed lacus. Convallis facilisis sit eget nullam dignissim phasellus diam cursus. Ultrices senectus a amet id vestibulum.</p>
-    <iframe class="h-[200px] lg:w-[600px] lg:h-[380px]" src="https://www.youtube.com/embed/ZF1ucSiAhW8?si=ZwBEB3ZK1v93kJps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe class="h-[200px] lg:w-[600px] lg:h-[380px]" src="https://www.youtube.com/embed/Edk9SFzablM?si=H3Bw42UTeOOIYSf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <img src="{{ asset('assets/images/triangle.svg') }}" class="hidden lg:block absolute translate-x-[30em] translate-y-[40em] rotate-[180deg] scale-75 triangle"/>
     </div>
 
