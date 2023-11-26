@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('progja_capres', function (Blueprint $table) {
             $table->id();
             $table->string('id_detail');
-            $table->string('progja');
+            $table->longText('progja');
             $table->timestamps();
         });
     }
