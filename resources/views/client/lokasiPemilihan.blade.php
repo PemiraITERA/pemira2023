@@ -10,11 +10,69 @@ class="md:px-10 md:pt-16 md:pb-[77px] md:bg-white overflow-hidden"
 <div
     class="gradient-1 py-16 md:py-20 px-6 md:px-11 xl:px-[88px] flex flex-col gap-10 md:rounded-2xl max-w-[1400px] mx-auto relative"
 >
-    <img
-        src="../images/Ellipse-Rectangel-DESKTOP-CAPRESMA-LOKASI.svg"
-        alt=""
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        viewBox="0 0 100 100"
+        fill="none"
         class="hidden xl:block w-[100px] h-[100px] absolute top-11 -right-20"
-    />
+    >
+        <circle
+            cx="11.7647"
+            cy="11.7647"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+        <circle
+            cx="50.0001"
+            cy="11.7647"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+        <circle
+            cx="88.2354"
+            cy="11.7647"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+        <circle
+            cx="11.7647"
+            cy="50"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+        <circle
+            cx="50.0001"
+            cy="50"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+        <circle
+            cx="88.2354"
+            cy="50"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+        <circle
+            cx="11.7647"
+            cy="88.2353"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+        <circle
+            cx="50.0001"
+            cy="88.2353"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+        <circle
+            cx="88.2354"
+            cy="88.2353"
+            r="11.7647"
+            fill="#FFACF7"
+        />
+    </svg>
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="156"
@@ -56,7 +114,7 @@ class="md:px-10 md:pt-16 md:pb-[77px] md:bg-white overflow-hidden"
                 <h2
                     class="font-montserrat font-semibold text-lg md:text-2xl"
                 >
-                    {{ $data->tgl }}
+                    {{ $data->tgl }} Pukul {{ $data->jam }}
                 </h2>
                 @foreach ($prodi as $item)
                     @if ($data->gedung == $item->gedung_pemilihan)

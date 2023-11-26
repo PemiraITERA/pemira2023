@@ -13,6 +13,7 @@ class gedung extends Model
     protected $fillable = [
         'gedung',
         'tgl',
-        'foto'
+        'foto',
+        'jam'
     ];
 }

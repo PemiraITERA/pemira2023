@@ -35,9 +35,33 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 col-12">
-                                <div class="form-group">
-                                    <label for="gedung-column" class="form-label">Foto</label>
-                                    <input type="text" id="gedung-column" class="form-control" disabled value="{{ $gedung->gedung }}" name="gedung-column" >
+                                <div class="form-group mandatory">
+                                    <label for="gedung" class="form-label">Gedung</label>
+                                    <input type="text" id="gedung-column" class="form-control" placeholder="Masukkan Gedung" name="gedung" value="{{ $gedung->gedung }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="form-group mandatory">
+                                    <label for="tgl" class="form-label">Tanggal</label>
+                                    <input type="text" id="tgl-column" class="form-control" placeholder="Masukkan Tanggal" name="tgl" value="{{ $gedung->tgl }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="form-group mandatory">
+                                    <label for="jam" class="form-label">Jam</label>
+                                    <input type="text" id="jam-column" class="form-control" placeholder="Masukkan Tanggal ex: 12:00 - 14:00" name="jam" value="{{ $gedung->jam }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="form-group mandatory">
+                                    <label for="foto" class="form-label">Foto</label>
+                                    <input type="text" id="foto-column" class="form-control" placeholder="Masukkan Foto Gedung" name="foto" value="{{ $gedung->gedung }}">
                                 </div>
                             </div>
                         </div>

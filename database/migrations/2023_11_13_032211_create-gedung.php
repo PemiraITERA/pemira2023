@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('gedung');
             $table->string('tgl');
             $table->string('foto');
+            $table->string('jam');
             $table->timestamps();
         });
     }

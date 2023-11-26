@@ -53,8 +53,21 @@
                         <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('tgl') is-invalid @enderror">
                                 <label for="tgl" class="form-label">Tanggal</label>
-                                <input type="text" id="tgl-column" class="form-control @error('tgl') is-invalid @enderror" placeholder="Masukkan Tanggal" name="tgl" value="{{ $tgl }}">
+                                <input type="text" id="tgl-column" class="form-control @error('tgl') is-invalid @enderror" placeholder="Masukkan Tanggal" name="tgl" value="{{ $gedung->tgl }}">
                                 @error('tgl')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12">
+                            <div class="form-group mandatory @error('jam') is-invalid @enderror">
+                                <label for="jam" class="form-label">Jam</label>
+                                <input type="text" id="jam-column" class="form-control @error('jam') is-invalid @enderror" placeholder="Masukkan Jam ex: 12:00 - 14:00" name="jam" value="{{ $gedung->jam }}">
+                                @error('jam')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

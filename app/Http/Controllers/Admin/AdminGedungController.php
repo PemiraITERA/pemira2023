@@ -38,13 +38,15 @@ public function store(Request $request)
     $validator = $request->validate([
         'gedung' => 'required|min:3',
         'tgl'=> 'required|date_format:d/m/Y',
+        'jam'=> 'required|min:3',
         'foto' => 'required|mimes:jpg,png,jpeg|max:5120',
     ],[
         'gedung.required' => 'Input Tidak Boleh Kosong',
         'gedung.min' => 'Minimal Inputkan 3 Karakter',
         'tgl.required' => 'Input Tidak boleh Kosong',
         'tgl.date_format' => 'Inputkan Tanggal Dengan Benar ex: 15/11/2023',
-        'foto.required' => 'Input Tidak Boleh Kosong',
+        'jam.required' => 'Input Tidak Boleh Kosong',
+        'jam.min' => 'Minimal Inputkan 3 Karakter',
         'foto.max' => 'Input Hanya Menampung File  Maksimal 5mb',
         'foto.mimes' => 'Input Hanya Menerima File Dengan Extensi jpg,png,jpeg'
     ]);
@@ -69,6 +71,7 @@ public function store(Request $request)
     gedung::create([
         'gedung' => $request->gedung,
         'tgl' => $tanggal,
+        'jam' => $request->jam,
         'foto' => $imageName,
     ]);
     return redirect(route('admin.gedung.index'))->with('sukses', 'Berhasil Tambah Data!');
@@ -102,12 +105,15 @@ public function update(Request $request, string $id)
     $validator = $request->validate([
         'gedung' => 'required|min:3',
         'tgl'=> 'required|date_format:d/m/Y',
+        'jam'=> 'required|min:3',
         'foto' => 'required|mimes:jpg,png,jpeg|max:5120',
     ],[
         'gedung.required' => 'Input Tidak Boleh Kosong',
         'gedung.min' => 'Minimal Inputkan 3 Karakter',
         'tgl.required' => 'Input Tidak boleh Kosong',
         'tgl.date_format' => 'Inputkan Tanggal Dengan Benar ex: 15/11/2023',
+        'jam.required' => 'Input Tidak Boleh Kosong',
+        'jam.min' => 'Minimal Inputkan 3 Karakter',
         'foto.max' => 'Input Hanya Menampung File  Maksimal 5mb',
         'foto.mimes' => 'Input Hanya Menerima File Dengan Extensi jpg,png,jpeg'
     ]);
@@ -139,6 +145,7 @@ public function update(Request $request, string $id)
         $gedung->update([
             'gedung' => $request->gedung,
             'tgl' => $tanggal,
+            'jam' => $request->jam,
             'foto' => $imageName,
         ]);
     }else{

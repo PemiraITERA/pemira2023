@@ -63,6 +63,19 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
+                            <div class="form-group mandatory @error('jam') is-invalid @enderror">
+                                <label for="jam" class="form-label">Jam</label>
+                                <input type="text" id="jam-column" class="form-control @error('jam') is-invalid @enderror" placeholder="Masukkan Tanggal ex: 12:00 - 14:00" name="jam">
+                                @error('jam')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12">
                             <div class="form-group mandatory @error('foto') is-invalid @enderror">
                                 <label for="foto" class="form-label">Foto</label>
                                 <input type="file" id="foto-column" class="form-control @error('foto') is-invalid @enderror" placeholder="Masukkan Foto Gedung" name="foto">
