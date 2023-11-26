@@ -31,7 +31,7 @@ class ClientCapresmaController extends Controller
         $misicapres = Misi::where('id_detail', $detailcapres->id)->get();
         $progjacapres = Progja::where('id_detail', $detailcapres->id)->get();
 
-        return view('client.detailcapresma', compact('capres', 'detailcapres', 'misicapres', 'progjacapres'));
+        return view('client.detailCapresma', compact('capres', 'detailcapres', 'misicapres', 'progjacapres'));
         // return dd($capres, $detailcapres, $misicapres, $progjacapres);
     }
 }
