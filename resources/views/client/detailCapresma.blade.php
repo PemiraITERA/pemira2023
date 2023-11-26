@@ -210,7 +210,7 @@
 
         <!-- section 3 - video pendek -->
         <div
-            class="my-16 md:my-[120px] xl:my-[174px] flex flex-col w-full justify-center items-center gap-8 rounded-3xl"
+            class="my-16 md:my-[120px] xl:my-[174px] flex flex-col w-full justify-center items-center gap-8 rounded-3xl hidden"
         >
             <div
                 class="flex w-full md:w-[688px] py-11 md:py-14 flex-col justify-center items-center gap-8"
@@ -234,7 +234,7 @@
 
         <!-- section 4 - proker -->
         <div
-            class="flex w-full px-10 py-16 flex-col justify-center items-center gap-10 flex-shrink-0 border-t-[2px] border-b-[2px] bg-main-50 border-main-100"
+            class="flex w-full px-10 py-16 flex-col justify-center items-center gap-10 flex-shrink-0 border-t-[2px] border-b-[2px]"
         >
             <div
                 class="flex items-center pb-2 border-b-[2px] border-main-200"
@@ -265,11 +265,11 @@
 
         <!-- section 5 - cv & grand design -->
         <div
-            class="my-6 flex justify-center items-center w-[312px] md:w-[450px] xl:w-[560px] gap-3 mx-auto md:gap-8"
+            class="my-6 flex justify-center items-center w-[312px] md:w-[450px] xl:w-[560px] gap-3 mx-auto md:gap-8 border-[2px] border-main-100 bg-[#FFF]"
         >
             <button
                 id="btnCV"
-                class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] hover:bg-slate-100 active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs md:text-2xl font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200"
+                class="flex p-4 justify-center items-center gap-2 flex-1 rounded-[500px] hover:bg-slate-100 active:bg-main-200 active:shadow-lg active:shadow-[rgba(255, 168, 105, 0.38)] text-main-200 active:text-[#fff] font-poppins text-xs md:text-2xl font-semibold leading-[124%] border-[1px] border-main-200 transition-all duration-200 hidden"
             >
                 CV
             </button>
