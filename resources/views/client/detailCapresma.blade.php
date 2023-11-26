@@ -52,7 +52,7 @@
                 </ol>
             </div>
             <img
-                class="md:p-[30px]"
+                class="md:p-[30px] w-full max-w-[217px] md:max-w-[288px] object-cover aspect-auto"
                 src="/public/client/images/union.svg"
                 alt=""
             />
