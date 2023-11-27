@@ -33,15 +33,15 @@
             </div>
             <div class="card-content">
               <div class="card-body">
-                <form class="form" data-parsley-validate action="{{route('admin.prodi.update', $prodi->id) }}" method="POST" enctype="multipart/form-data">
+                <form class="form" data-parsley-validate action="{{route('admin.prodi.update', $ormawa->id) }}" method="POST" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory @error('nama') is-invalid @enderror">
-                                <label for="nama_prodi" class="form-label">Nama Prodi</label>
-                                <input type="text" id="nama-prodi-column" class="form-control @error('nama_prodi') is-invalid @enderror" placeholder="Masukkan Nama Prodi" name="nama_prodi" value="{{ $prodi->nama_prodi }}">
-                                @error('nama_prodi')
+                            <div class="form-group mandatory @error('nama_ormawa') is-invalid @enderror">
+                                <label for="nama_ormawa" class="form-label">Nama Ormawa</label>
+                                <input type="text" id="waktu-pemilihan-column" class="form-control @error('nama_ormawa') is-invalid @enderror" placeholder="Masukkan Nama Ormawa" name="nama_ormawa" value="{{ $ormawa->nama_ormawa }}">
+                                @error('nama_ormawa')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -51,27 +51,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12">
-                            <div class="form-group mandatory @error('gedung_pemilihan') is-invalid @enderror">
-                                <label for="gedung_pemilihan" class="form-label">Gedung Pemilihan</label>
-                                <select name="gedung_pemilihan" id="gedung_pemilihan" class="form-control @error('gedung_pemilihan') is-invalid @enderror">
-                                @foreach ($gedung as $data )
-                                    <option value="{{ $data->gedung }}" @if ($prodi->gedung_pemilihan == $data->gedung) selected @endif>{{ $data->gedung }}</option>
-                                @endforeach
-                                </select>
-                                @error('gedung_pemilihan')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-12">
-                            <div class="form-group mandatory @error('waktu_pemilihan') is-invalid @enderror">
-                                <label for="waktu_pemilihan" class="form-label">Waktu Pemilihan</label>
-                                <input type="text" id="waktu-pemilihan-column" class="form-control @error('waktu_pemilihan') is-invalid @enderror" placeholder="Masukkan Waktu Pemilihan ex: 13:20" name="waktu_pemilihan" value="{{ $prodi->waktu_pemilihan }}">
-                                @error('waktu_pemilihan')
+                            <div class="form-group mandatory @error('foto') is-invalid @enderror">
+                                <label for="foto" class="form-label">Logo</label>
+                                <input type="file" id="foto-column" class="form-control @error('foto') is-invalid @enderror" placeholder="Masukkan Foto Logo" name="foto">
+                                @error('foto')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

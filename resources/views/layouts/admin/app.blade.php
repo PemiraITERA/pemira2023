@@ -122,19 +122,19 @@
             <li class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-people"></i>
-                    <span>Program studi</span>
+                    <span>Koalisi Ormawa</span>
                 </a>
 
                 <ul class="submenu ">
                     <li class="submenu-item ">
                         <a href="{{route('admin.prodi.create') }}" class="submenu-link">
-                            <i class="bi bi-people-fill"></i>Tambah Program Studi
+                            <i class="bi bi-building-fill-add"></i>Tambah Ormawa
                         </a>
                     </li>
 
                     <li class="submenu-item">
                         <a href="{{route('admin.prodi.index') }}" class="submenu-link">
-                            <i class="bi bi-people-fill"></i> Kelola Program Studi
+                            <i class="bi bi-people-fill"></i> Kelola Ormawa
                         </a>
                     </li>
                 </ul>

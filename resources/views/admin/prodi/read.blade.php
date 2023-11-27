@@ -8,14 +8,14 @@
     <div class="page-title">
       <div class="row">
         <div class="col-12 col-md-6 order-md-1 order-last">
-          <h3>Detail Program Studi</h3>
+          <h3>Detail Ormawa</h3>
         </div>
         <div class="col-12 col-md-6 order-md-2 order-first">
           <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
               <li class="breadcrumb-item active" aria-current="page">
-                Read Prodi
+                Read Ormawa
               </li>
             </ol>
           </nav>
@@ -29,34 +29,26 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Program Studi</h4>
+                    <h4 class="card-title">Ormawa</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 col-12">
-                                <div class="form-group">
-                                    <label for="name-column" class="form-label">Nama Prodi</label>
-                                    <input type="text" id="nama-prodi-column" class="form-control" disabled value="{{ $prodi->nama_prodi }}" name="nama-prodi-column" >
+                                <div class="form-group mandatory">
+                                    <label for="nama_ormawa" class="form-label">Nama Ormawa</label>
+                                    <input type="text" id="waktu-pemilihan-column" class="form-control" placeholder="Masukkan Nama Ormawa" name="nama_ormawa" value="{{ $ormawa->nama_ormawa }}">
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 col-12">
-                                <div class="form-group">
-                                    <label for="gedung-pemilihan-column" class="form-label">Gedung Pemilihan</label>
-                                    <input type="text" id="gedung-pemilihan-column" class="form-control" disabled value="{{ $prodi->gedung_pemilihan }}" name="gedung-pemilihan-column" >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-12">
-                                <div class="form-group">
-                                    <label for="waktu-pemilihan-column" class="form-label">Waktu Pemilihan</label>
-                                    <input type="text" id="waktu-pemilihan-column" class="form-control" disabled value="{{ $prodi->waktu_pemilihan }}" name="gedung-pemilihan-column" >
-                                </div>
-                            </div>
-                        </div>
+                          <div class="row">
+                              <div class="col-md-12 col-12">
+                                  <div class="form-group mandatory">
+                                      <label for="foto" class="form-label">Logo</label>
+                                      <input type="text" id="foto-column" class="form-control" placeholder="Masukkan Foto Logo" name="foto" value="{{ $ormawa->foto }}">
+                                  </div>
+                              </div>
+                          </div>
                     </div>
                 </div>
         </div>

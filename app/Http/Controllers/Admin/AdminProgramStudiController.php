@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\ProgramStudi;
-use App\Models\gedung;
+use App\Models\Capres;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 
 class AdminProgramStudiController extends Controller
 {
@@ -18,7 +19,7 @@ class AdminProgramStudiController extends Controller
     public function index()
     {
         return view('admin.prodi.index',[
-            'prodi' => DB::table('prodi')->paginate(5)
+            'ormawa' => DB::table('ormawa')->paginate(5)
         ]);
     }
 
@@ -27,8 +28,9 @@ class AdminProgramStudiController extends Controller
      */
     public function create()
     {
-        $gedung = gedung::all();
-        return view('admin.prodi.create', compact('gedung'));
+        return view('admin.prodi.create',[
+            'capres' => Capres::all()
+        ]);
     }
 
     /**
@@ -37,25 +39,29 @@ class AdminProgramStudiController extends Controller
     public function store(Request $request)
     {
         $validator = $request->validate([
-            'nama_prodi' => 'required|max:255|min:3',
-            'gedung_pemilihan' => 'required|max:255|min:3',
-            'waktu_pemilihan' => 'required|date_format:H:i',
+            'nama_ormawa' => 'required|max:255|min:3',
+            'koalisi' => 'required',
+            'foto' => 'required|mimes:jpg,png,jpeg|max:5120',
         ],[
-            'nama_prodi.required' => 'Input Tidak Boleh Kosong',
-            'nama_prodi.min' => 'Input Minimal 3 Karakter',
-            'nama_prodi.max' => 'Input Hanya Menampung 255 Karakter',
-            'gedung_pemilihan.required' => 'Input Tidak Boleh Kosong',
-            'gedung_pemilihan.min' => 'Input Minimal 3 Karakter',
-            'gedung_pemilihan.max' => 'Input Hanya Menampung 255 Karakter',
-            'waktu_pemilihan.required' => 'Input Tidak Boleh Kosong',
-            'waktu_pemilihan.min' => 'Inputkan Waktu Dengan Benar ex: 13:20',
+            'nama_ormawa.required' => 'Input Tidak Boleh Kosong',
+            'nama_ormawa.min' => 'Input Minimal 3 Karakter',
+            'nama_ormawa.max' => 'Input Hanya Menampung 255 Karakter',
+            'koalisi.required' => 'Input Tidak Boleh Kosong',
+            'foto.max' => 'Input Hanya Menampung File  Maksimal 5mb',
+            'foto.mimes' => 'Input Hanya Menerima File Dengan Extensi jpg,png,jpeg'
         ]);
 
+        if ($request->hasFile('foto')) {
+            $detination_path = 'public/ormawa';
+            $image = $request->file('foto');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->storeAs($detination_path, $imageName);
+        }
 
         ProgramStudi::create([
-            'nama_prodi' => $request->nama_prodi,
-            'gedung_pemilihan' => $request->gedung_pemilihan,
-            'waktu_pemilihan' => $request->waktu_pemilihan
+            'nama_ormawa' => $request->nama_ormawa,
+            'koalisi' => $request->koalisi,
+            'foto' => $imageName,
         ]);
         return redirect(route('admin.prodi.index'))->with('sukses', 'Berhasil Tambah Data!');
     }
@@ -65,17 +71,16 @@ class AdminProgramStudiController extends Controller
      */
     public function show(string $id)
     {
-        $prodi = ProgramStudi::where('id', $id)->first();
-        return view('admin.prodi.read', compact('prodi'));
+        $ormawa = ProgramStudi::where('id', $id)->first();
+        return view('admin.prodi.read', compact('ormawa'));
     }
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        $prodi = ProgramStudi::where('id', $id)->first();
-        $gedung = gedung::all();
-        return view('admin.prodi.update', compact('prodi', 'gedung'));
+        $ormawa = ProgramStudi::where('id', $id)->first();
+        return view('admin.prodi.update', compact('ormawa'));
     }
 
     /**
@@ -84,27 +89,44 @@ class AdminProgramStudiController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = $request->validate([
-            'nama_prodi' => 'required|max:255|min:3',
-            'gedung_pemilihan' => 'required|max:255|min:3',
-            'waktu_pemilihan' => 'required|max:255|min:3',
+            'nama_ormawa' => 'required|max:255|min:3',
+            'koalisi' => 'required',
+            'foto' => 'mimes:jpg,png,jpeg|max:5120',
         ],[
-            'nama_prodi.required' => 'Input Tidak Boleh Kosong',
-            'nama_prodi.min' => 'Input Minimal 3 Karakter',
-            'nama_prodi.max' => 'Input Hanya Menampung 255 Karakter',
-            'gedung_pemilihan.required' => 'Input Tidak Boleh Kosong',
-            'gedung_pemilihan.min' => 'Input Minimal 3 Karakter',
-            'gedung_pemilihan.max' => 'Input Hanya Menampung 255 Karakter',
-            'waktu_pemilihan.required' => 'Input Tidak Boleh Kosong',
-            'waktu_pemilihan.min' => 'Input Minimal 3 Karakter',
-            'waktu_pemilihan.max' => 'Input Hanya Menampung 255 Karakter',
+            'nama_ormawa.required' => 'Input Tidak Boleh Kosong',
+            'nama_ormawa.min' => 'Input Minimal 3 Karakter',
+            'nama_ormawa.max' => 'Input Hanya Menampung 255 Karakter',
+            'koalisi.required' => 'Input Tidak Boleh Kosong',
+            'foto.max' => 'Input Hanya Menampung File  Maksimal 5mb',
+            'foto.mimes' => 'Input Hanya Menerima File Dengan Extensi jpg,png,jpeg'
         ]);
 
-        $prodi = ProgramStudi::where('id', $id)->first();
-        $prodi -> update([
-            'nama_prodi' => $request -> nama_prodi,
-            'gedung_pemilihan' => $request -> gedung_pemilihan,
-            'waktu_pemilihan' => $request->waktu_pemilihan
-        ]);
+        $ormawa = ProgramStudi::where('id', $id)->first();
+        $image = $request->file('foto');
+
+        if($image != null){
+            if ($request->hasFile('foto')) {
+                $detination_path = 'public/ormawa';
+                $image = $request->file('foto');
+                $imageName = time() . '_' . $image->getClientOriginalName();
+                $image->storeAs($detination_path, $imageName);
+                $filePath = 'ormawa/'.$ormawa->foto;
+                if (Storage::disk('public')->exists($filePath)) {
+                    Storage::disk('public')->delete($filePath);
+                }
+            }
+
+            $ormawa->update([
+                'nama_ormawa' => $request->nama_ormawa,
+                'koalisi' => $request->koalisi,
+                'foto' => $imageName,
+            ]);
+        }else{
+            $ormawa->update([
+                'nama_ormawa' => $request->nama_ormawa,
+                'koalisi' => $request->koalisi,
+            ]);
+        }
 
         return redirect(route('admin.prodi.index'))->with('sukses', 'Berhasil Update Data!');
     }
@@ -114,8 +136,12 @@ class AdminProgramStudiController extends Controller
      */
     public function destroy(string $id)
     {
-        $prodi = ProgramStudi::where('id', $id)->first();
-        $prodi->delete();
+        $ormawa = ProgramStudi::where('id', $id)->first();
+        $filePath = 'ormawa/' . $ormawa->foto;
+        if (Storage::disk('public')->exists($filePath)) {
+            Storage::disk('public')->delete($filePath);
+        }
+        $ormawa->delete();
         return redirect(route('admin.prodi.index'))->with('sukses', 'Berhasil Hapus Data!');
     }
 

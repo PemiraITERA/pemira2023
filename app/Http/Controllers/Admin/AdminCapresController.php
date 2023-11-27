@@ -45,7 +45,7 @@ class AdminCapresController extends Controller
         $rules = [];
         $messages = [];
         // Loop through each item and construct validation rules
-        foreach ($request->all() as $key => $item) { 
+        foreach ($request->all() as $key => $item) {
             if($key == 'nim'){
                 $rules["{$key}"] = 'required|numeric';
                 $messages["{$key}.required"] = "{$key} tidak boleh kosong";

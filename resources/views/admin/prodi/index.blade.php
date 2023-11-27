@@ -31,18 +31,16 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Prodi</th>
-                            <th>Gedung Pemilihan</th>
-                            <th>Waktu Pemilihan</th>
+                            <th>Nama Ormawa</th>
+                            <th>Foto</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($prodi as $data => $value)
+                        @foreach ($ormawa as $data => $value)
                             <tr>
-                                <td>{{ $prodi->firstItem() + $data}}</td>
-                                <td>{{ $value->nama_prodi }}</td>
-                                <td>{{ $value->gedung_pemilihan }}</td>
-                                <td>{{ $value->waktu_pemilihan }}</td>
+                                <td>{{ $ormawa->firstItem() + $data}}</td>
+                                <td>{{ $value->nama_ormawa }}</td>
+                                <td>{{ $value->foto }}</td>
                                 <td>
                                     <a href="{{route('admin.prodi.edit', $value->id) }}" class="btn btn-light-primary">Edit</a>
                                 <a href="{{route('admin.prodi.show', $value->id) }}" class="btn btn-light-success">Read</a>
@@ -60,7 +58,7 @@
                 </table>
             </div>
             <div class="card-footer clearfix">
-                {{ $prodi->links('vendor.pagination.bootstrap-5') }}
+                {{ $ormawa->links('vendor.pagination.bootstrap-5') }}
             </div>
         </div>
 

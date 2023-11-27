@@ -104,7 +104,7 @@ public function update(Request $request, string $id)
         'gedung' => 'required|min:3',
         'tgl'=> 'required|min:3',
         'jam'=> 'required|min:3',
-        'foto' => 'required|mimes:jpg,png,jpeg|max:5120',
+        'foto' => 'mimes:jpg,png,jpeg|max:5120',
     ],[
         'gedung.required' => 'Input Tidak Boleh Kosong',
         'gedung.min' => 'Minimal Inputkan 3 Karakter',
@@ -149,7 +149,8 @@ public function update(Request $request, string $id)
     }else{
         $gedung->update([
             'gedung' => $request->gedung,
-            'tgl' => $tanggal,
+            'tgl' => $request->tgl,
+            'jam' => $request->jam,
         ]);
     }
 

@@ -11,12 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('progja_capres', function (Blueprint $table) {
-            $table->id();
-            $table->string('id_detail');
-            $table->longText('progja');
-            $table->timestamps();
-        });
+        Schema::rename('prodi', 'ormawa');
     }
 
     /**
@@ -24,6 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('progja_capres');
+        //
     }
 };

@@ -1446,6 +1446,10 @@ video {
   border-bottom-width: 2px;
 }
 
+.border-t-2{
+  border-top-width: 2px;
+}
+
 .border-t-\[2px\]{
   border-top-width: 2px;
 }
