@@ -142,7 +142,7 @@ public function update(Request $request, string $id)
 
         $gedung->update([
             'gedung' => $request->gedung,
-            'tgl' => $$request->tgl,
+            'tgl' => $request->tgl,
             'jam' => $request->jam,
             'foto' => $imageName,
         ]);
