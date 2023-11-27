@@ -27,7 +27,7 @@
     <div id="about" class="m-4 mt-[0em] mb-10 flex flex-col gap-5 items-center">
     <img src="{{ asset('assets/images/triangle.svg') }}" class="relative left-[-280px] translate-y-[7em] hidden lg:block scale-100"/>
     <h1 class="text-center text-2xl font-bold border-b-2 border-b-orange-300 pb-3 lg:text-3xl font-montserrat">APA ITU PEMIRA? 🤔</h1>
-    <p class="text-center text-sm lg:w-2/3 w-11/12 lg:w-7/12 lg:mt-11 mb-11 font-poppins">Lorem ipsum dolor sit amet consectetur. Sed mauris mi ac nibh augue orci. Risus turpis praesent tellus felis. Vel vitae iaculis potenti gravida odio vitae sed lacus. Convallis facilisis sit eget nullam dignissim phasellus diam cursus. Ultrices senectus a amet id vestibulum.</p>
+    <p class="text-center text-sm lg:w-2/3 w-11/12 lg:w-7/12 lg:mt-11 mb-11 font-poppins">Negara Indonesia yang dimana pemimpin terpilih secara demokrasi melalui kegiatan PEMILU atau Pemilihan Umum. Maka dari itu, ITERA menerapkan sistem yang sama yaitu dalam pelimilhan presiden mahasiswa dalam kegiatan PEMIRA. PEMIRA atau Pemilihan Umum Raya adalah pesta demokrasi terbesar yang ada di ITERA. Harapan terlaksananya kegiatan ini adalah untuk menentukan seseorang pemimpin kabinet yang tepat dalam satu tahun periode jabatan ke depan. Pemilihan umum tidak hanya mengingatkan kita tentang hak namun juga tanggung jawab kita sebagai warga negara dalamberdemokrasi. Nah kita sebagai mahasiswa ITERA memiliki hak dan tanggung jawab untuk menyumbangkan suara.</p>
     <iframe class="h-[200px] lg:w-[600px] lg:h-[380px]" src="https://www.youtube.com/embed/Edk9SFzablM?si=H3Bw42UTeOOIYSf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <img src="{{ asset('assets/images/triangle.svg') }}" class="hidden lg:block absolute translate-x-[30em] translate-y-[40em] rotate-[180deg] scale-75 triangle"/>
     </div>
@@ -37,27 +37,17 @@
     <div class="flex flex-col gap-3 ml-5 mr-5 lg:w-5/12">
         <button class="p-3 border-2 border-orange-600 bg-white text-orange-500 rounded-lg flex flex-row justify-between gap-3 font-bold btn-toggle transition ease-in font-montserrat">Bagaimana cara voting? <i data-feather="chevron-down"></i>
         </button>
-        <span class="text-main-300 transition ease-out opacity-0 h-0">Lorem ipsum dolor sit amet consectetur. Quam turpis in odio rhoncus felis morbi. Nunc euismod eu tortor eros porttitor gravida etiam sit orci.</span>
+        <span class="text-main-300 transition ease-out opacity-0 h-0">Pertama, teman-teman klik tombol Ayo Voting! pada halaman ini. Teman - teman akan diarahkan ke website pemilihan. Kemudian, klik mulai voting dan lakukan login akun SSO ITERA. Setelahnya, teman - teman dapat memilih calon yang diinginkan. Untuk lebih detilnya dapat dicek di Youtube PEMIRA KM ITERA.</span>
     </div>
     <div class="flex flex-col gap-3 ml-5 mr-5 lg:w-5/12">
-    <button class="p-3 border-2 border-orange-600 bg-white text-orange-500 rounded-lg flex flex-row justify-between gap-3 font-bold btn-toggle transition ease-in font-montserrat">Bagaimana cara voting? <i data-feather="chevron-down"></i>
+    <button class="p-3 border-2 border-orange-600 bg-white text-orange-500 rounded-lg flex flex-row justify-between gap-3 font-bold btn-toggle transition ease-in font-montserrat">Siapa sajakah calon presiden mahasiswa kali ini? <i data-feather="chevron-down"></i>
     </button>
-    <span class="text-main-300 transition ease-out opacity-0 h-0">Lorem ipsum dolor sit amet consectetur. Quam turpis in odio rhoncus felis morbi. Nunc euismod eu tortor eros porttitor gravida etiam sit orci.</span>
+    <span class="text-main-300 transition ease-out opacity-0 h-0">Kali ini, kita ada 2 calon presidem mahasiswa KM ITERA. Untuk lebih lengkapnya dapat dicek di halaman Capresma di website ini ya.</span>
     </div>
     <div class="flex flex-col gap-3 ml-5 mr-5 lg:w-5/12">
-    <button class="p-3 border-2 border-orange-600 bg-white text-orange-500 rounded-lg flex flex-row justify-between gap-3 font-bold btn-toggle transition ease-in font-montserrat">Bagaimana cara voting? <i data-feather="chevron-down"></i>
+    <button class="p-3 border-2 border-orange-600 bg-white text-orange-500 rounded-lg flex flex-row justify-between gap-3 font-bold btn-toggle transition ease-in font-montserrat">Dimanakah saya dapat melakukan pemilihan? <i data-feather="chevron-down"></i>
     </button>
-    <span class="text-main-300 transition ease-out opacity-0 h-0">Lorem ipsum dolor sit amet consectetur. Quam turpis in odio rhoncus felis morbi. Nunc euismod eu tortor eros porttitor gravida etiam sit orci.</span>
-    </div>
-    <div class="flex flex-col gap-3 ml-5 mr-5 lg:w-5/12">
-    <button class="p-3 border-2 border-orange-600 bg-white text-orange-500 rounded-lg flex flex-row justify-between gap-3 font-bold btn-toggle transition ease-in font-montserrat">Bagaimana cara voting? <i data-feather="chevron-down"></i>
-    </button>
-    <span class="text-main-300 transition ease-out opacity-0 h-0">Lorem ipsum dolor sit amet consectetur. Quam turpis in odio rhoncus felis morbi. Nunc euismod eu tortor eros porttitor gravida etiam sit orci.</span>
-    </div>
-    <div class="flex flex-col gap-3 ml-5 mr-5 lg:w-5/12">
-    <button class="p-3 border-2 border-orange-600 bg-white text-orange-500 rounded-lg flex flex-row justify-between gap-3 font-bold btn-toggle transition ease-in font-montserrat">Bagaimana cara voting? <i data-feather="chevron-down"></i>
-    </button>
-    <span class="text-main-300 transition ease-out opacity-0 h-0">Lorem ipsum dolor sit amet consectetur. Quam turpis in odio rhoncus felis morbi. Nunc euismod eu tortor eros porttitor gravida etiam sit orci.</span>
+    <span class="text-main-300 transition ease-out opacity-0 h-0">Pemilihan dapat dilkakukan di Gedung F maupun Gedung Kuliah Umum 1. Untuk lebih lengkapnya dapat dicek di halaman Lokasi Pemilihan di website ini ya. </span>
     </div>
     </div>
     </div>
