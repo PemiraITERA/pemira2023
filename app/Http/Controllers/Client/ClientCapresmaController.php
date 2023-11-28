@@ -9,6 +9,7 @@ use App\Models\Capres;
 use App\Models\DetailCapres;
 use App\Models\Misi;
 use App\Models\Progja;
+use App\Models\ProgramStudi;
 use Illuminate\Foundation\Mix;
 
 class ClientCapresmaController extends Controller
@@ -21,7 +22,8 @@ class ClientCapresmaController extends Controller
     public function index()
     {
         return view('client.capresma',[
-            'capres' => Capres::all()
+            'capres' => Capres::all(),
+            'koalisi' => ProgramStudi::all(),
         ]);
     }
     public function show(string $nama_capres)
@@ -30,8 +32,9 @@ class ClientCapresmaController extends Controller
         $detailcapres = DetailCapres::where('id', $capres->id)->first();
         $misicapres = Misi::where('id_detail', $detailcapres->id)->get();
         $progjacapres = Progja::where('id_detail', $detailcapres->id)->get();
+        $kolaisi = ProgramStudi::where('koalisi', $capres->id)->get();
 
-        return view('client.detailCapresma', compact('capres', 'detailcapres', 'misicapres', 'progjacapres'));
+        return view('client.detailCapresma', compact('capres', 'detailcapres', 'misicapres', 'progjacapres', 'kolaisi'));
         // return dd($capres, $detailcapres, $misicapres, $progjacapres);
     }
 }
