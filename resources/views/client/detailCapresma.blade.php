@@ -272,7 +272,7 @@
                 @foreach ($koalisi as $data)
                 <div class="flex flex-col items-center gap-6">
                     <div
-                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full bg-[url('{{ asset('storage/ormawa/'.$data->foto) }}')]"
+                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] rounded-full bg-[url('{{ asset('storage/ormawa/'.$data->foto) }}')]"
                     ></div>
                     <h2
                         class="text-black font-montserrat text-lg md:text-2xl xl:text-[32px] xl:-tracing-[1.28px] font-semibold leading-[125%]"
