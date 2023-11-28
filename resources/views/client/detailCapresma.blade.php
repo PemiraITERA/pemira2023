@@ -77,7 +77,7 @@
                 <div class="flex justify-center items-center gap-4 hidden">
                     <div class="flex justify-center items-center gap-2">
                         <div
-                            class="w-8 h-8 rounded-full bg-[#FFD8C2]"
+                            class="w-8 h-8 rounded-full bg-[#FFD8C2] bg-[url('')]"
                         ></div>
                         <p
                             class="font-poppins text-xs md:text-base font-semibold leading-[124%] text-[#4D4D4D]"
@@ -85,37 +85,6 @@
                             Nama Partai 1
                         </p>
                     </div>
-                    <div class="w-[1px] h-8 bg-main-300"></div>
-                    <div
-                        class="hidden xl:flex justify-center items-center gap-2"
-                    >
-                        <div
-                            class="w-8 h-8 rounded-full bg-[#FFD8C2]"
-                        ></div>
-                        <p
-                            class="font-poppins text-xs md:text-base font-semibold leading-[124%] text-[#4D4D4D]"
-                        >
-                            Nama Partai 2
-                        </p>
-                    </div>
-                    <div
-                        class="hidden xl:flex w-[1px] h-8 bg-main-300"
-                    ></div>
-                    <div
-                        class="hidden xl:flex justify-center items-center gap-2"
-                    >
-                        <div
-                            class="w-8 h-8 rounded-full bg-[#FFD8C2]"
-                        ></div>
-                        <p
-                            class="font-poppins text-xs md:text-base font-semibold leading-[124%] text-[#4D4D4D]"
-                        >
-                            Nama Partai 3
-                        </p>
-                    </div>
-                    <div
-                        class="hidden xl:flex w-[1px] h-8 bg-main-300"
-                    ></div>
                     <a
                         href="#partai"
                         class="flex-1 font-poppins text-[10px] md:text-base font-semibold leading-[124%] text-main-200"
@@ -286,7 +255,7 @@
         <!-- section 6 - partai pendukung -->
         <div
             id="partai"
-            class="flex w-full py-16 flex-col items-center gap-10 border-t-[2px] border-b-[2px] border-main-100 bg-main-50 hidden"
+            class="flex w-full py-16 flex-col items-center gap-10 border-t-[2px] border-b-[2px] border-main-100 bg-main-50"
         >
             <div
                 class="flex pb-2 items-center border-b-[2px] border-main-200"
@@ -294,7 +263,7 @@
                 <h1
                     class="text-[#050200] font-montserrat text-2xl xl:font-poppins xl:text-[44px] font-semibold leading-[125%] xl:leading-normal"
                 >
-                    Partai Pendukung
+                    Koalisi Pendukung
                 </h1>
             </div>
             <div
@@ -302,57 +271,7 @@
             >
                 <div class="flex flex-col items-center gap-6">
                     <div
-                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full"
-                    ></div>
-                    <h2
-                        class="text-black font-montserrat text-lg md:text-2xl xl:text-[32px] xl:-tracing-[1.28px] font-semibold leading-[125%]"
-                    >
-                        HMIF
-                    </h2>
-                </div>
-                <div class="flex flex-col items-center gap-6">
-                    <div
-                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full"
-                    ></div>
-                    <h2
-                        class="text-black font-montserrat text-lg md:text-2xl xl:text-[32px] xl:-tracing-[1.28px] font-semibold leading-[125%]"
-                    >
-                        HMIF
-                    </h2>
-                </div>
-                <div class="flex flex-col items-center gap-6">
-                    <div
-                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full"
-                    ></div>
-                    <h2
-                        class="text-black font-montserrat text-lg md:text-2xl xl:text-[32px] xl:-tracing-[1.28px] font-semibold leading-[125%]"
-                    >
-                        HMIF
-                    </h2>
-                </div>
-                <div class="flex flex-col items-center gap-6">
-                    <div
-                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full"
-                    ></div>
-                    <h2
-                        class="text-black font-montserrat text-lg md:text-2xl xl:text-[32px] xl:-tracing-[1.28px] font-semibold leading-[125%]"
-                    >
-                        HMIF
-                    </h2>
-                </div>
-                <div class="flex flex-col items-center gap-6">
-                    <div
-                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full"
-                    ></div>
-                    <h2
-                        class="text-black font-montserrat text-lg md:text-2xl xl:text-[32px] xl:-tracing-[1.28px] font-semibold leading-[125%]"
-                    >
-                        HMIF
-                    </h2>
-                </div>
-                <div class="flex flex-col items-center gap-6">
-                    <div
-                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full"
+                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full bg-[url('')]"
                     ></div>
                     <h2
                         class="text-black font-montserrat text-lg md:text-2xl xl:text-[32px] xl:-tracing-[1.28px] font-semibold leading-[125%]"

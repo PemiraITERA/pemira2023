@@ -173,7 +173,7 @@
 
     <!-- Daftar Partai -->
     <section
-        class="gradient-4 mx-auto w-full xl:w-[1400px] md:w-[680px] inline-flex flex-col justify-center py-16 md:py-20 xl:py-[80px] gap-16 md:rounded-3xl hidden"
+        class="gradient-4 mx-auto w-full xl:w-[1400px] md:w-[680px] inline-flex flex-col justify-center py-16 md:py-20 xl:py-[80px] gap-16 md:rounded-3xl"
     >
         <!-- Tema-->
         <div class="flex justify-center">
@@ -181,7 +181,7 @@
                 <h1
                     class="overflow-hidden text-[rgb(63,62,62)] mb-1 text-lg md:text-2xl xl:text-[40px] text-center font-montserrat font-semibold"
                 >
-                    DAFTAR PARTAI MAHASISWA
+                    DAFTAR KOALISI MAHASISWA
                 </h1>
             </div>
         </div>
@@ -193,8 +193,8 @@
             <div
                 class="flex flex-col gap-6 justify-center items-center"
             >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
+                {{-- <svg
+                    class=""
                     xmlns="http://www.w3.org/2000/svg"
                     width="80"
                     height="80"
@@ -202,178 +202,8 @@
                     fill="none"
                 >
                     <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col xl:col-start-2 gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
-                <label
-                    class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
-                >
-            </div>
-
-            <div
-                class="flex flex-col col-start-2 md:col-start-auto gap-6 justify-center items-center"
-            >
-                <svg
-                    class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="80"
-                    height="80"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                >
-                    <circle cx="50" cy="50" r="50" fill="#0B1742" />
-                </svg>
+                </svg> --}}
+                <img src="" alt="" class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]">
                 <label
                     class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
                     >HMIF</label
