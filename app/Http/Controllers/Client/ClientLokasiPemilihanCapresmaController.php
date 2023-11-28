@@ -14,7 +14,6 @@ class ClientLokasiPemilihanCapresmaController extends Controller
     public function index()
     {
         return view('client.lokasiPemilihan',[
-            'prodi' => ProgramStudi::all(),
             'gedung' => gedung::all()
         ]);
     }
