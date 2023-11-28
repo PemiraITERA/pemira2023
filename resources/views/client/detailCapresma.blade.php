@@ -269,16 +269,18 @@
             <div
                 class="grid grid-cols-2 md:grid-cols-3 justify-center items-center gap-6"
             >
+                @foreach ($koalisi as $data)
                 <div class="flex flex-col items-center gap-6">
                     <div
-                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full bg-[url('')]"
+                        class="w-[80px] md:w-[100px] xl:w-[120px] h-[80px] md:h-[100px] xl:h-[120px] bg-[#0B1742] rounded-full bg-[url('{{ asset('storage/ormawa/'.$data->foto) }}')]"
                     ></div>
                     <h2
                         class="text-black font-montserrat text-lg md:text-2xl xl:text-[32px] xl:-tracing-[1.28px] font-semibold leading-[125%]"
                     >
-                        HMIF
+                    {{ $data->nama_ormawa }}
                     </h2>
                 </div>
+                @endforeach
             </div>
         </div>
 

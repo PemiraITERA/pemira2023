@@ -32,9 +32,9 @@ class ClientCapresmaController extends Controller
         $detailcapres = DetailCapres::where('id', $capres->id)->first();
         $misicapres = Misi::where('id_detail', $detailcapres->id)->get();
         $progjacapres = Progja::where('id_detail', $detailcapres->id)->get();
-        $kolaisi = ProgramStudi::where('koalisi', $capres->id)->get();
+        $koalisi = ProgramStudi::where('koalisi', $capres->id)->get();
 
-        return view('client.detailCapresma', compact('capres', 'detailcapres', 'misicapres', 'progjacapres', 'kolaisi'));
+        return view('client.detailCapresma', compact('capres', 'detailcapres', 'misicapres', 'progjacapres', 'koalisi'));
         // return dd($capres, $detailcapres, $misicapres, $progjacapres);
     }
 }

@@ -190,6 +190,7 @@
         <div
             class="grid grid-cols-3 mx-auto gap-5 md:grid-cols-5 xl:grid-cols-6 md:gap-y-10"
         >
+        @foreach ($koalisi as $data)
             <div
                 class="flex flex-col gap-6 justify-center items-center"
             >
@@ -203,12 +204,13 @@
                 >
                     <circle cx="50" cy="50" r="50" fill="#0B1742" />
                 </svg> --}}
-                <img src="" alt="" class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]">
+                <img src="{{ asset('storage/ormawa/'.$data->foto) }}" alt="" class="md:w-[100px] md:h-[100px] xl:w-[183px] xl:h-[183px]">
                 <label
                     class="text-lg md:text-2xl xl:text-[28px] font-montserrat font-semibold"
-                    >HMIF</label
+                    >{{ $data->nama_ormawa }}</label
                 >
             </div>
+        @endforeach
         </div>
     </section>
 </main>
