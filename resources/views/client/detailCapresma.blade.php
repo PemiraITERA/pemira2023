@@ -233,7 +233,7 @@
         </div>
 
         <!-- section 5 - cv & grand design -->
-        <div class="border-t-2 border-b-2 border-main-100 bg-main-50 my-6 flex justify-center items-center">
+        <div class="border-t-2 border-b-2 border-main-100 bg-main-50 py-6 flex justify-center items-center">
             <div
                 class="flex justify-center items-center w-[312px] md:w-[450px] xl:w-[560px] gap-3 mx-auto md:gap-8"
             >
@@ -255,7 +255,7 @@
         <!-- section 6 - partai pendukung -->
         <div
             id="partai"
-            class="flex w-full py-16 flex-col items-center gap-10 border-t-[2px] border-b-[2px] border-main-100 bg-main-50"
+            class="flex w-full py-16 flex-col items-center gap-10"
         >
             <div
                 class="flex pb-2 items-center border-b-[2px] border-main-200"
