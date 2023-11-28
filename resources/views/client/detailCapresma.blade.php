@@ -203,7 +203,7 @@
 
         <!-- section 4 - proker -->
         <div
-            class="flex w-full px-10 py-16 flex-col justify-center items-center gap-10 flex-shrink-0 border-t-[2px] border-b-[2px]"
+            class="flex w-full px-10 py-16 flex-col justify-center items-center gap-10 flex-shrink-0"
         >
             <div
                 class="flex items-center pb-2 border-b-[2px] border-main-200"
