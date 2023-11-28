@@ -13,6 +13,7 @@ class ProgramStudi extends Model
 
     protected $fillable = [
         'nama_ormawa',
+        'koalisi',
         'foto',
     ];
 
