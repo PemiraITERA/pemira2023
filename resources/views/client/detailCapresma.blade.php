@@ -203,7 +203,7 @@
 
         <!-- section 4 - proker -->
         <div
-            class="flex w-full px-10 py-16 flex-col justify-center items-center gap-10 flex-shrink-0"
+            class="flex w-full px-10 py-16 flex-col justify-center items-center gap-10 flex-shrink-0 border-b-2 border-main-100"
         >
             <div
                 class="flex items-center pb-2 border-b-[2px] border-main-200"
@@ -233,7 +233,7 @@
         </div>
 
         <!-- section 5 - cv & grand design -->
-        <div class="border-y-2 border-main-100 bg-main-50 py-6 flex justify-center items-center box-border">
+        <div class="border-t-2 border-b-2 border-main-100 bg-main-50 py-6 flex justify-center items-center box-border">
             <div
                 class="flex justify-center items-center w-[312px] md:w-[450px] xl:w-[560px] gap-3 mx-auto md:gap-8"
             >
